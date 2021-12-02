@@ -1,0 +1,2 @@
+###
+GET https://localhost:5001/api/Khsds/LocationList/false/false/ HTTP/1.1
