@@ -4,14 +4,16 @@ import App from './App.vue';
 import router from './router';
 import PrimeVue from 'primevue/config';
 
-appGlobal.apiBaseUrl = "https://localhost:5001/api";
+appGlobal.apiBaseUrl = 'https://localhost:5001/api';
 
 //#region "PrimeVue css Imports"
 import 'primevue/resources/primevue.min.css'
 import 'primeicons/primeicons.css'
-import "primeflex/primeflex.css";
-import "primevue/resources/themes/saga-blue/theme.css";
+import 'primeflex/primeflex.css';
+import 'primevue/resources/themes/saga-blue/theme.css';
 //#endregion
+
+
 
 //#region 'PrimeVue Components'
 import AutoComplete from 'primevue/autocomplete';

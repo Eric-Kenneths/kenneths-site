@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { reactive, toRefs, onMounted, watch } from 'vue';
+  import { reactive, toRefs, onMounted } from 'vue';
   import { khsdsRepo } from '@/store/repository/khsdsRepo';
 
   export default {
