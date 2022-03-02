@@ -3,6 +3,7 @@ import Home from '/src/views/Home.vue';
 import Locations from '/src/views/locations/Locations.vue';
 import MR from '/src/views/locations/MR.vue';
 import PL from '/src/views/locations/PL.vue';
+import ServiceMenu from '/src/views/services/ServiceMenu.vue';
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     name: 'PL',
     component: PL
   },
+  {
+    path: '/service-menu',
+    name: 'ServiceMenu',
+    component: ServiceMenu
+  }
 ]
 
 const router = createRouter({

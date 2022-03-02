@@ -3,21 +3,23 @@
   <div>
     <!-- Large Menu -->
     <div class="hidden md:flex md:align-items-center lg:grid">
-      <div class="col md:flex md:flex-column md:align-items-start lg:block">
+      <div class="col-5 md:flex md:flex-column md:align-items-start lg:block">
         <Button label="BOOK NOW" class="menu-button border-noround border-none border-bottom-1"/>
 
-        <Button label="SHOP" class="menu-button border-noround border-none border-bottom-1"/>
+        <Button label="RETAIL" class="menu-button border-noround border-none border-bottom-1"/>
 
-        <Button label="SERVICES" class="menu-button border-noround border-none border-bottom-1 mr-2"/>
+        <Button label="SERVICES" class="menu-button border-noround border-none border-bottom-1 mr-2" @click="doRoute('serviceMenu')"/>
 
         <Button label="CLUB KENNETH" class="menu-button border-noround border-none border-bottom-1 lg:mx-2"/>
       </div>
 
-      <div class="col text-center">
-        <img src="/src/assets/logo.png" class="logo" @click="doRoute('home')"/>
+      <div class="col-2 m-0 p-0 text-center">
+        <img src="/src/assets/logo.png" class="logo cursor-pointer" @click="doRoute('home')"/>
       </div>
 
-      <div class="col text-right md:flex md:flex-column md:align-items-end lg:block">
+      <div class="col-5 text-right md:flex md:flex-column md:align-items-end lg:block">
+        <Button label="GIFT CARDS" class="menu-button border-noround border-none border-bottom-1 lg:mx-2"/>
+
         <Button label="LOCATIONS" class="menu-button border-noround border-none border-bottom-1 lg:mr-2" @click="doRoute('locations')"/>
 
         <Button label="CAREERS" class="menu-button border-noround border-none border-bottom-1 lg:mx-2"/>
@@ -48,7 +50,7 @@
         </div>
 
         <div>
-          <Button label="SERVICES" class="menu-button border-noround border-none border-bottom-1 my-2"/>
+          <Button label="SERVICES" class="menu-button border-noround border-none border-bottom-1 my-2" @click="doRoute('serviceMenu')"/>
         </div>
 
         <div>
@@ -107,25 +109,25 @@
         <img src="/src/assets/social/vertical/FollowUs.png" width="18"/>
       </div>
 
-      <div class="flex align-items-center mt-3">
+      <div class="flex align-items-center mt-4">
         <a href="https://www.instagram.com/kennethssalonandspa/ " target="_blank">
           <img src="/src/assets/social/Instagram.png" width="18"/>
         </a>
       </div>
 
-      <div class="flex align-items-center mt-3">
+      <div class="flex align-items-center mt-4">
         <a href="https://www.tiktok.com/@kennethssalonandspa" target="_blank">
           <img src="/src/assets/social/TikTok.png" width="18"/>
         </a>
       </div>
 
-      <div class="flex align-items-center mt-3">
+      <div class="flex align-items-center mt-4">
         <a href="https://www.facebook.com/KennethsSalonandspa" target="_blank">
           <img src="/src/assets/social/FaceBook.png" width="18"/>
         </a>
       </div>
 
-      <div class="flex align-items-center mt-3">
+      <div class="flex align-items-center mt-4">
         <a href="https://www.pinterest.com/kennethssalonandspa" target="_blank">
           <img src="/src/assets/social/Pintrest.png" width="18"/>
         </a>
@@ -139,14 +141,18 @@
     </div>
 
     <!-- Quick Access (right) -->
-    <div class="hidden lg:flex flex-column fixed bottom-50 right-0">
-      <div class="flex justify-content-center">
-        <Button label="Book Now" class="menu-button border-noround border-none border-bottom-1 my-7 rotate-90"/>
-      </div>
+    <div class="hidden lg:flex flex-column fixed top-50 right-0 mr-4">
+        <div class="flex align-items-center mb-5">
+          <img src="/src/assets/menu/vertical/bookNow.png" width="18" class="cursor-pointer"/>
+        </div>
 
-      <div class="flex justify-content-center">
-        <Button label="Shop" class="menu-button border-noround border-none border-bottom-1 my-7 rotate-90"/>
-      </div>
+        <div class="flex align-items-center mb-5">
+          <img src="/src/assets/menu/vertical/retail.png" width="18" class="cursor-pointer"/>
+        </div>
+
+        <div class="flex align-items-center">
+          <img src="/src/assets/menu/vertical/giftCards.png" width="18" class="cursor-pointer"/>
+        </div>
     </div>    
 
     <!-- Content -->
@@ -157,10 +163,10 @@
     </div>
 
     <!-- Footer -->
-    <div class="grid footer shadow-8 mx-0">
+    <div class="grid footer mx-0">
       <div class="grid m-0 align-items-center">
         <div class="col sans-serif text-center text-4xl md:text-5xl">
-          Follow @kennethssalonandspa
+          Get Inspired <img src="/src/assets/social/Instagram.png" width="27"/> kennethssalonandspa
           <div class="grid mt-1 flex">
             <div class="col-2">
               <img class="thumbnail" src="/src/assets/footer/1.jpg"/>
@@ -212,6 +218,11 @@
             router.push('/locations');
             state.sidebarVisible = false;
             break;
+
+          case 'serviceMenu': 
+            router.push('/service-menu');
+            state.sidebarVisible = false;
+            break;
         }
       }
 
@@ -240,15 +251,15 @@
 }
 
 @font-face {
-  font-family: 'prompt';
-  src: local('prompt'),
+  font-family: 'lato';
+  src: local('lato'),
         url('./assets/fonts/lato-Light.ttf') format('truetype');
   line-gap-override: 30%;
 }
 
 @font-face {
-  font-family: 'EBGaramond';
-  src: local('EBGaramond'),
+  font-family: 'Playfair';
+  src: local('Playfair'),
         url('./assets/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
 }
 
@@ -259,11 +270,11 @@ html, body {
 }
 
 .sans-serif {
-  font-family: 'prompt', arial, helvetica;
+  font-family: 'lato', arial, helvetica;
 }
 
 .serif {
-  font-family: 'EBGaramond', garamond, 'Times New Roman';
+  font-family: 'Playfair', garamond, 'Times New Roman';
 }
 
 .logo {
@@ -278,7 +289,7 @@ html, body {
   border-color: var(--white) !important;
   box-shadow: transparent !important;
   font-size: 20px !important;
-  font-family: 'prompt', arial, helvetica !important;
+  font-family: 'lato', arial, helvetica !important;
 }
 
 .hamburger-button {
