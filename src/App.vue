@@ -2,7 +2,7 @@
 <meta name="viewport" content="user-scalable=0, initial-scale=1.0">
   <div>
     <!-- Large Menu -->
-    <div class="hidden md:flex md:align-items-center lg:grid">
+    <div class="hidden md:flex md:align-items-center my-2 lg:grid">
       <div class="col-5 md:flex md:flex-column md:align-items-start lg:block">
         <Button label="BOOK NOW" class="menu-button border-noround border-none border-bottom-1"/>
 
@@ -307,10 +307,6 @@ html, body {
 .sidebar {
   background-color: var(--white) !important;
   color: var(--black) !important;
-}
-
-.r-90 {
-  transform: rotate(90deg);
 }
 
 .menu-button:focus {
