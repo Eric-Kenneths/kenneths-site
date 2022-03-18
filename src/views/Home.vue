@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg md:mb-0">
+    <div class="grid mb-0 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg md:mb-0">
       <div class="flex col-3 md:col-4 md:col-offset-1">
         <div class="serif flex align-items-center text-4xl text-right z-1 negative-margin md:text-7xl lg:text-8xl xl:text-8xl">
           A partner in life's most memorable moments
@@ -13,8 +13,8 @@
       </div>
     </div>
 
-    <div class="grid mt-1 md:ml-7 lg:mx-7">
-      <div class="col-12 px-0">
+    <div class="grid mt-0 md:ml-7 lg:mx-7">
+      <div class="col-12 py-0 px-0">
         <div class="flex flex-row align-items-center justify-content-center text-6xl square">
           <video class="flex justify-content-center video" autoplay loop muted>
             <source src="/src/assets/home/horizontal.mp4">
@@ -25,7 +25,7 @@
 
     <div class="grid align-items-center parallax-creative-sm parallax-creative-md parallax-creative-lg parallax-creative-xl mt-4 sm:p-0 md:mt-0 md:ml-7 md:mb-0 md:pb-7 lg:mx-7"> 
       <div class="col-12 flex justify-content-center p-0 mt-2 md:justify-content-end md:col-4 lg:col-5">
-        <img src="/src/assets/home/location.jpg" alt="creative" class="photo-creative-sm photo-creative-md photo-creative-lg photo-creative-xl md:rellax">
+        <img src="/src/assets/home/location.jpg" alt="creative" class="photo-creative-sm photo-creative-md photo-creative-lg photo-creative-xl">
       </div>
 
       <div class="col-12 flex flex-column mt-4 md:col-8 lg:col-7">
@@ -53,8 +53,8 @@
     
     <div class="grid parallax-location-sm parallax-location-md parallax-location-lg parallax-location-xl mt-4 md:mt-0 md:ml-7 lg:mx-7 xl:p-8">
       <div class="col-12 flex justify-content-center md:flex-order-0 md:col-6">
-        <div class="flex flex-column align-items-center justify-content-center lg:p-6">
-          <div class="p-4 md:pr-4">
+        <div class="flex flex-column align-items-center justify-content-center">
+          <div class="p-4 text-background-sm md:pr-4">
             <div class="serif text-left pt-1 md:text-xl md:px-4 lg:text-3xl lg:px-6">
               TEN LOCATIONS, ONE EXCEPTIONAL EXPEREINCE
             </div>
@@ -67,20 +67,20 @@
           </div>
 
           <div class="mt-4 ">
-            <Button label="LOCATIONS" class="button-location"/>
+            <Button label="LOCATIONS" class="button-location" @click="doRoute('locations')"/>
           </div>
         </div>
       </div>
 
-      <div class="col-12 flex justify-content-center md:flex-order-1 md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
-        <video class="flex justify-content-center" style="width: 50%" autoplay loop muted>
+      <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
+        <video class="flex justify-content-center location-video-sm location-video-md location-video-lg location-video-xl" autoplay loop muted>
          <source src="/src/assets/locations/pl/video.mp4">
         </video>
       </div>
     </div>
 
-    <div class="grid mt-1 md:ml-7 lg:mx-7">
-      <div class="col-12">
+    <div class="grid md:ml-7 lg:mx-7">
+      <div class="col-12 my-0 py-0">
         <div class="flex grid mt-1 service-row-sm service-row-md service-row-lg service-row-xl">
           <div class="flex col-4 justify-content-center align-items-center spa-sm spa-md spa-lg spa-xl">
               <div class="spa-text text-3xl md:text-5xl lg:text-6xl">
@@ -106,26 +106,38 @@
 </template>
 
 <script>
+  import { reactive } from 'vue';
+  import { useRouter } from 'vue-router';
+  
   export default {
     name: 'Home',
 
     setup() {
+      const state = reactive({
 
+      });
+
+      window.scrollTo(0, 0);
+
+      const router = useRouter();
+
+      function doRoute(whereTo) {
+        switch (whereTo) {
+          case 'locations':
+            router.push('/locations');
+            break;
+        }
+      }
+
+      return {
+        state,
+        doRoute
+      }
     }
   }
 </script>
 
 <style scoped>
-.test {
-  object-fit: cover;
-  height: 100%;
-  width: 50%;
-}
-
-.negative-margin {
-  margin: 0 -4rem 0 0;
-}
-
 /* Small screen (phone) */
 @media only screen and (min-width: 1px) {
   .text-background-sm {
@@ -166,6 +178,10 @@
     background-repeat: no-repeat;
     background-size: 100% 50%;
     flex-direction: column-reverse !important;
+  }
+
+  .location-video-sm {
+    width: 75%;
   }
 
   .service-row-sm {
@@ -254,6 +270,10 @@
     flex-direction: unset !important;
   }
 
+  .location-video-md {
+    width: 80%;
+  }
+
   .service-row-md {
     height: 30rem;
     background-color: var(--black);
@@ -331,18 +351,17 @@
     height: auto;
   }
 
-  .photo-location-lg {
-    height: auto;
-    width: 75%;
-  }
-
   .parallax-location-lg {
     background-image: url('/src/assets/home/parallax/locationParallax.jpg');
     background-attachment: fixed;
     background-position: right;
     background-repeat: no-repeat;
-    background-size: 48% 100%;
+    background-size: 40% 100%;
     height: auto;
+  }
+
+  .location-video-lg {
+    width: 80%;
   }
 
   .service-row-lg {
@@ -400,7 +419,6 @@
   }
 
   .parallax-creative-xl {
-    background-image: url('/src/assets/home/parallax/creativeParallax.jpg');
     background-attachment: fixed;
     background-position: left;
     background-repeat: no-repeat;
@@ -414,11 +432,14 @@
   }
 
   .parallax-location-xl {
-    background-image: url('/src/assets/home/parallax/locationParallax.jpg');
     background-attachment: fixed;
     background-position: right;
     background-repeat: no-repeat;
     background-size: 37% 100%;
+  }
+
+  .location-video-xl {
+    width: 50%;
   }
 
   .service-row-xl {
@@ -427,7 +448,6 @@
   }
 
   .service-spa-xl {
-    background-image: url('/src/assets/home/spa.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 70%;
@@ -439,7 +459,6 @@
   }
 
   .service-nail-xl {
-    background-image: url('/src/assets/home/nail.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 70%;
@@ -463,26 +482,8 @@
   }
 }
 
-.button-hair {
-  background-color: var(--blue) !important;
-  color: var(--black) !important;
-  border-width: 0px !important;
-  border-color: var(--black) !important;
-  box-shadow: transparent !important;
-  font-size: 20px !important;
-  font-family: 'lato', arial, helvetica !important;
-  font-weight: Bold;
-}
-
-.button-career {
-  background-color: var(--light-red) !important;
-  color: var(--black) !important;
-  border-width: 0px !important;
-  border-color: var(--black) !important;
-  box-shadow: transparent !important;
-  font-size: 20px !important;
-  font-family: 'lato', arial, helvetica !important;
-  font-weight: bold;
+.negative-margin {
+  margin: 0 -4rem 0 0;
 }
 
 .button-location {

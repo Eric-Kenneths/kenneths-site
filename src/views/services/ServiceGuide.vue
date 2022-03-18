@@ -16,6 +16,8 @@
 
       });
 
+      window.scrollTo(0, 0);
+
       const router = useRouter();
 
       function doRoute(whereTo) {

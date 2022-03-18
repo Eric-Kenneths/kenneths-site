@@ -1,347 +1,383 @@
 <template>
   <div>
-    <div class="grid mt-1 flex flex-column align-items-center md:align-items-start md:ml-7 md:flex-row">
-      <div class="col-12 md:col-4">
-        <div class="grid">   
-          <div class="col-12 flex flex-column align-items-end"> 
-            <div class="flex flex-column align-items-center container-sm container-md container-lg container-xl  md:align-items-start">
-              <div class="flex flex-row justify-content-start">
-                <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg flex align-self-start" @click="doRoute('mr')">
+    <div class="grid mt-1 flex flex-column align-items-start md:ml-7 md:flex-row lg:mx-7">
+      <div class="col-12 md:px-4 md:col-4">
+        <div class="grid py-3" style="background-color: var(--black); color: var(--white); height: 100%">  
+          <div class="col-9 md:col-10 md:pl-0 md:py-0">
+            <div class="ml-3 flex flex-column align-items-center md:block">
+              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
+                      @click="doRoute('ts')">
+                <source src="/src/assets/locations/mr/video.mp4">
+              </video>
 
-                <div class="align-self-start rotate large-label-sm large-label-md large-label-xl large-label-xxl">
-                  Arlington-Hilliard
+              <div class="grid mt-2 flex flex-column">
+                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                  <div>
+                    Mill Run Center
+                  </div>
+
+                  <div>
+                    3610 Fishinger Blvd.
+                  </div>
+
+                  <div>
+                    Hilliard, OH 43026
+                  </div>
+                </div>
+
+                <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
+                  <Button label="BOOK"/>
                 </div>
               </div>
+            </div>
+          </div> 
 
-              <div class="mt-3 address-sm address-md address-xl">
-                <div>
-                  Mill Run Center
-                </div>
-
-                <div>
-                  3610 Fishinger Blvd.
-                </div>
-
-                <div>
-                  Hilliard. Ohio 43026
-                </div>
-
-                <div class="mt-3 flex justify-content-center md:block">
-                  <Button label="Book"/>
-                </div>
-              </div>
+          <div class="col-3 md:col-2 md:pl-0">
+            <div class="rotate mr-1 large-label-sm large-label-md large-label-lg large-label-xl large-label-xxl large-label-xxxl">
+              Arlington-Hilliard
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 md:col-4">
-        <div class="grid">   
-          <div class="col-12 flex flex-column align-items-end"> 
-            <div class="flex flex-column align-items-center container-sm container-md container-lg container-xl md:align-items-start">
-              <div class="flex flex-row justify-content-start">
-                <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg flex align-self-start" @click="doRoute('av')">
-                
-                <div class="align-self-start rotate label-sm label-md label-lg label-xl">
-                  Dublin
+      <div class="col-12 md:px-4 md:col-4">
+        <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
+          <div class="col-9 md:col-10 md:pl-0 md:py-0">
+            <div class="ml-3 flex flex-column align-items-center md:block">
+              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
+                      @click="doRoute('ts')">
+                <source src="/src/assets/locations/av/video.mp4">
+              </video>
+
+              <div class="grid mt-2 flex flex-column">
+                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                  <div>
+                    Avery Square Center
+                  </div>
+
+                  <div>
+                    7056 Hospital Dr.
+                  </div>
+
+                  <div>
+                    Dublin, OH 43016
+                  </div>
+                </div>
+
+                <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
+                  <Button label="BOOK"/>
                 </div>
               </div>
+            </div>
+          </div> 
 
-              <div class="mt-3 address-sm address-md address-xl">
-                <div>
-                  Avery Square Center
-                </div>
-
-                <div>
-                  7056 Hospital Dr.
-                </div>
-
-                <div>
-                  Dublin, Ohio 43016
-                </div>
-
-                <div class="mt-3 flex justify-content-center md:block">
-                  <Button label="Book"/>
-                </div>
-              </div>
+          <div class="col-3 md:col-2 md:pl-0">
+            <div class="rotate mr-1 label-sm label-md label-lg label-xl label-xxl">
+              Dublin
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 md:col-4">
-        <div class="grid">   
-          <div class="col-12 flex flex-column align-items-end"> 
-            <div class="flex flex-column align-items-center container-sm container-md container-lg container-xl md:align-items-start">
-              <div class="flex flex-row justify-content-start">
-                <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg flex align-self-start" @click="doRoute('gr')">
-                
-                <div class="align-self-start rotate label-sm label-md label-lg label-xl">
-                  Grove City
-                </div>
-              </div>
+      <div class="col-12 md:px-4 md:col-4">
+        <div class="grid py-3" style="background-color: var(--black); color: var(--white); height: 100%;">  
+          <div class="col-9 md:col-10 md:pl-0 md:py-0">
+            <div class="ml-3 flex flex-column align-items-center md:block">
+              <img src="/src/assets/locations/gr/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg" @click="doRoute('mr')">
 
-              <div class="mt-3 address-sm address-md address-xl">
-                <div>
-                  Parkway Centre North
-                </div>
+              <div class="grid mt-2 flex flex-column">
+                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                  <div>
+                    Parkway Centre North
+                  </div>
 
-                <div>
-                  1582 Stringtown Rd.
-                </div>
+                  <div>
+                    1582 Stringtown Rd.
+                  </div>
 
-                <div>
-                  Grove City, Ohio 43123
+                  <div>
+                    Grove City, OH 43123
+                  </div>
                 </div>
 
-                <div class="mt-3 flex justify-content-center md:block">
-                  <Button label="Book"/>
+                <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
+                    <Button label="BOOK"/>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          </div> 
 
-    <div class="grid mt-4 flex flex-column align-items-center md:align-items-start md:ml-7 md:flex-row">
-      <div class="col-12 md:col-4">
-        <div class="grid">   
-          <div class="col-12 flex flex-column align-items-end"> 
-            <div class="flex flex-column align-items-center container-sm container-md container-lg container-xl md:align-items-start">
-              <div class="flex flex-row justify-content-start">
-                <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg flex align-self-start" @click="doRoute('kd')">
-                
-                <div class="align-self-start rotate label-sm label-md label-lg label-xl">
-                  Kingsdale
-                </div>
-              </div>
-
-              <div class="mt-3 address-sm address-md address-xl">
-                <div>
-                  Kingsdale
-                </div>
-
-                <div>
-                  3134 Kingsdale center
-                </div>
-
-                <div>
-                  Upper Arlington, Ohio 43221
-                </div>
-
-                <div class="mt-3 flex justify-content-center md:block">
-                  <Button label="Book"/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 md:col-4">
-        <div class="grid">   
-          <div class="col-12 flex flex-column align-items-end"> 
-            <div class="flex flex-column align-items-center container-sm container-md container-lg container-xl md:align-items-start">
-              <div class="flex flex-row justify-content-start">
-                <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg flex align-self-start" @click="doRoute('ng')">
-                
-                <div class="align-self-start rotate label-sm label-md label-lg label-xl">
-                  New Albany
-                </div>
-              </div>
-
-              <div class="mt-3 address-sm address-md address-xl">
-                <div>
-                  New Albany Square
-                </div>
-
-                <div>
-                  4942 Morse Rd.
-                </div>
-
-                <div>
-                  Columbus, Ohio 43230
-                </div>
-
-                <div class="mt-3 flex justify-content-center md:block">
-                  <Button label="Book"/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 md:col-4">
-        <div class="grid">   
-          <div class="col-12 flex flex-column align-items-end"> 
-            <div class="flex flex-column align-items-center container-sm container-md container-lg container-xl md:align-items-start">
-              <div class="flex flex-row justify-content-start">
-                <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg flex align-self-start" @click="doRoute('ts')">
-                
-                <div class="align-self-start rotate label-sm label-md label-lg label-xl">
-                  Pickerington
-                </div>
-              </div>
-
-              <div class="mt-3 address-sm address-md address-xl">
-                <div>
-                  Taylor Square Center
-                </div>
-
-                <div>
-                  2865 Taylor Road Extension
-                </div>
-
-                <div>
-                  Reynoldsburg, Ohio 43068
-                </div>
-
-                <div class="mt-3 flex justify-content-center md:block">
-                  <Button label="Book"/>
-                </div>
-              </div>
+          <div class="col-3 md:col-2 md:pl-0">
+            <div class="rotate mr-1 label-sm label-md label-lg label-xl label-xxl">
+              Grove City
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="grid mt-4 flex flex-column align-items-center md:align-items-start md:ml-7 md:flex-row">
-      <div class="col-12 md:col-4">
-        <div class="grid">   
-          <div class="col-12 flex flex-column align-items-end"> 
-            <div class="flex flex-column align-items-center container-sm container-md container-lg container-xl md:align-items-start">
-              <div class="flex flex-row justify-content-start">
-                <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg flex align-self-start" @click="doRoute('pl')">
+    <div class="grid mt-4 flex flex-column align-items-center md:align-items-start md:ml-7 md:flex-row lg:mx-7">
+      <div class="col-12 md:px-4 md:col-4">
+        <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
+          <div class="col-9 md:col-10 md:pl-0 md:py-0">
+            <div class="ml-3 flex flex-column align-items-center md:block">
+              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
+                      @click="doRoute('ts')">
+                <source src="/src/assets/locations/kd/video.mp4">
+              </video>
+              
+              <div class="grid mt-2 flex flex-column">
+                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                  <div>
+                    Kingsdale
+                  </div>
 
-                <div class="align-self-start rotate large-label-sm large-label-md large-label-lg large-label-xl large-label-xxl">
-                  Polaris Parkway
+                  <div>
+                    3134 Kingsdale Ctr.
+                  </div>
+
+                  <div class="long-address-sm long-address-md long-address-lg long-address-xl">
+                    Upper Arlington, OH 43221
+                  </div>
+                </div>
+
+                <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
+                    <Button label="BOOK"/>
                 </div>
               </div>
+            </div>
+          </div> 
 
-              <div class="mt-3 address-sm address-md address-xl">
-                <div>
-                  Oak Creek Center
-                </div>
-
-                <div>
-                  1305 Cameron Ave.
-                </div>
-
-                <div>
-                  Lewis Center, Ohio 43035
-                </div>
-
-                <div class="mt-3 flex justify-content-center md:block">
-                  <Button label="Book"/>
-                </div>
-              </div>
+          <div class="col-3 md:col-2 md:pl-0">
+            <div class="rotate label-sm label-md label-xl label-xxl">
+              Kingsdale
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 md:col-4">
-        <div class="grid">   
-          <div class="col-12 flex flex-column align-items-end"> 
-            <div class="flex flex-column align-items-center container-sm container-md container-lg container-xl md:align-items-start">
-              <div class="flex flex-row justify-content-start">
-                <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg flex align-self-start" @click="doRoute('pw')">
+      <div class="col-12 md:px-4 md:col-4">
+        <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
+          <div class="col-9 md:col-10 md:pl-0 md:py-0">
+            <div class="ml-3 flex flex-column align-items-center md:block">
+              <img src="/src/assets/locations/ng/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg" @click="doRoute('mr')">
+              
+              <div class="grid mt-2 flex flex-column">
+                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                  <div>
+                    New Albany Square
+                  </div>
 
-                <div class="align-self-start rotate label-sm label-md label-lg label-xl">
-                  Powell
+                  <div>
+                    4942 Morse Rd.
+                  </div>
+
+                  <div>
+                    Columbus, OH 43230
+                  </div>
+                </div>
+
+                <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
+                    <Button label="BOOK"/>
                 </div>
               </div>
+            </div>
+          </div> 
 
-              <div class="mt-3 address-sm address-md address-xl">
-                <div>
-                  Powell Crossing Center
-                </div>
-
-                <div>
-                  9868 Brewster Ln.
-                </div>
-
-                <div>
-                  Powell, Ohio 43065
-                </div>
-
-                <div class="mt-3 flex justify-content-center md:block">
-                  <Button label="Book"/>
-                </div>
-              </div>
+          <div class="col-3 md:col-2 md:pl-0">
+            <div class="rotate label-sm label-md label-xl label-xxl">
+              New Albany
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 md:col-4">
-        <div class="grid">   
-          <div class="col-12 flex flex-column align-items-end"> 
-            <div class="flex flex-column align-items-center container-sm container-md container-lg container-xl md:align-items-start">
-              <div class="flex flex-row justify-content-start">
-                <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg flex align-self-start" @click="doRoute('ws')">
+      <div class="col-12 md:px-4 md:col-4">
+        <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
+          <div class="col-9 md:col-10 md:pl-0 md:py-0">
+            <div class="ml-3 flex flex-column align-items-center md:block">
+              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
+                      @click="doRoute('ts')">
+                <source src="/src/assets/locations/ts/video.mp4">
+              </video>
+              
+              <div class="grid mt-2 flex flex-column">
+                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                  <div>
+                    Taylor Square Center
+                  </div>
 
-                <div class="align-self-start rotate label-sm label-md label-lg label-xl">
-                  Westerville
+                  <div>
+                    2865 Taylor Rd. Ext.
+                  </div>
+
+                  <div>
+                    Reynoldsburg, OH 43068
+                  </div>
+                </div>
+
+                <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
+                    <Button label="BOOK"/>
                 </div>
               </div>
+            </div>
+          </div> 
 
-              <div class="mt-3 address-sm address-md address-xl">
-                <div>
-                  Northridge Center
-                </div>
-  
-                <div>
-                  726 N. State St.
-                </div>
-  
-                <div>
-                  Westerville, Ohio 43082
-                </div>
-  
-                <div class="mt-3 flex justify-content-center md:block">
-                  <Button label="Book"/>
-                </div>
-              </div>
+          <div class="col-3 md:col-2 md:pl-0">
+            <div class="rotate label-sm label-md label-xl label-xxl cursor-pointer" @click="doRoute('ts')">
+              Pickerington
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="grid mt-4 flex flex-column align-items-center md:align-items-start md:ml-7 md:flex-row">
-      <div class="col-12 md:col-4">
-        <div class="grid">   
-          <div class="col-12 flex flex-column align-items-end"> 
-            <div class="flex flex-column align-items-center container-sm container-md container-lg container-xl md:align-items-start">
-              <div class="flex flex-row justify-content-start">
-                <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg flex align-self-start" @click="doRoute('at')">
-                
-                <div class="align-self-start rotate label-sm label-md label-xl label-xxl">
-                   Academy
+    <div class="grid mt-4 flex flex-column align-items-center md:align-items-start md:ml-7 md:flex-row lg:mx-7">
+      <div class="col-12 md:px-4 md:col-4">
+        <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
+          <div class="col-9 md:col-10 md:pl-0 md:py-0">
+            <div class="ml-3 flex flex-column align-items-center md:block">
+              <img src="/src/assets/locations/pl/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg" @click="doRoute('pl')">
+              
+              <div class="grid mt-2 flex flex-column">
+                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                  <div>
+                    Oak Creek Center
+                  </div>
+
+                  <div>
+                    1305 Cameron Ave.
+                  </div>
+
+                  <div>
+                    Lewis Center, OH 43035
+                  </div>
+                </div>
+
+                <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
+                    <Button label="BOOK"/>
                 </div>
               </div>
+            </div>
+          </div> 
 
-              <div class="mt-3 address-sm address-md address-xl">
-                <div>
-                  Academy Hair Salon
+          <div class="col-3 md:col-2 md:pl-0">
+            <div class="rotate large-label-sm large-label-md large-label-xl large-label-xxl">
+              Polaris Parkway
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 md:px-4 md:col-4">
+        <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
+          <div class="col-9 md:col-10 md:pl-0 md:py-0">
+            <div class="ml-3 flex flex-column align-items-center md:block">
+              <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg" @click="doRoute('mr')">
+              
+              <div class="grid mt-2 flex flex-column">
+                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                  <div>
+                    Powell Crossing Center
+                  </div>
+
+                  <div>
+                    9868 Brewster Ln.
+                  </div>
+
+                  <div>
+                    Powell, OH 43065
+                  </div>
                 </div>
 
-                <div>
-                  5151 Reed Rd. Suite 110B
-                </div>
-
-                <div>
-                  Columbus, Ohio 43220
-                </div>
-
-                <div class="mt-3 flex justify-content-center md:block">
-                  <Button label="Book"/>
+                <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
+                    <Button label="BOOK"/>
                 </div>
               </div>
+            </div>
+          </div> 
+
+          <div class="col-3 md:col-2 md:pl-0">
+            <div class="rotate label-sm label-md label-xl label-xxl">
+              Powell
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 md:px-4 md:col-4">
+        <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
+          <div class="col-9 md:col-10 md:pl-0 md:py-0">
+            <div class="ml-3 flex flex-column align-items-center md:block">
+              <video class="flex justify-content-center photo-sm photo-md photo-lg" onmouseover="this.play()" onmouseout="this.pause();" loop muted>
+                <source src="/src/assets/locations/ws/video.mp4">
+              </video>
+              
+              <div class="grid mt-2 flex flex-column">
+                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                  <div>
+                    Northridge Center
+                  </div>
+
+                  <div>
+                    726 North State St.
+                  </div>
+
+                  <div>
+                    Westerville, OH 43082
+                  </div>
+                </div>
+
+                <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
+                    <Button label="BOOK"/>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+          <div class="col-3 md:col-2 md:pl-0">
+            <div class="rotate label-sm label-md label-xl label-xxl">
+              Westerville
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid mt-4 flex flex-column align-items-center md:align-items-start md:ml-7 md:flex-row lg:mx-7">
+      <div class="col-12 md:px-4 md:col-4">
+        <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
+          <div class="col-9 md:col-10 md:pl-0 md:py-0">
+            <div class="ml-3 flex flex-column align-items-center md:block">
+              <video class="flex justify-content-center photo-sm photo-md photo-lg" onmouseover="this.play()" onmouseout="this.pause();" loop muted>
+                <source src="/src/assets/locations/at/video.mp4">
+              </video>
+              
+              <div class="grid mt-2 flex flex-column">
+                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                  <div>
+                    Academy Hair Salon
+                  </div>
+
+                  <div>
+                    5151 Reed Rd. Suite 110B
+                  </div>
+
+                  <div>
+                    Columbus, OH 43220
+                  </div>
+                </div>
+
+                <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
+                    <Button label="BOOK"/>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+          <div class="col-3 md:col-2 md:pl-0">
+            <div class="rotate label-sm label-md label-xl label-xxl">
+              Academy
             </div>
           </div>
         </div>
@@ -368,6 +404,8 @@
 
       });
 
+      window.scrollTo(0, 0);
+
       const router = useRouter();
 
       function doRoute(whereTo) {
@@ -393,7 +431,7 @@
             break;
 
           case 'ts':
-            router.push('/location/pickerington-hair-salon-nail-spa-waxing-studio');
+            router.push('/locations/pickerington-hair-salon-nail-spa-waxing-studio');
             break;
 
           case 'pl':
@@ -427,15 +465,21 @@
 @media only screen and (min-width: 1px) {
   .container-sm {
     width: 100%;
+    background-color: var(--black);
+    color: var(--white);
   }
 
   .photo-sm {
-    width: 70%;
+    width: 85%;
     height: auto;
-    margin: auto 0px auto auto
+    
   }
 
   .address-sm {
+    font-size: 1.125rem;
+  }
+
+  .long-address-sm {
     font-size: 1.125rem;
   }
 
@@ -455,21 +499,25 @@
   }
 
   .photo-md {
-    width: 70%;
+    width: 100%;
     height: auto;
     margin: 0
   }
 
   .address-md {
-    font-size: 1rem;
+    font-size: .9rem;
+  }
+
+  .long-address-md {
+    font-size: .766rem;
   }
 
   .label-md {
-    font-size: 2.5rem;
+    font-size: 1.55rem;
   }
 
   .large-label-md {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -480,12 +528,24 @@
   }
 
   .photo-lg {
-    width: 60%;
+    width: 100%;
     height: auto;
   }
 
   .label-lg {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+  }
+
+  .large-label-lg {
+    font-size: 2.35rem;
+  }
+
+  .address-lg {
+    font-size: .96rem;
+  }
+
+  .long-address-lg {
+    font-size: .96rem;
   }
 }
 
@@ -496,46 +556,39 @@
   }
 
   .label-xl {
-    font-size: 3rem;
+    font-size: 2.15rem;
   }
 
   .large-label-xl {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .address-xl {
     font-size: 1.25rem;
   }
-}
 
-@media only screen and (min-width: 1500px) {
-  .large-label-xxl {
-    font-size: 2.5rem;
+  .long-address-xl {
+    font-size: 1.25rem;
   }
 }
 
 button {
   border-radius: 0px !important;
-  background-color: var(--black) !important;
-  color: var(--white) !important;
+  background-color: var(--white) !important;
+  color: var(--black) !important;
   border-width: 0px !important;
-  border-color: var(--white) !important;
+  border-color: var(--black) !important;
   box-shadow: transparent !important;
-  font-size: 20px !important;
+  font-size: 14px !important;
   font-family: 'lato', arial, helvetica !important;
   border-radius: 0px !important;
 }
 
-button:focus {
-  box-shadow: 0 0 0 0 transparent !important;
-}
-
-.photo {
-  width: 60%;
-  height: auto;
-}
-
 .rotate {
   writing-mode: vertical-rl;
+}
+
+.height {
+  height: 100%;
 }
 </style>

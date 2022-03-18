@@ -33,7 +33,7 @@
       <Button class="absolute top-0 left-0 test hamburger-button" icon="pi pi-bars" @click="state.sidebarVisible = true"/>
 
       <div class="text-center">
-        <img src="/src/assets/logo.png" width="125"/>
+        <img src="/src/assets/logo.png" width="125" @click="doRoute('home')"/>
       </div>
 
       <Sidebar class="sidebar" v-model:visible="state.sidebarVisible" :baseZIndex="1000">
@@ -163,29 +163,58 @@
     </div>
 
     <!-- Footer -->
-    <div class="grid footer mx-0">
+    <div class="grid footer sans-serif mx-0">
       <div class="grid m-0 align-items-center">
-        <div class="col sans-serif text-center text-4xl md:text-5xl">
+        <div class="col text-center text-4xl md:text-5xl">
           Get Inspired <img src="/src/assets/social/Instagram.png" width="27"/> kennethssalonandspa
-          <div class="grid mt-1 flex">
-            <div class="col-2">
-              <img class="thumbnail" src="/src/assets/footer/1.jpg"/>
+
+          <div class="grid mt-1 flex flex-row">
+            <div class="col-2" v-for="(post, id) in state.footerPosts" :key="id">
+              <span v-if="post.media_type !== 'VIDEO'">
+                <img class="thumbnail" :src="post.media_url"/>
+              </span>
+
+              <span v-if="post.media_type === 'VIDEO'">
+                <video class="thumbnail" autoplay loop muted>
+                  <source :src="post.media_url">
+                </video>
+              </span>
             </div>
-            <div class="col-2">
-              <img class="thumbnail" src="/src/assets/footer/2.jpg"/>
-            </div>
-            <div class="col-2">
-              <img class="thumbnail" src="/src/assets/footer/3.jpg"/>
-            </div>
-            <div class="col-2">
-              <img class="thumbnail" src="/src/assets/footer/4.jpg"/>
-            </div>
-            <div class="col-2">
-              <img class="thumbnail" src="/src/assets/footer/5.jpg"/>
-            </div>
-            <div class="col-2">
-              <img class="thumbnail" src="/src/assets/footer/6.jpg"/>
-            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12 flex justify-content-center align-items-end text-sm md:col-4">
+        <div class="flex flex-column align-items-center">
+          <div>
+            5151 Reed Rd Suite 250B
+          </div>
+
+          <div>
+            Columbus, OH 43220
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 flex justify-content-center align-items-end text-sm md:col-4">
+        <div class="flex flex-column align-items-center">
+          <div>
+            &copy; 2009-22 Kenneth's Hair Salons & Day Spa, Inc.
+          </div>
+
+          <div>
+            All Rights Reserved
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 flex justify-content-center align-items-end text-sm md:col-4">
+        <div class="flex flex-column align-items-center">
+          <div>
+            Call Us
+          </div>
+          <div>
+            614.538.5800
           </div>
         </div>
       </div>
@@ -197,14 +226,31 @@
   import { reactive } from 'vue';
   import { useRouter } from 'vue-router';
   import { appGlobal } from '@/store/global/appGlobal';
+  import { employeeRepo } from '@/store/repository/employeeRepo';
 
   export default {
     name: 'App',
 
     setup() {
       const state = reactive({
-        sidebarVisible: false
+        sidebarVisible: false,
+        footerPosts: []
       });
+
+      window.scrollTo(0, 0);
+
+      const {
+        getSocialMediaToken,
+        getPhotos
+      } = employeeRepo();
+
+      loadInstagramPosts();
+
+      async function loadInstagramPosts() {
+        let socialMedia = await getSocialMediaToken();
+
+        state.footerPosts = await getPhotos(socialMedia.userId, socialMedia.token);
+      }
 
       const router = useRouter();
 
@@ -229,7 +275,8 @@
       return {
         state,
         appGlobal,
-        doRoute
+        doRoute,
+        loadInstagramPosts
       }
     }
   }
@@ -316,11 +363,10 @@ html, body {
 .thumbnail {
   object-fit: cover;
   width: 100%;
-  height: 70%;
+  height: 100%;
 }
 
 .footer {
-  background-color: var(--grey);
   color: var(--black);
   justify-content: center;
   height: 70%;
@@ -340,5 +386,9 @@ html, body {
 
 button {
   border-radius: 0px !important;
+}
+
+button:focus {
+  box-shadow: 0 0 0 0 transparent !important;
 }
 </style>

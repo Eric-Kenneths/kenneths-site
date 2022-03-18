@@ -3,15 +3,15 @@
     <div class="grid mx-7">
       <div class="col-12">
         <div class="grid">
-          <div class="col-6 flex p-6">
+          <div class="col-6 flex px-6">
             <div class="flex flex-column align-items-end justify-content-center">
-              <div class="serif text-6xl">
+              <div class="serif text-right md:text-2xl lg:text-4xl xl:text-6xl">
                 A Beautiful Experience.
               </div>
 
-              <div class="sans-serif text-xl align-items text-right mt-2">
+              <div class="sans-serif lg:text-lg xl:text-xl align-self-end text-right mt-2">
                 Not sure what you're looking for? No worries, each service begins with an in-depth consultation. 
-                This empowers our technicians to customize your service. If you don't see what you're looking for contact us for 
+                This empowers our technicians to customize your service. If you don't see what you're looking for, contact us for 
                 more information. We can promise a personalized, extraordinary experience.
               </div>
 
@@ -23,7 +23,7 @@
 
           <div class="col-6 p-0">
             <div class="flex align-items-center justify-content-center">
-              <img src="/src/assets/service/serviceMenuLower.jpg" alt="" class="flex align-items-center justify-content-center" style="width: 100%">
+              <img src="/src/assets/service/serviceMenuLower.jpg" alt="" class="flex align-items-center justify-content-center" style="height: 100%; width: 100%">
             </div>
           </div>
         </div>
@@ -96,6 +96,8 @@
       const state = reactive({
         services: []
       });
+
+      window.scrollTo(0, 0);
 
       const {
         getServicesByWhatGroup
