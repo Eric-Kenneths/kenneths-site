@@ -7,10 +7,11 @@ export function employeeRepo() {
   const array = ref([]);
 
   async function getSocialMediaToken() {
+
     const url = appGlobal.apiBaseUrl + '/employees/SocialMedia/GetToken/177000/1';
 
     object.value = {};
-
+console.log(appGlobal.apiBaseUrl)
     await fetch(url)
     .then(response => response.json())
     .then(function (data) {

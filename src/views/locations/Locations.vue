@@ -6,24 +6,28 @@
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
               <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
-                      @click="doRoute('ts')">
+                      @click="doRoute('mr')">
                 <source src="/src/assets/locations/mr/video.mp4">
               </video>
 
               <div class="grid mt-2 flex flex-column">
-                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
-                  <div>
-                    Mill Run Center
-                  </div>
+                <a class="address" href="https://maps.google.com/?q=3610+Fishinger+Blvd+,+Hilliard,+OH+43026" target="_blank">
+                  <a class="address" href="https://maps.google.com/?q=3610+Fishinger+Blvd+,+Hilliard,+OH+43026" target="_blank">
+                    <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                      <div>
+                        Mill Run Center
+                      </div>
 
-                  <div>
-                    3610 Fishinger Blvd.
-                  </div>
+                      <div>
+                        3610 Fishinger Blvd.
+                      </div>
 
-                  <div>
-                    Hilliard, OH 43026
-                  </div>
-                </div>
+                      <div>
+                        Hilliard, OH 43026
+                      </div>
+                    </div>
+                  </a>
+                </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
                   <Button label="BOOK"/>
@@ -50,19 +54,23 @@
               </video>
 
               <div class="grid mt-2 flex flex-column">
-                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
-                  <div>
-                    Avery Square Center
-                  </div>
+                <a class="address" href="https://maps.google.com/?q=7056+Hospital+Dr+,+Dublin,+OH+43016" target="_blank">
+                  <a class="address" href="https://maps.google.com/?q=7056+Hospital+Dr+,+Dublin,+OH+43016" target="_blank">
+                    <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                      <div>
+                        Avery Square Center
+                      </div>
 
-                  <div>
-                    7056 Hospital Dr.
-                  </div>
+                      <div>
+                        7056 Hospital Dr.
+                      </div>
 
-                  <div>
-                    Dublin, OH 43016
-                  </div>
-                </div>
+                      <div>
+                        Dublin, OH 43016
+                      </div>
+                    </div>
+                  </a>
+                </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
                   <Button label="BOOK"/>
@@ -86,19 +94,23 @@
               <img src="/src/assets/locations/gr/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg" @click="doRoute('mr')">
 
               <div class="grid mt-2 flex flex-column">
-                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
-                  <div>
-                    Parkway Centre North
-                  </div>
+                <a class="address" href="https://maps.google.com/?q=1582+Stringtown+Rd+,+Grove+City,+OH+43123" target="_blank">
+                  <a class="address" href="https://maps.google.com/?q=1582+Stringtown+Rd+,+Grove+City,+OH+43123" target="_blank">
+                    <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                      <div>
+                        Parkway Centre North
+                      </div>
 
-                  <div>
-                    1582 Stringtown Rd.
-                  </div>
+                      <div>
+                        1582 Stringtown Rd.
+                      </div>
 
-                  <div>
-                    Grove City, OH 43123
-                  </div>
-                </div>
+                      <div>
+                        Grove City, OH 43123
+                      </div>
+                    </div>
+                  </a>
+                </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
                     <Button label="BOOK"/>
@@ -127,19 +139,23 @@
               </video>
               
               <div class="grid mt-2 flex flex-column">
-                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
-                  <div>
-                    Kingsdale
-                  </div>
+                <a class="address" href="https://maps.google.com/?q=3134+Kingsdale+,+Upper+Arlington,+OH+43221" target="_blank">
+                  <a class="address" href="https://maps.google.com/?q=3134+Kingsdale+,+Upper+Arlington,+OH+43221" target="_blank">
+                    <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                      <div>
+                        Kingsdale
+                      </div>
 
-                  <div>
-                    3134 Kingsdale Ctr.
-                  </div>
+                      <div>
+                        3134 Kingsdale Ctr.
+                      </div>
 
-                  <div class="long-address-sm long-address-md long-address-lg long-address-xl">
-                    Upper Arlington, OH 43221
-                  </div>
-                </div>
+                      <div class="long-address-sm long-address-md long-address-lg long-address-xl">
+                        Upper Arlington, OH 43221
+                      </div>
+                    </div>
+                  </a>
+                </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
                     <Button label="BOOK"/>
@@ -163,19 +179,23 @@
               <img src="/src/assets/locations/ng/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg" @click="doRoute('mr')">
               
               <div class="grid mt-2 flex flex-column">
-                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
-                  <div>
-                    New Albany Square
-                  </div>
+                <a class="address" href="https://maps.google.com/?q=4942+Morse+Rd,+Columbus,+OH+43230" target="_blank">
+                  <a class="address" href="https://maps.apple.com/maps?q=4942+Morse+Rd,+Columbus,+OH+43230" target="_blank">
+                    <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                      <div>
+                        New Albany Square
+                      </div>
 
-                  <div>
-                    4942 Morse Rd.
-                  </div>
+                      <div>
+                        4942 Morse Rd.
+                      </div>
 
-                  <div>
-                    Columbus, OH 43230
-                  </div>
-                </div>
+                      <div>
+                        Columbus, OH 43230
+                      </div>
+                    </div>
+                  </a>
+                </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
                     <Button label="BOOK"/>
@@ -202,19 +222,23 @@
               </video>
               
               <div class="grid mt-2 flex flex-column">
-                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
-                  <div>
-                    Taylor Square Center
-                  </div>
+                <a class="address" href="https://maps.google.com/?q=2865+Taylor+Rd+Ext,+Reynoldsburg,+OH+43068" target="_blank">
+                  <a class="address" href="https://maps.apple.com/maps?q=2865+Taylor+Rd+Ext,+Reynoldsburg,+OH+43068" target="_blank">
+                    <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                      <div>
+                        Taylor Square Center
+                      </div>
 
-                  <div>
-                    2865 Taylor Rd. Ext.
-                  </div>
+                      <div>
+                        2865 Taylor Rd. Ext.
+                      </div>
 
-                  <div>
-                    Reynoldsburg, OH 43068
-                  </div>
-                </div>
+                      <div>
+                        Reynoldsburg, OH 43068
+                      </div>
+                    </div>
+                  </a>
+                </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
                     <Button label="BOOK"/>
@@ -240,19 +264,23 @@
               <img src="/src/assets/locations/pl/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg" @click="doRoute('pl')">
               
               <div class="grid mt-2 flex flex-column">
-                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
-                  <div>
-                    Oak Creek Center
-                  </div>
+                <a class="address" href="https://maps.google.com/?q=1305+Cameron+Ave,+Lewis+Center,+OH+43035" target="_blank">
+                  <a class="address" href="https://maps.google.com/?q=1305+Cameron+Ave,+Lewis+Center,+OH+43035" target="_blank">
+                    <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                      <div>
+                        Oak Creek Center
+                      </div>
 
-                  <div>
-                    1305 Cameron Ave.
-                  </div>
+                      <div>
+                        1305 Cameron Ave.
+                      </div>
 
-                  <div>
-                    Lewis Center, OH 43035
-                  </div>
-                </div>
+                      <div>
+                        Lewis Center, OH 43035
+                      </div>
+                    </div>
+                  </a>
+                </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
                     <Button label="BOOK"/>
@@ -276,19 +304,23 @@
               <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg" @click="doRoute('mr')">
               
               <div class="grid mt-2 flex flex-column">
-                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
-                  <div>
-                    Powell Crossing Center
-                  </div>
+                <a class="address" href="https://maps.google.com/?q=9868+Brewster+Ln,+Powell,+OH+43065" target="_blank">
+                  <a class="address" href="https://maps.google.com/?q=9868+Brewster+Ln,+Powell,+OH+43065" target="_blank">
+                    <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                      <div>
+                        Powell Crossing Center
+                      </div>
 
-                  <div>
-                    9868 Brewster Ln.
-                  </div>
+                      <div>
+                        9868 Brewster Ln.
+                      </div>
 
-                  <div>
-                    Powell, OH 43065
-                  </div>
-                </div>
+                      <div>
+                        Powell, OH 43065
+                      </div>
+                    </div>
+                  </a>
+                </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
                     <Button label="BOOK"/>
@@ -314,19 +346,23 @@
               </video>
               
               <div class="grid mt-2 flex flex-column">
-                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
-                  <div>
-                    Northridge Center
-                  </div>
+                <a class="address" href="https://maps.google.com/?q=726+North+State+St,+Westerville,+OH+43082" target="_blank">
+                  <a class="address" href="https://maps.google.com/?q=726+North+State+St,+Westerville,+OH+43082" target="_blank">
+                    <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                      <div>
+                        Northridge Center
+                      </div>
 
-                  <div>
-                    726 North State St.
-                  </div>
+                      <div>
+                        726 North State St.
+                      </div>
 
-                  <div>
-                    Westerville, OH 43082
-                  </div>
-                </div>
+                      <div>
+                        Westerville, OH 43082
+                      </div>
+                    </div>
+                  </a>
+                </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
                     <Button label="BOOK"/>
@@ -354,19 +390,23 @@
               </video>
               
               <div class="grid mt-2 flex flex-column">
-                <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
-                  <div>
-                    Academy Hair Salon
-                  </div>
+                <a class="address" href="https://maps.google.com/?q=5151+Reed+Rd+Suite+110B,+Columbus,+OH+43220" target="_blank">
+                  <a class="address" href="https://maps.google.com/?q=5151+Reed+Rd+Suite+110B,+Columbus,+OH+43220" target="_blank">
+                    <div class="col-12 flex flex-column address-sm address-md address-lg address-xl pb-0">
+                      <div>
+                        Academy Hair Salon
+                      </div>
 
-                  <div>
-                    5151 Reed Rd. Suite 110B
-                  </div>
+                      <div>
+                        5151 Reed Rd. Suite 110B
+                      </div>
 
-                  <div>
-                    Columbus, OH 43220
-                  </div>
-                </div>
+                      <div>
+                        Columbus, OH 43220
+                      </div>
+                    </div>
+                  </a>
+                </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
                     <Button label="BOOK"/>
@@ -476,6 +516,8 @@
   }
 
   .address-sm {
+    color: white;
+    text-decoration: none;
     font-size: 1.125rem;
   }
 
@@ -586,6 +628,11 @@ button {
 
 .rotate {
   writing-mode: vertical-rl;
+}
+
+.address {
+  color: white;
+  text-decoration: none;
 }
 
 .height {

@@ -24,18 +24,18 @@
           <div class="col-12 flex flex-column justify-content-center align-items-center">
             <div class="text-center sans-serif text-5xl" style="color: white">
               <a class="address" href="https://maps.google.com/?q=2865+Taylor+Rd+Ext,+Reynoldsburg,+OH+43068" target="_blank">
-              <a class="address" href="https://maps.apple.com/maps?q=2865+Taylor+Rd+Ext,+Reynoldsburg,+OH+43068" target="_blank">
-                <div>
-                  Taylor Square Center
-                </div>
-
-                <div>
-                  2865 Taylor Rd Ext
-                </div>
-
-                <div>
-                  Reynoldsburg, Ohio 43068
-                </div>
+                <a class="address" href="https://maps.apple.com/maps?q=2865+Taylor+Rd+Ext,+Reynoldsburg,+OH+43068" target="_blank">
+                  <div>
+                    Taylor Square Center
+                  </div>
+  
+                  <div>
+                    2865 Taylor Rd Ext
+                  </div>
+  
+                  <div>
+                    Reynoldsburg, Ohio 43068
+                  </div>
                 </a>
               </a>
             </div>
@@ -96,16 +96,18 @@
             Our Taylor Square family
           </div>
 
-          <div class="col-12 sans-serif text-center text-xl">
+          <div class="col-12 sans-serif text-center text-xl name">
             Lead by <span v-for="(employee, id) in state.employees.manager" :key="id">{{ employee.emalias }}<span v-if="id !== state.employees.manager.length - 1">, </span></span>
           </div>
 
-          <div class="col-12 serif text-center text-3xl mt-4">
+          <div class="col-12 serif text-center text-3xl">
             Supported by
           </div>
 
           <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.desk" :key="id">
-            {{ employee.emalias }}
+            <div class="name flex justify-content-center align-items-center">
+              {{ employee.emalias }}
+            </div>
           </div>
         
           <div class="col-12 serif text-center text-3xl mt-5">
@@ -113,7 +115,10 @@
           </div>
 
           <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.hair" :key="id">
-            {{ employee.emalias }}
+            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
+                  @click="goToInstagram(employee.username)">
+              {{ employee.emalias }}
+            </div>
           </div>
 
           <div class="col-12 serif text-center text-3xl mt-5">
@@ -121,7 +126,9 @@
           </div>
 
           <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.nail" :key="id">
-            {{ employee.emalias }}
+            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)">
+              {{ employee.emalias }}
+            </div>
           </div>
 
           <div class="col-12 serif text-center text-3xl mt-5">
@@ -129,7 +136,9 @@
           </div>
 
           <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.spa" :key="id">
-            {{ employee.emalias }}
+            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)">
+              {{ employee.emalias }}
+            </div>
           </div>
         </div>
       </div>
@@ -168,22 +177,48 @@
       getEmployees();
 
       async function getEmployees() {
-        let employeeList = await getEmployeesByLocationWithSocialMedia('mr');
+        let employeeList = await getEmployeesByLocationWithSocialMedia('ts');
 
-        state.employees.manager = employeeList.filter(employee => employee.positionId === 4 || employee.positionId === 5 || employee.positionId === 6);
+        state.employees.manager = employeeList.filter(employee => employee.positionId === 4 || employee.positionId === 5 || 
+                                                                  employee.positionId === 6 || employee.positionId === 113000003);
         
         state.employees.desk = employeeList.filter(employee => employee.positionId === 8 || employee.positionId === 113000004);
 
         state.employees.hair = employeeList.filter(employee => employee.positionId === 26);
-
+     
         state.employees.nail = employeeList.filter(employee => employee.positionId === 34);
 
-        state.employees.spa = employeeList.filter(employee => employee.positionId === 33 || employee.positionId === 35 || employee.positionId === 43);
+        state.employees.spa = employeeList.filter(employee => employee.positionId === 33 || employee.positionId === 35 || 
+                                                              employee.positionId === 43);
+      }
+
+      function styleInstagram(username) {
+        let thisStyle = {
+          backgroundColor: 'var(--white)'
+        }
+
+        if (username !== '' && username !== null) {
+          thisStyle.backgroundImage = "linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url('/src/assets/social/Instagram.png')";
+          thisStyle.backgroundPosition = "center";
+          thisStyle.backgroundRepeat = "no-repeat";
+          thisStyle.backgroundSize = "50% 100%";
+          thisStyle.cursor = "pointer !important"
+        }
+
+        return thisStyle;
+      }
+
+      function goToInstagram(username) {
+        if (username !== '' && username !== null) {
+          window.open('https://www.instagram.com/' + username);
+        }
       }
 
       return {
         state,
-        getEmployees
+        getEmployees,
+        styleInstagram,
+        goToInstagram
       }
     }
   }
@@ -296,7 +331,8 @@
       -o-filter: grayscale(100%);
       filter: grayscale(100%);
       width: 100%;
-      height: 35rem;
+      height: 45rem;
+      margin: 20px 20px;
     }
 
     .photo-location-xl {
@@ -322,6 +358,12 @@
 
   .address {
     color: var(--white);
+  }
+
+  .name {
+    font-weight: 800;
+    height: 6rem;
+    cursor: default;
   }
 
   video {

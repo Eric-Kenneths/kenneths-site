@@ -3,3 +3,6 @@ GET https://localhost:5001/api/Khsds/Services/HS HTTP/1.1
 
 ###
 GET https://localhost:5001/api/employees/SocialMedia/GetToken/177000/1 HTTP/1.1
+
+###
+GET https://localhost:5001/api/employees/SocialMedia/ForWeb/mr HTTP/1.1

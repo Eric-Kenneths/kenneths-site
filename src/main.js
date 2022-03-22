@@ -1,10 +1,7 @@
 import { createApp } from 'vue';
-import { appGlobal } from '@/store/global/appGlobal';
 import App from './App.vue';
 import router from './router';
 import PrimeVue from 'primevue/config';
-
-appGlobal.apiBaseUrl = 'https://localhost:5001/api';
 
 //#region "PrimeVue css Imports"
 import 'primevue/resources/primevue.min.css'
