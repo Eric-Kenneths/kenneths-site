@@ -22,7 +22,7 @@
       <div class="col-6">
         <div class="grid" style="height: 50%">
           <div class="col-12 flex flex-column justify-content-center align-items-center">
-            <div class="text-center sans-serif text-5xl" style="color: white">
+            <div class="text-left sans-serif text-5xl" style="color: white">
               <a class="address" href="https://maps.google.com/?q=3610+Fishinger+Blvd,+Hilliard,+OH+43026" target="_blank">
                 <a class="address" href="https://maps.apple.com/maps?q=3610+Fishinger+Blvd,+Hilliard,+OH+43026" target="_blank">
                   <div>
@@ -105,7 +105,9 @@
           </div>
 
           <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.desk" :key="id">
-            {{ employee.emalias }}
+            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)">
+              {{ employee.emalias }}
+            </div>
           </div>
         
           <div class="col-12 serif text-center text-3xl mt-5">
@@ -113,7 +115,9 @@
           </div>
 
           <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.hair" :key="id">
-            {{ employee.emalias }}
+            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)">
+              {{ employee.emalias }}
+            </div>
           </div>
 
           <div class="col-12 serif text-center text-3xl mt-5">
@@ -121,7 +125,9 @@
           </div>
 
           <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.nail" :key="id">
-            {{ employee.emalias }}
+            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)">
+              {{ employee.emalias }}
+            </div>
           </div>
 
           <div class="col-12 serif text-center text-3xl mt-5">
@@ -129,7 +135,9 @@
           </div>
 
           <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.spa" :key="id">
-            {{ employee.emalias }}
+            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)">
+              {{ employee.emalias }}
+            </div>
           </div>
         </div>
       </div>
@@ -183,9 +191,24 @@
                                                               employee.positionId === 43);
       }
 
+      function styleInstagram(username) {
+        let thisStyle = {
+          backgroundColor: 'var(--white)'
+        }
+        if (username !== '' && username !== null) {
+          thisStyle.backgroundImage = "linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url('/static/image/Instagram.png')";
+          thisStyle.backgroundPosition = "center";
+          thisStyle.backgroundRepeat = "no-repeat";
+          thisStyle.backgroundSize = "6rem 6rem";
+          thisStyle.cursor = "pointer !important";
+        }
+        return thisStyle;
+      }
+
       return {
         state,
-        getEmployees
+        getEmployees,
+        styleInstagram
       }
     }
   }
@@ -297,7 +320,7 @@
       -ms-filter: grayscale(100%);
       -o-filter: grayscale(100%);
       filter: grayscale(100%);
-      width: 100%;
+      width: 50rem;
       height: 45rem;
       margin: 20px 20px;
     }
@@ -326,6 +349,12 @@
   .address {
     color: var(--white);
     text-decoration: none;
+  }
+
+  .name {
+    font-weight: 800;
+    height: 6rem;
+    cursor: default;
   }
 
   video {

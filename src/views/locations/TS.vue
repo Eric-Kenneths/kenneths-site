@@ -1,28 +1,28 @@
 <template>
   <div>
-    <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg md:mb-0">
+    <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg parallax-banner-xl md:mb-0">
       <div class="flex col-9 justify-content-end align-items-center md:py-7 md:col-7">
-        <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" autoplay loop muted>
+        <video class="flex justify-content-center location-video-md location-video-lg location-video-xl cursor-pointer" autoplay loop muted>
             <source src="/src/assets/locations/ts/video.mp4">
           </video>
       </div>
 
       <div class="flex col-3 md:col-5">
-        <div class="serif flex align-items-center text-4xl text-left z-1 negative-margin md:text-7xl lg:text-8xl xl:text-8xl">
+        <div class="serif flex align-items-center text-4xl text-left z-1 negative-margin md:text-7xl lg:text-7xl xl:text-8xl">
           Taylor Square Salon + Spa Studio
         </div>
       </div>
     </div>
 
-    <div class="grid mt-0 lg:mx-7" style="background-color: var(--black)">
-      <div class="col-6">
-        <iframe class="map-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.7439463945657!2d-83.16356407378912!3d40.103421493880774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883893542a22b9eb%3A0x496eeac0990c9c4e!2sKenneth&#39;s+Hair+Salons+%26+Day+Spas!5e0!3m2!1sen!2sus!4v1533570095385"></iframe>
+    <div class="grid mt-0 flex flex-column lg:flex-row md:ml-7 lg:mx-7" style="background-color: var(--black)">
+      <div class="flex-order-1 col-12 lg:flex-order-0 lg:col-6">
+        <iframe class="map-sm map-md map-lg map-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.7439463945657!2d-83.16356407378912!3d40.103421493880774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883893542a22b9eb%3A0x496eeac0990c9c4e!2sKenneth&#39;s+Hair+Salons+%26+Day+Spas!5e0!3m2!1sen!2sus!4v1533570095385"></iframe>
       </div>
 
-      <div class="col-6">
+      <div class="col-12 md:flex-order-0 md:col-12 lg:flex-order-1 lg:col-6">
         <div class="grid" style="height: 50%">
-          <div class="col-12 flex flex-column justify-content-center align-items-center">
-            <div class="text-center sans-serif text-5xl" style="color: white">
+          <div class="col-12 lg:col-12 flex justify-content-center align-items-center">
+            <div class="text-left sans-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl" style="color: white">
               <a class="address" href="https://maps.google.com/?q=2865+Taylor+Rd+Ext,+Reynoldsburg,+OH+43068" target="_blank">
                 <a class="address" href="https://maps.apple.com/maps?q=2865+Taylor+Rd+Ext,+Reynoldsburg,+OH+43068" target="_blank">
                   <div>
@@ -42,8 +42,8 @@
           </div>
         </div>
 
-        <div class="grid flex" style="height: 50%; color: white">
-          <div class="sans-serif col-5 col-offset-3 flex flex-column text-2xl">
+        <div class="grid flex justify-content-center mt-3" style="height: 50%; color: white">
+          <div class="sans-serif flex flex-column col-7 text-xl md:col-offset-3 md:col-5 md:text-xl lg:col-6 lg:col-offset-2 lg:text-xl xl:text-2xl">
             <div>
               <div style="float: left">MON</div>
               <div style="float: right">8:30am - 7:30pm</div>
@@ -80,8 +80,8 @@
             </div>
           </div>
 
-          <div class="col-4">
-            <div class="serif rotate text-7xl">
+          <div class="sm:col md:col-4">
+            <div class="serif rotate text-5xl md:text-6xl lg:text-7xl">
               Hours
             </div>
           </div>
@@ -89,7 +89,7 @@
       </div>
     </div>
 
-    <div class="grid parallax-location-sm parallax-location-md parallax-location-lg parallax-location-xl mt-4 md:mt-0 md:ml-7 lg:mr-7 lg:ml-4 xl:p-8">
+    <div class="grid parallax-location-md parallax-location-lg parallax-location-xl mt-4 md:mt-0 md:ml-7 lg:mr-7 lg:ml-4 xl:p-8">
       <div class="col-12 flex flex-column justify-content-center md:flex-order-0 md:col-6">
         <div class="grid sans-serif text-lg">
           <div class="col-12 serif text-center text-5xl">
@@ -104,7 +104,7 @@
             Supported by
           </div>
 
-          <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.desk" :key="id">
+          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.desk" :key="id">
             <div class="name flex justify-content-center align-items-center">
               {{ employee.emalias }}
             </div>
@@ -114,7 +114,7 @@
             Hair
           </div>
 
-          <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.hair" :key="id">
+          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.hair" :key="id">
             <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
                   @click="goToInstagram(employee.username)">
               {{ employee.emalias }}
@@ -125,7 +125,7 @@
             Nail
           </div>
 
-          <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.nail" :key="id">
+          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.nail" :key="id">
             <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)">
               {{ employee.emalias }}
             </div>
@@ -135,7 +135,7 @@
             Spa
           </div>
 
-          <div class="col-3 sans-serif text-center text-xl" v-for="(employee, id) in state.employees.spa" :key="id">
+          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.spa" :key="id">
             <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)">
               {{ employee.emalias }}
             </div>
@@ -144,7 +144,7 @@
       </div>
 
       <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
-        <img src="/src/assets/locations/ts/regularImage.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl md:rellax">
+        <img src="/src/assets/locations/ts/regularImage.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl hidden md:block">
       </div>
     </div>
   </div>
@@ -198,11 +198,11 @@
         }
 
         if (username !== '' && username !== null) {
-          thisStyle.backgroundImage = "linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url('/src/assets/social/Instagram.png')";
+          thisStyle.backgroundImage = "linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url('/static/image/Instagram.png')";
           thisStyle.backgroundPosition = "center";
           thisStyle.backgroundRepeat = "no-repeat";
-          thisStyle.backgroundSize = "50% 100%";
-          thisStyle.cursor = "pointer !important"
+          thisStyle.backgroundSize = "6rem 6rem";
+          thisStyle.cursor = "pointer !important";
         }
 
         return thisStyle;
@@ -227,6 +227,17 @@
 <style scoped>
   /* Small screen (phone) */
   @media only screen and (min-width: 1px) {
+    .map-sm {
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      filter: grayscale(100%);
+      width: 100%;
+      height: 30rem;
+      margin: auto;
+    }
+
     .parallax-banner-sm {
       height: 28rem;
     }
@@ -241,15 +252,6 @@
       height: auto;
       width: 50%;
     }
-
-    .parallax-location-sm {
-      background-image: linear-gradient(var(--light-tan), var(--light-tan));
-      background-attachment: fixed;
-      background-position: bottom center 0px;
-      background-repeat: no-repeat;
-      background-size: 100% 50%;
-      flex-direction: column-reverse !important;
-    }
   }
 
   @media only screen and (min-width: 570px) {
@@ -260,6 +262,16 @@
 
   /* Medium screen (tablet) */
   @media only screen and (min-width: 768px) {
+    .map-md{
+      width: 100%;
+      height: 30rem;
+      margin: auto;
+    }
+
+    .location-video-md {
+      width: 65%;
+    }
+
     .photo-md {
       width: 100%;
       height: auto;
@@ -267,10 +279,7 @@
     }
 
     .parallax-banner-md {
-      background-image: url('/src/assets/home/parallax/bannerParallax.jpg');
-      /* background-color: var(--white); */
-      /* background-attachment: fixed; */
-      /* background-position: right; */
+      background-image: url('/src/assets/locations/ts/bannerParallax.jpg');
       background-repeat: no-repeat;
       background-size: 55% 100%;
       height: 46%;
@@ -282,25 +291,26 @@
     }
 
     .parallax-location-md {
-      background-image: linear-gradient(var(--light-red), var(--light-red));
+      background-image: linear-gradient(var(--blue), var(--light-blue));
       background-attachment: fixed;
-      background-position: center left 0px;
+      background-position: top right 0px;
       background-repeat: no-repeat;
-      background-size: 90% 50%;
+      background-size: 40% 60%;
       flex-direction: unset !important;
     }
   }
 
   /* Large screen */
   @media only screen and (min-width: 992px) {
+    .map-lg {
+      width: 100%;
+      height: 40em;
+      margin: 20px 20px 20px 20px;
+    }
+
     .parallax-banner-lg {
-      background-image: url('/src/assets/locations/ts/bannerParallax.jpg');
-      /* background-color: var(--white); */
-      /* background-attachment: fixed; */
-      /* background-position: left; */
-      /* background-repeat: no-repeat; */
-      background-size: auto 150%;
-      height: 52rem;
+      background-size: 50% 150%;
+      height: 45rem;
     }
 
     .photo-lg {
@@ -318,12 +328,17 @@
     }
 
     .location-video-lg {
-      width: 80%;
+      width: 60%;
     }
   }
   
   /* Extra large screen */
   @media only screen and (min-width: 1200px) {
+    .parallax-banner-xl {
+      background-size: 45% 150%;
+      height: 52rem;
+    }
+
     .map-xl {
       -webkit-filter: grayscale(100%);
       -moz-filter: grayscale(100%);
@@ -331,8 +346,8 @@
       -o-filter: grayscale(100%);
       filter: grayscale(100%);
       width: 100%;
-      height: 45rem;
-      margin: 20px 20px;
+      height: 45em;
+      margin: 20px 20px 20px 20px;
     }
 
     .photo-location-xl {
@@ -346,6 +361,11 @@
       background-repeat: no-repeat;
       background-size: 37% 100%;
     }
+
+    .location-video-xl {
+      width: 45%;
+      height: auto;
+    }
   }
 
   .negative-margin {
@@ -358,6 +378,7 @@
 
   .address {
     color: var(--white);
+    text-decoration: none;
   }
 
   .name {

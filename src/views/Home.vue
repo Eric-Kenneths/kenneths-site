@@ -60,7 +60,7 @@
             </div>
 
             <div class="sans-serif text-xl mt-3 md:px-4 lg:px-6">
-              Kenneth's Salons + Day Spas has 11 locations throughout central Ohio to best serve our communities. 
+              Kenneth's Salons + Day Spas has 10 locations throughout central Ohio to best serve our communities. 
               Regardless of the location you call home, you can expect the same gratifying experience that 
               Kenneth's is known for. Every location, every day, we aim to exceed expectations and leave you feeling your absolute best.
             </div>
