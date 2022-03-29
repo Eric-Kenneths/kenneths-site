@@ -2,39 +2,41 @@
   <div>
     <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg parallax-banner-xl md:mb-0">
       <div class="flex col-7 justify-content-end align-items-center md:py-7 md:col-7">
-        <video class="flex justify-content-center location-video-md location-video-lg location-video-xl cursor-pointer" autoplay loop muted>
-            <source src="/src/assets/locations/ts/video.mp4">
-          </video>
+        <!-- <video class="flex justify-content-center location-video-md location-video-lg location-video-xl cursor-pointer" autoplay loop muted> -->
+          <!-- <source src="/src/assets/locations/ng/video.mp4"> -->
+        <!-- </video> -->
+
+        <img src="/src/assets/locations/ng/banner.jpg" class="flex justify-content-center location-video-md location-video-lg location-video-xl cursor-pointer">
       </div>
 
       <div class="flex col-5 md:col-5">
         <div class="serif flex align-items-center text-4xl text-left z-1 negative-margin md:text-7xl lg:text-7xl xl:text-8xl">
-          Mill Run Salon + Spa Studio
+          New Albany Salon + Spa Studio
         </div>
       </div>
     </div>
 
     <div class="grid mt-0 flex flex-column lg:flex-row md:ml-7 lg:mx-7" style="background-color: var(--black)">
       <div class="flex-order-1 col-12 lg:flex-order-0 lg:col-6">
-        <iframe class="map-sm map-md map-lg map-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3055.1553799662283!2d-83.11784148465836!3d40.02731018715476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8838922948e04b25%3A0x158c381344c7fa00!2sKenneth&#39;s+Hair+Salons+%26+Day+Spas!5e0!3m2!1sen!2sus!4v1533573241461"></iframe>
+        <iframe class="map-sm map-md map-lg map-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3053.8825065492038!2d-82.86284668465761!3d40.05572288543993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883860f91cbfadd3%3A0x345069bb788038af!2sKenneth&#39;s+Hair+Salons+%26+Day+Spas!5e0!3m2!1sen!2sus!4v1533574854051"></iframe>
       </div>
 
       <div class="col-12 md:flex-order-0 md:col-12 lg:flex-order-1 lg:col-6">
         <div class="grid" style="height: 50%">
           <div class="col-12 lg:col-12 flex justify-content-center align-items-center">
             <div class="text-left sans-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl" style="color: white">
-              <a class="address" href="https://maps.google.com/?q=3610+Fishinger+Blvd,+Hilliard,+OH+43026" target="_blank">
-                <a class="address" href="https://maps.apple.com/maps?q=3610+Fishinger+Blvd,+Hilliard,+OH+43026" target="_blank">
+              <a class="address" href="https://maps.google.com/?q=4942+Morse+Rd,+Gahanna,+OH+43230" target="_blank">
+                <a class="address" href="https://maps.apple.com/maps?q=4942+Morse+Rd,+Gahanna,+OH+43230" target="_blank">
                   <div>
-                    Mill Run Center
+                    New Albany Square
                   </div>
   
                   <div>
-                    3610 Fishinger Blvd
+                    4942 Morse Rd
                   </div>
   
                   <div>
-                    Hilliard, Ohio 43026
+                    Gahanna, Ohio 43230
                   </div>
                 </a>
               </a>
@@ -93,52 +95,52 @@
       <div class="col-12 flex flex-column justify-content-center md:flex-order-0 md:col-6">
         <div class="grid sans-serif text-lg">
           <div class="col-12 serif text-center text-5xl">
-            Our Mill Run family
+            Our Kingsdale family
           </div>
 
           <div class="col-12 sans-serif text-center text-xl name">
             Lead by <span v-for="(employee, id) in state.employees.manager" :key="id">{{ employee.emalias }}<span v-if="id !== state.employees.manager.length - 1">, </span></span>
           </div>
 
-          <div class="col-12 serif text-center text-3xl">
+          <div class="col-12 serif text-center text-3xl" v-if="state.employees.desk.length > 0">
             Supported by
           </div>
 
           <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.desk" :key="id">
-            <div class="name flex justify-content-center align-items-center">
+            <div class="name flex justify-content-center align-items-center" v-if="state.employees.desk.length > 0">
               {{ employee.emalias }}
             </div>
           </div>
         
-          <div class="col-12 serif text-center text-3xl mt-5">
+          <div class="col-12 serif text-center text-3xl mt-5" v-if="state.employees.hair.length > 0">
             Hair
           </div>
 
           <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.hair" :key="id">
             <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
-                  @click="goToInstagram(employee.username)">
+                  @click="goToInstagram(employee.username)" v-if="state.employees.hair.length > 0">
               {{ employee.emalias }}
             </div>
           </div>
 
-          <div class="col-12 serif text-center text-3xl mt-5">
+          <div class="col-12 serif text-center text-3xl mt-5" v-if="state.employees.nail.length > 0">
             Nail
           </div>
 
           <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.nail" :key="id">
             <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
-                  @click="goToInstagram(employee.username)">
+                  @click="goToInstagram(employee.username)" v-if="state.employees.nail.length > 0">
               {{ employee.emalias }}
             </div>
           </div>
 
-          <div class="col-12 serif text-center text-3xl mt-5">
+          <div class="col-12 serif text-center text-3xl mt-5" v-if="state.employees.spa.length > 0">
             Spa
           </div>
 
           <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.spa" :key="id">
             <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
-                  @click="goToInstagram(employee.username)">
+                  @click="goToInstagram(employee.username)" v-if="state.employees.spa.length > 0">
               {{ employee.emalias }}
             </div>
           </div>
@@ -146,7 +148,7 @@
       </div>
 
       <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
-        <img src="/src/assets/locations/mr/regularImage.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl hidden md:block">
+        <img src="/src/assets/locations/kd/regularImage.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl hidden md:block">
       </div>
     </div>
   </div>
@@ -157,7 +159,7 @@
   import { employeeRepo } from '@/store/repository/employeeRepo.js'
 
   export default {
-    name: 'MR',
+    name: 'NG',
 
     setup() {
       const state = reactive({
@@ -179,7 +181,7 @@
       getEmployees();
 
       async function getEmployees() {
-        let employeeList = await getEmployeesByLocationWithSocialMedia('mr');
+        let employeeList = await getEmployeesByLocationWithSocialMedia('ng');
 
         state.employees.manager = employeeList.filter(employee => employee.positionId === 4 || employee.positionId === 5 || 
                                                                   employee.positionId === 6 || employee.positionId === 113000003);
@@ -281,7 +283,7 @@
     }
 
     .parallax-banner-md {
-      background-image: url('/src/assets/locations/mr/bannerParallax.jpg');
+      background-image: url('/src/assets/locations/ng/bannerParallax.jpg');
       background-repeat: no-repeat;
       background-size: 55% 100%;
       height: 46%;
@@ -321,7 +323,7 @@
     }
 
     .parallax-location-lg {
-      background-image: url('/src/assets/locations/mr/otherParallax.jpg');
+      background-image: url('/src/assets/locations/ng/otherParallax.jpg');
       background-attachment: fixed;
       background-position: right;
       background-repeat: no-repeat;

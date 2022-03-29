@@ -169,7 +169,7 @@
           Get Inspired <img src="/src/assets/social/Instagram.png" width="27"/> kennethssalonandspa
 
           <div class="grid mt-1 flex flex-row">
-            <div class="col-2" v-for="(post, id) in state.footerPosts" :key="id">
+            <div class="col-4 md:col-2" v-for="(post, id) in state.footerPosts" :key="id">
               <span v-if="post.media_type !== 'VIDEO'">
                 <img class="thumbnail" :src="post.media_url"/>
               </span>

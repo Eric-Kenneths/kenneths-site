@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg parallax-banner-xl md:mb-0">
-      <div class="flex col-9 justify-content-end align-items-center md:py-7 md:col-7">
+      <div class="flex col-7 justify-content-end align-items-center md:py-7 md:col-7">
         <video class="flex justify-content-center location-video-md location-video-lg location-video-xl cursor-pointer" autoplay loop muted>
             <source src="/src/assets/locations/ts/video.mp4">
           </video>
       </div>
 
-      <div class="flex col-3 md:col-5">
+      <div class="flex col-5 md:col-5">
         <div class="serif flex align-items-center text-4xl text-left z-1 negative-margin md:text-7xl lg:text-7xl xl:text-8xl">
           Taylor Square Salon + Spa Studio
         </div>
@@ -16,7 +16,7 @@
 
     <div class="grid mt-0 flex flex-column lg:flex-row md:ml-7 lg:mx-7" style="background-color: var(--black)">
       <div class="flex-order-1 col-12 lg:flex-order-0 lg:col-6">
-        <iframe class="map-sm map-md map-lg map-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.7439463945657!2d-83.16356407378912!3d40.103421493880774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883893542a22b9eb%3A0x496eeac0990c9c4e!2sKenneth&#39;s+Hair+Salons+%26+Day+Spas!5e0!3m2!1sen!2sus!4v1533570095385"></iframe>
+        <iframe class="map-sm map-md map-lg map-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.100268152192!2d-82.78935838466066!3d39.939146792470055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883864dc4e69cd43%3A0xa9232520bf1c29ea!2sKenneth&#39;s!5e0!3m2!1sen!2sus!4v1533577746477"></iframe>
       </div>
 
       <div class="col-12 md:flex-order-0 md:col-12 lg:flex-order-1 lg:col-6">
