@@ -74,7 +74,7 @@
 
       <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
         <video class="flex justify-content-center location-video-sm location-video-md location-video-lg location-video-xl" autoplay loop muted>
-         <source src="/src/assets/locations/pl/video.mp4">
+          <source src="/src/assets/locations/pl/video.mp4">
         </video>
       </div>
     </div>
@@ -82,19 +82,19 @@
     <div class="grid md:ml-7 lg:mx-7">
       <div class="col-12 my-0 py-0">
         <div class="flex grid mt-1 service-row-sm service-row-md service-row-lg service-row-xl">
-          <div class="flex col-4 justify-content-center align-items-center spa-sm spa-md spa-lg spa-xl">
+          <div class="flex col-4 justify-content-center align-items-center spa-sm spa-md spa-lg spa-xl cursor-pointer">
               <div class="spa-text text-3xl md:text-5xl lg:text-6xl">
                 SPA
               </div>
           </div>
           
-          <div class="flex col-4 justify-content-center align-items-center nail-sm nail-md nail-lg nail-xl">
+          <div class="flex col-4 justify-content-center align-items-center nail-sm nail-md nail-lg nail-xl cursor-pointer">
             <div class="nail-text text-3xl md:text-5xl lg:text-6xl">
               NAILS
             </div>
           </div>
 
-          <div class="flex col-4 justify-content-center align-items-center hair-sm hair-md hair-lg hair-xl">
+          <div class="flex col-4 justify-content-center align-items-center hair-sm hair-md hair-lg hair-xl cursor-pointer">
             <div class="hair-text text-3xl md:text-5xl lg:text-6xl">
               HAIR
             </div>

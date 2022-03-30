@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '/src/views/Home.vue';
 import Locations from '/src/views/locations/Locations.vue';
+import Careers from '/src/views/careers/Careers.vue';
 import MR from '/src/views/locations/MR.vue';
 import PL from '/src/views/locations/PL.vue';
 import TS from '/src/views/locations/TS.vue';
@@ -78,6 +79,11 @@ const routes = [
     path: '/service-menu',
     name: 'ServiceMenu',
     component: ServiceMenu
+  },
+  {
+    path: '/careers',
+    name: 'Careers',
+    component: Careers
   }
 ]
 

@@ -4,27 +4,27 @@
     <!-- Large Menu -->
     <div class="hidden md:flex md:align-items-center my-2 lg:grid">
       <div class="col-5 md:flex md:flex-column md:align-items-start lg:block">
-        <Button label="BOOK NOW" class="menu-button border-noround border-none border-bottom-1"/>
+        <Button label="BOOK NOW" class="menu-button border-none"/>
 
-        <Button label="RETAIL" class="menu-button border-noround border-none border-bottom-1"/>
+        <Button label="RETAIL" class="menu-button border-none"/>
 
-        <Button label="SERVICES" class="menu-button border-noround border-none border-bottom-1 mr-2" @click="doRoute('serviceMenu')"/>
+        <Button label="SERVICES" class="menu-button border-none" @click="doRoute('serviceMenu')"/>
 
-        <Button label="CLUB KENNETH" class="menu-button border-noround border-none border-bottom-1 lg:mx-2"/>
+        <Button label="CLUB KENNETH" class="menu-button border-none"/>
       </div>
 
-      <div class="col-2 m-0 p-0 text-center">
+      <div class="col m-0 p-0 text-center">
         <img src="/src/assets/logo.png" class="logo cursor-pointer" @click="doRoute('home')"/>
       </div>
 
       <div class="col-5 text-right md:flex md:flex-column md:align-items-end lg:block">
-        <Button label="GIFT CARDS" class="menu-button border-noround border-none border-bottom-1 lg:mx-2"/>
+        <Button label="GIFT CARDS" class="menu-button border-none"/>
 
-        <Button label="LOCATIONS" class="menu-button border-noround border-none border-bottom-1 lg:mr-2" @click="doRoute('locations')"/>
+        <Button label="LOCATIONS" class="menu-button border-none" @click="doRoute('locations')"/>
 
-        <Button label="CAREERS" class="menu-button border-noround border-none border-bottom-1 lg:mx-2"/>
+        <Button label="CAREERS" class="menu-button border-none" @click="doRoute('careers')"/>
 
-        <Button label="BLOG" class="menu-button border-noround border-none border-bottom-1 lg:ml-2"/>
+        <Button label="BLOG" class="menu-button border-none"/>
       </div>
     </div>
 
@@ -62,7 +62,7 @@
         </div>
 
         <div>
-          <Button label="CAREERS" class="menu-button border-noround border-none border-bottom-1 my-2"/>
+          <Button label="CAREERS" class="menu-button border-noround border-none border-bottom-1 my-2" @click="doRoute('careers')"/>
         </div>
 
         <div>
@@ -164,38 +164,51 @@
 
     <!-- Footer -->
     <div class="grid footer sans-serif mx-0">
+      <!-- Social media -->
       <div class="grid m-0 align-items-center">
         <div class="col text-center text-4xl md:text-5xl">
-          Get Inspired <img src="/src/assets/social/Instagram.png" width="27"/> kennethssalonandspa
+          Get Inspired 
+          <a class="link" href="https://www.instagram.com/kennethssalonandspa" target="_blank">
+            <img src="/src/assets/social/Instagram.png" width="27"/> kennethssalonandspa</a>
 
           <div class="grid mt-1 flex flex-row">
             <div class="col-4 md:col-2" v-for="(post, id) in state.footerPosts" :key="id">
               <span v-if="post.media_type !== 'VIDEO'">
-                <img class="thumbnail" :src="post.media_url"/>
+                <a href="https://www.instagram.com/kennethssalonandspa" target="_blank">
+                  <img class="thumbnail cursor-pointer" :src="post.media_url"/>
+                </a>
               </span>
 
               <span v-if="post.media_type === 'VIDEO'">
-                <video class="thumbnail" autoplay loop muted>
-                  <source :src="post.media_url">
-                </video>
+                <a href="https://www.instagram.com/kennethssalonandspa" target="_blank">
+                  <video class="thumbnail cursor-pointer" autoplay loop muted>
+                    <source :src="post.media_url">
+                  </video>
+                </a>
               </span>
             </div>
           </div>
         </div>
       </div>
       
+      <!-- Address -->
       <div class="col-12 flex justify-content-center align-items-end text-sm md:col-4">
-        <div class="flex flex-column align-items-center">
-          <div>
-            5151 Reed Rd Suite 250B
-          </div>
+        <a class="link" href="https://maps.google.com/?q=5151+Reed+Rd+Suite+250B,+Columbus,+OH+43220" target="_blank">
+          <a class="link" href="https://maps.google.com/?q=5151+Reed+Rd+Suite+250B,+Columbus,+OH+43220" target="_blank">
+            <div class="flex flex-column align-items-center">
+              <div>
+                5151 Reed Rd Suite 250B
+              </div>
 
-          <div>
-            Columbus, OH 43220
-          </div>
-        </div>
+              <div>
+                Columbus, OH 43220
+              </div>
+            </div>
+          </a>
+        </a>
       </div>
 
+      <!-- Copyrights -->
       <div class="col-12 flex justify-content-center align-items-end text-sm md:col-4">
         <div class="flex flex-column align-items-center">
           <div>
@@ -208,13 +221,17 @@
         </div>
       </div>
 
+      <!-- Phone -->
       <div class="col-12 flex justify-content-center align-items-end text-sm md:col-4">
         <div class="flex flex-column align-items-center">
           <div>
             Call Us
           </div>
+
           <div>
-            614.538.5800
+            <a class="link" href="tel:6145385800">
+              614.538.5800
+            </a>
           </div>
         </div>
       </div>
@@ -269,6 +286,11 @@
             router.push('/service-menu');
             state.sidebarVisible = false;
             break;
+
+          case 'careers': 
+            router.push('/careers');
+            state.sidebarVisible = false;
+            break;
         }
       }
 
@@ -314,6 +336,7 @@ html, body {
   background-color: var(--white);
   color: var(--black);
   margin: 0;
+  cursor: default;
 }
 
 .sans-serif {
@@ -390,5 +413,10 @@ button {
 
 button:focus {
   box-shadow: 0 0 0 0 transparent !important;
+}
+
+.link {
+  color: var(--black);
+  text-decoration: none;  
 }
 </style>

@@ -2,7 +2,7 @@
   <div>
     <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg parallax-banner-xl md:mb-0">
       <div class="flex col-7 justify-content-end align-items-center md:py-7 md:col-7">
-        <video class="flex justify-content-center location-video-md location-video-lg location-video-xl cursor-pointer" autoplay loop muted>
+        <video class="flex justify-content-center location-video-md location-video-lg location-video-xl" autoplay loop muted>
           <source src="/src/assets/locations/at/video.mp4">
         </video>
       </div>
