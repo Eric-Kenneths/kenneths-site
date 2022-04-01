@@ -41,38 +41,18 @@
 
           <div class="col-6">
             <div class="grid flex justify-content-center">
-              <div class="col-10 ">
+              <div class="col-10" v-for="(item, id) in state.serviceMenu" :key="id">
                 <div class="flex justify-content-center text-3xl">
-                  Hair & Style
+                  {{ item.header }}
                 </div>
 
                 <div class="grid mt-1 text-xl sans-serif">
                   <div class="col-12 text-right px-0">
                     <div class="flex flex-column">
-                      <div>
-                        <div style="float: left">Women's</div>
-                        <div style="float: right">$47 +</div>
+                      <div v-for="(service, id) in item.services" :key="id">
+                        <div style="float: left">{{ service.serviceName }}</div>
+                        <div style="float: right">{{ service.price }}</div>
                       </div>
-
-                      <div class="mt-3">
-                        <div style="float: left">Blowout</div>
-                        <div style="float: right">$39 +</div>
-                      </div>
-
-                      <div class="mt-3">
-                        <div style="float: left">Special Occasion Style</div>
-                        <div style="float: right">$66 +</div>
-                      </div>
-
-                      <div class="mt-3">
-                        <div style="float: left">Men's</div>
-                        <div style="float: right">$38 +</div>
-                      </div>
-
-                      <div class="mt-3">
-                        <div style="float: left">Children's</div>
-                        <div style="float: right">$32 +</div>
-                      </div> 
                     </div>
                   </div>
                 </div>
@@ -94,13 +74,14 @@
 
     setup() {
       const state = reactive({
-        services: []
+        serviceMenu: []
       });
 
       window.scrollTo(0, 0);
 
       const {
-        getServicesByWhatGroup
+        getServiceHeaders,
+        getServiceDetails
       } = khsdsRepo();
 
       onMounted(async () => {
@@ -108,12 +89,31 @@
       });
 
       async function getServices() {
-        state.services = await getServicesByWhatGroup('HC');
+        let serviceHeaders = await getServiceHeaders();
+
+        for (const header of serviceHeaders) {
+          let menuItem = {
+            sequence: 0,
+            header: '',
+            services: []
+          }
+          
+          menuItem.sequence = header.sequence;
+
+          menuItem.header = header.headerName;
+
+          menuItem.services = await getServiceDetails(header.serviceMenuHeaderId);
+  
+          state.serviceMenu.push(menuItem);
+        };
+
+        state.serviceMenu.sort((a, b) => a.sequence - b.sequence);
       }
-      
+
       return {
         state,
-        getServices
+        getServices,
+        
       }
     }
   }

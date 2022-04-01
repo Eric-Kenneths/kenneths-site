@@ -4,7 +4,8 @@ import { handleResponse } from '@/helpers/response';
 
 export function khsdsRepo() {
   const locations = ref([]);
-  const services = ref([]);
+  const serviceHeaders = ref([]);
+  const serviceDetails = ref([]);
 
   async function getLocationListLite(hasSpa, showOffice) {
     const url = appGlobal.apiBaseUrl + '/khsds/LocationList/' + hasSpa + '/' + showOffice;
@@ -28,10 +29,10 @@ export function khsdsRepo() {
     return locations.value;
   }
 
-  async function getServicesByWhatGroup(whatGroup) {
-    const url = appGlobal.apiBaseUrl + '/khsds/Services/' + whatGroup;
+  async function getServiceHeaders() {
+    const url = appGlobal.apiBaseUrl + '/khsds/Services/HeadersForWebMenu';
 
-    services.value = [];
+    serviceHeaders.value = [];
 
     await fetch(url)
       .then(response => response.json())
@@ -40,7 +41,7 @@ export function khsdsRepo() {
           return;
         }
 
-        services.value = data;
+        serviceHeaders.value = data;
 
       })
       .catch(function (e) {
@@ -50,11 +51,36 @@ export function khsdsRepo() {
         //Maybe do something
       })
 
-    return services.value;
+    return serviceHeaders.value;
+  }
+
+  async function getServiceDetails(headerId) {
+    const url = appGlobal.apiBaseUrl + '/khsds/Services/DetailsForWebMenu/' + headerId;
+
+    serviceDetails.value = [];
+
+    await fetch(url)
+      .then(response => response.json())
+      .then(function (data) {
+        if (!handleResponse(data)) {
+          return;
+        }
+
+        serviceDetails.value = data;
+      })
+      .catch(function (e) {
+        console.log(e);
+      })
+      .finally(function () {
+        //Maybe do something
+      })
+
+    return serviceDetails.value;
   }
 
   return {
     getLocationListLite,
-    getServicesByWhatGroup
+    getServiceHeaders,
+    getServiceDetails
   };
 }

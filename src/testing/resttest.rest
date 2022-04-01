@@ -6,3 +6,9 @@ GET https://localhost:5001/api/employees/SocialMedia/GetToken/177000/1 HTTP/1.1
 
 ###
 GET https://localhost:5001/api/employees/SocialMedia/ForWeb/mr HTTP/1.1
+
+###
+GET https://localhost:5001/api/khsds/Services/HeadersForWebMenu HTTP/1.1
+
+###
+GET https://localhost:5001/api/khsds/Services/DetailsForWebMenu/1 HTTP/1.1
