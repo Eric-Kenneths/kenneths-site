@@ -42,7 +42,7 @@
           <div class="col-6">
             <div class="grid flex justify-content-center">
               <div class="col-10" v-for="(item, id) in state.serviceMenu" :key="id">
-                <div class="flex justify-content-center text-3xl">
+                <div class="flex justify-content-center text-5xl">
                   {{ item.header }}
                 </div>
 
@@ -50,8 +50,8 @@
                   <div class="col-12 text-right px-0">
                     <div class="flex flex-column">
                       <div v-for="(service, id) in item.services" :key="id">
-                        <div style="float: left">{{ service.serviceName }}</div>
-                        <div style="float: right">{{ service.price }}</div>
+                        <div class="text-2xl" style="float: left">{{ service.serviceName }}</div>
+                        <div class="text-2xl" style="float: right">{{ service.price }}</div>
                       </div>
                     </div>
                   </div>
