@@ -13,6 +13,7 @@ import PW from '/src/views/locations/PW.vue';
 import WS from '/src/views/locations/WS.vue';
 import AT from '/src/views/locations/AT.vue';
 import ServiceMenu from '/src/views/services/ServiceMenu.vue';
+import ServiceGuide from '/src/views/services/ServiceGuide.vue';
 
 const routes = [
   {
@@ -79,6 +80,12 @@ const routes = [
     path: '/service-menu',
     name: 'ServiceMenu',
     component: ServiceMenu
+  },
+  {
+    path: '/service-guide/hair',
+    name: 'ServiceGuide',
+    component: ServiceGuide,
+    props: {department: 'H'}
   },
   {
     path: '/careers',

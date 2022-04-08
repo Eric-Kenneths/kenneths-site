@@ -39,16 +39,16 @@
             </div>
           </div>
 
-          <div class="col-6">
+          <div class="col-6 mt-8">
             <div class="grid flex justify-content-center">
               <div class="col-10" v-for="(item, id) in state.serviceMenu" :key="id">
-                <div class="flex justify-content-center text-4xl">
+                <div class="text-4xl">
                   {{ item.header }}
                 </div>
 
                 <div class="grid mt-1 text-2xl sans-serif">
                   <div class="col-12 text-right px-0">
-                    <div class="flex flex-column">
+                    <div class="flex ml-2 flex-column">
                       <div v-for="(service, id) in item.services" :key="id">
                         <div style="float: left">{{ service.serviceName }}</div>
                         <div style="float: right">{{ service.price }}</div>

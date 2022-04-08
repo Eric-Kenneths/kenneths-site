@@ -10,7 +10,7 @@
 
         <Button label="SERVICES" class="menu-button border-none" @click="doRoute('serviceMenu')"/>
 
-        <Button label="CLUB KENNETH" class="menu-button border-none"/>
+        <!-- <Button label="CLUB KENNETH" class="menu-button border-none"/> -->
       </div>
 
       <div class="col m-0 p-0 text-center">
@@ -419,4 +419,8 @@ button:focus {
   color: var(--black);
   text-decoration: none;  
 }
+
+
+
+
 </style>

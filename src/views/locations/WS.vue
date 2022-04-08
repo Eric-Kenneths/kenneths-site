@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg parallax-banner-xl md:mb-0">
+    <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg parallax-banner-xl md:mb-0" style="background-color: #E8DED1">
       <div class="flex col-7 justify-content-end align-items-center md:py-7 md:col-7">
         <video class="flex justify-content-center location-video-md location-video-lg location-video-xl" autoplay loop muted>
           <source src="/src/assets/locations/ws/video.mp4">
@@ -8,8 +8,8 @@
       </div>
 
       <div class="flex col-5 md:col-5">
-        <div class="serif flex align-items-center text-4xl text-left z-1 negative-margin md:text-7xl lg:text-7xl xl:text-8xl">
-          Westerville Salon + Waxing Studio
+        <div class="serif flex align-items-center text-4xl text-left z-1 negative-margin md:text-7xl lg:text-7xl xl:text-8xl" style="color: var(--tan)">
+          Westerville Salon <br> + Spa Studio
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
 
       <div class="col-12 md:flex-order-0 md:col-12 lg:flex-order-1 lg:col-6">
         <div class="grid" style="height: 50%">
-          <div class="col-12 lg:col-12 flex justify-content-center align-items-center">
+          <div class="col-12 flex justify-content-start align-items-center">
             <div class="text-left sans-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl" style="color: white">
               <a class="address" href="https://maps.google.com/?q=726+North+State+St,+Westerville,+OH+43082" target="_blank">
                 <a class="address" href="https://maps.apple.com/maps?q=726+North+State+St,+Westerville,+OH+43082" target="_blank">
@@ -42,8 +42,8 @@
           </div>
         </div>
 
-        <div class="grid flex justify-content-center mt-3" style="height: 50%; color: white">
-          <div class="sans-serif flex flex-column col-7 text-xl md:col-offset-3 md:col-5 md:text-xl lg:col-6 lg:col-offset-2 lg:text-xl xl:text-2xl">
+        <div class="grid flex mt-3" style="height: 50%; color: white">
+          <div class="sans-serif flex flex-column justify-content-start col-7 text-xl md:col-offset-3 md:col-5 md:text-xl lg:col-6 lg:col-offset-0 lg:text-xl xl:text-2xl">
             <div>
               <div style="float: left">MON</div>
               <div style="float: right">8:30am - 7:30pm</div>
@@ -92,32 +92,29 @@
     <div class="grid parallax-location-md parallax-location-lg parallax-location-xl mt-4 md:mt-0 md:ml-7 lg:mr-7 lg:ml-4 xl:p-8">
       <div class="col-12 flex flex-column justify-content-center md:flex-order-0 md:col-6">
         <div class="grid sans-serif text-lg">
-          <div class="col-12 serif text-center text-5xl">
+          <div class="col-12 serif text-center text-6xl">
             Our Westerville family
           </div>
 
-          <div class="col-12 sans-serif text-center text-xl name">
+          <div class="col-12 sans-serif text-center text-3xl name">
             Lead by <span v-for="(employee, id) in state.employees.manager" :key="id">{{ employee.emalias }}<span v-if="id !== state.employees.manager.length - 1">, </span></span>
+             and supported by <span v-for="(employee, id) in state.employees.desk" :key="id"> {{ employee.emalias }}<span v-if="id !== state.employees.desk.length - 1">, </span></span>
           </div>
 
-          <div class="col-12 serif text-center text-3xl" v-if="state.employees.desk.length > 0">
-            Supported by
-          </div>
-
-          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.desk" :key="id">
-            <div class="name flex justify-content-center align-items-center" v-if="state.employees.desk.length > 0">
-              {{ employee.emalias }}
+          <div class="grid">
+            <div class="col-2 serif rotate text-left text-8xl mt-5" v-if="state.employees.hair.length > 0">
+              HAIR
             </div>
-          </div>
-        
-          <div class="col-12 serif text-center text-3xl mt-5" v-if="state.employees.hair.length > 0">
-            Hair
-          </div>
 
-          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.hair" :key="id">
-            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
-                  @click="goToInstagram(employee.username)" v-if="state.employees.hair.length > 0">
-              {{ employee.emalias }}
+            <div class="col-10">
+              <div class="grid">
+                <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.hair" :key="id">
+                  <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
+                        @click="goToInstagram(employee.username)" v-if="state.employees.hair.length > 0">
+                    {{ employee.emalias }}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -146,7 +143,7 @@
       </div>
 
       <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
-        <img src="/src/assets/locations/kd/regularImage.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl hidden md:block">
+        <img src="/src/assets/home/location.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl hidden md:block">
       </div>
     </div>
   </div>
@@ -347,9 +344,9 @@
       -ms-filter: grayscale(100%);
       -o-filter: grayscale(100%);
       filter: grayscale(100%);
-      width: 100%;
-      height: 45em;
-      margin: 20px 20px 20px 20px;
+      width: 80%;
+      height: 35rem;
+      margin: 4rem 4rem 4rem 6rem;
     }
 
     .photo-location-xl {
@@ -371,7 +368,7 @@
   }
 
   .negative-margin {
-    margin: 0 0 0 -4rem;
+    margin: 0 0 0 -17rem;
   }
 
   .rotate {
@@ -387,6 +384,10 @@
     font-weight: 800;
     height: 6rem;
     cursor: default;
+  }
+
+  .rotate {
+    writing-mode: vertical-rl;
   }
 
   video {

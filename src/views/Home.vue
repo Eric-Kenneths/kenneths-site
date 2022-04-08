@@ -25,7 +25,7 @@
 
     <div class="grid align-items-center parallax-creative-sm parallax-creative-md parallax-creative-lg parallax-creative-xl mt-4 sm:p-0 md:mt-0 md:ml-7 md:mb-0 md:pb-7 lg:mx-7"> 
       <div class="col-12 flex justify-content-center p-0 mt-2 md:justify-content-end md:col-4 lg:col-5">
-        <img src="/src/assets/home/location.jpg" alt="creative" class="photo-creative-sm photo-creative-md photo-creative-lg photo-creative-xl">
+        <img src="/src/assets/home/location.jpg" alt="creative" class="mt-3 photo-creative-sm photo-creative-md photo-creative-lg photo-creative-xl">
       </div>
 
       <div class="col-12 flex flex-column mt-4 md:col-8 lg:col-7">

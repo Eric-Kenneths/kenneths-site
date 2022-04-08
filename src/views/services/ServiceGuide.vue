@@ -1,44 +1,123 @@
 <template>
   <div>
-    
+    <div class="grid mx-7">
+      <div class="col-12">
+        <div class="grid">
+          <div class="col-6 flex px-6">
+            <div class="flex flex-column align-items-end justify-content-center">
+              <div class="serif text-right md:text-2xl lg:text-4xl xl:text-6xl">
+                {{ department }} Services
+              </div>
+              <div class="sans-serif lg:text-lg xl:text-xl align-self-end text-right mt-2">
+                Not sure what you're looking for? No worries, each service begins with an in-depth consultation. 
+                This empowers our technicians to customize your service. If you don't see what you're looking for, contact us for 
+                more information. We can promise a personalized, extraordinary experience.
+              </div>
+              <div class="mt-4">
+                <Button label="Book Now"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 p-0">
+            <div class="flex align-items-center justify-content-center">
+              <img src="/src/assets/service/serviceMenuLower.jpg" alt="" class="flex align-items-center justify-content-center" style="height: 100%; width: 100%">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Servbice good for key -->
+    <div class="grid mx-7">
+      <div class="col-12">
+        <div class="grid">
+          <div class="col">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service menu -->
+    <div class="grid mx-7">
+      <div class="col-12">
+        <div class="grid">
+          <div class="col-6" v-for="(service, id) in state.services" :key="id">
+            <div class=" text-3xl serif bold">
+              {{ service.serviceDescription }}
+            </div>
+
+            <div v-show="service.serviceGoodForLists !== undefined">
+              <span>
+                <img v-for="(goodFor, id) in service.serviceGoodForLists" :key="id" 
+                      :src="getImageSource(goodFor.goodForId)" alt="">
+              </span>
+            </div>
+
+            <div class="sans-serif text-xl">
+              <b class="serif">Description:</b> {{ service.webDescription }}
+            </div>
+
+            <div class="sans-serif text-xl">
+              <b class="serif">Good for: </b> 
+              <span v-for="(goodFor, gfid) in service.serviceGoodForLists" :key="gfid">{{ goodFor.goodForDescription }}<span v-show="service.serviceGoodForLists.length !== gfid + 1">, </span></span>
+            </div>
+
+            <!-- pairs with -->
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import { reactive } from 'vue';
-  import { useRouter } from 'vue-router';
+  import { reactive, onMounted } from 'vue';
+  //import { useRouter } from 'vue-router';
+  import { dataGlobal } from '@/store/global/dataGlobal';
+  import { khsdsRepo } from '@/store/repository/khsdsRepo';
+  import { minutesDifference } from '@/helpers/dateFunction';
   
   export default {
-    name: 'ServiceMenu',
+    name: 'ServiceGuide',
 
-    setup() {
+    props: ['department'],
+
+    setup(props, context) {
       const state = reactive({
-
+        services: []
       });
 
       window.scrollTo(0, 0);
 
-      const router = useRouter();
+      const {
+        getServicesGlobal
+      } = khsdsRepo();
 
-      function doRoute(whereTo) {
-        switch (whereTo) {
-          case 'mr':
-            router.push('/locations/upper-arlington-hilliard-hair-salon-day-spa');
-            break;
+      onMounted(async () => {
+        await getServices();
+      });
 
-          case 'pl':
-            router.push('/locations/polaris-parkway-lewis-center-hair-salon-day-spa');
-            break;
-
-          case 'locations': 
-            router.push('/locations');
-            break;
+      async function getServices() {
+        if (dataGlobal.services.lastPullDateTime === '' || minutesDifference(dataGlobal.services.lastPullDateTime, new Date()) > 30) {
+          await getServicesGlobal();
         }
+
+        state.services = dataGlobal.services.serviceList.filter(service => service.department === props.department);
+
+        // state.services = state.services.sort(function (a, b) {
+          // return a.webSequence - b.webSequence;
+        // })
+      }
+
+      function getImageSource(goodForId) {
+        return '/src/assets/icon/serviceGuide/' + goodForId + '.png';
       }
 
       return {
         state,
-        doRoute
+        getServicesGlobal,
+        getImageSource
       }
     }
   }

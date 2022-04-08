@@ -1,11 +1,13 @@
 import { ref } from 'vue';
 import { appGlobal } from '@/store/global/appGlobal';
+import { dataGlobal } from '@/store/global/dataGlobal';
 import { handleResponse } from '@/helpers/response';
 
 export function khsdsRepo() {
   const locations = ref([]);
   const serviceHeaders = ref([]);
   const serviceDetails = ref([]);
+  const goodFors = ref([]);
 
   async function getLocationListLite(hasSpa, showOffice) {
     const url = appGlobal.apiBaseUrl + '/khsds/LocationList/' + hasSpa + '/' + showOffice;
@@ -78,9 +80,57 @@ export function khsdsRepo() {
     return serviceDetails.value;
   }
 
+  async function getServicesGlobal() {
+    const url = appGlobal.apiBaseUrl + '/khsds/WebSiteServices';
+
+    await fetch(url)
+      .then(response => response.json())
+      .then(function (data) {
+        if (!handleResponse(data)) {
+          return;
+        }
+
+        dataGlobal.services.serviceList = data.servicesForWebSiteViewModels;
+        dataGlobal.services.lastPullDateTime = data.lastPullDateTime;
+      })
+      .catch(function (e) {
+        console.log(e);
+      })
+      .finally(function () {
+        //Maybe do something
+      })
+    return serviceDetails.value;
+  }
+
+  async function getGoodForsByDepartment(department) {
+    const url = appGlobal.apiBaseUrl + '/khsds/Services/GoodFor/' + department;
+
+    goodFors.value = [];
+
+    await fetch(url)
+      .then(response => response.json())
+      .then(function (data) {
+        if (!handleResponse(data)) {
+          return;
+        }
+
+        goodFors.value = data.serviceGoodForByDepartmentViewModels;
+      })
+      .catch(function (e) {
+        console.log(e);
+      })
+      .finally(function () {
+        //Maybe do something
+      })
+      
+    return goodFors.value;
+  }
+
   return {
     getLocationListLite,
     getServiceHeaders,
-    getServiceDetails
+    getServiceDetails,
+    getServicesGlobal,
+    getGoodForsByDepartment
   };
 }

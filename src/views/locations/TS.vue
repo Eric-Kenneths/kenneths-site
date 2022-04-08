@@ -21,7 +21,7 @@
 
       <div class="col-12 md:flex-order-0 md:col-12 lg:flex-order-1 lg:col-6">
         <div class="grid" style="height: 50%">
-          <div class="col-12 lg:col-12 flex justify-content-center align-items-center">
+          <div class="col-12 flex justify-content-start align-items-center">
             <div class="text-left sans-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl" style="color: white">
               <a class="address" href="https://maps.google.com/?q=2865+Taylor+Rd+Ext,+Reynoldsburg,+OH+43068" target="_blank">
                 <a class="address" href="https://maps.apple.com/maps?q=2865+Taylor+Rd+Ext,+Reynoldsburg,+OH+43068" target="_blank">
@@ -42,8 +42,8 @@
           </div>
         </div>
 
-        <div class="grid flex justify-content-center mt-3" style="height: 50%; color: white">
-          <div class="sans-serif flex flex-column col-7 text-xl md:col-offset-3 md:col-5 md:text-xl lg:col-6 lg:col-offset-2 lg:text-xl xl:text-2xl">
+        <div class="grid flex mt-3" style="height: 50%; color: white">
+          <div class="sans-serif flex flex-column justify-content-start col-7 text-xl md:col-offset-3 md:col-5 md:text-xl lg:col-6 lg:col-offset-0 lg:text-xl xl:text-2xl">
             <div>
               <div style="float: left">MON</div>
               <div style="float: right">8:30am - 7:30pm</div>
@@ -345,9 +345,9 @@
       -ms-filter: grayscale(100%);
       -o-filter: grayscale(100%);
       filter: grayscale(100%);
-      width: 100%;
-      height: 45em;
-      margin: 20px 20px 20px 20px;
+      width: 80%;
+      height: 30rem;
+      margin: 4rem 4rem 4rem 6rem;
     }
 
     .photo-location-xl {
@@ -385,6 +385,10 @@
     font-weight: 800;
     height: 6rem;
     cursor: default;
+  }
+
+  .rotate {
+    writing-mode: vertical-rl;
   }
 
   video {
