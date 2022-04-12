@@ -110,11 +110,11 @@ export function khsdsRepo() {
     await fetch(url)
       .then(response => response.json())
       .then(function (data) {
-        if (!handleResponse(data)) {
+        if (!handleResponse(data)) { 
           return;
         }
 
-        goodFors.value = data.serviceGoodForByDepartmentViewModels;
+        goodFors.value = data;
       })
       .catch(function (e) {
         console.log(e);

@@ -30,9 +30,15 @@
     <!-- Servbice good for key -->
     <div class="grid mx-7">
       <div class="col-12">
-        <div class="grid">
-          <div class="col">
-
+        <div class="grid pt-6 pb-6" style="background-color: var(--grey)">
+          <div class="col text-center" v-for="(goodFor, id) in state.goodFors" :key="id">
+            <div class="col">
+              <img :src="getImageSource(goodFor.goodForId)" alt="">
+            </div>
+            
+            <div class="text-3xl">
+              {{ goodFor.goodForDescription }}
+            </div>
           </div>
         </div>
       </div>
@@ -42,23 +48,23 @@
     <div class="grid mx-7">
       <div class="col-12">
         <div class="grid">
-          <div class="col-6" v-for="(service, id) in state.services" :key="id">
-            <div class=" text-3xl serif bold">
-              {{ service.serviceDescription }}
+          <div class="col-6 p-8" v-for="(service, id) in state.services" :key="id">
+            <div class=" text-5xl serif bold">
+              <b>{{ service.serviceDescription }}</b>
             </div>
 
-            <div v-show="service.serviceGoodForLists !== undefined">
+            <div class="p-2" v-show="service.serviceGoodForLists !== undefined">
               <span>
-                <img v-for="(goodFor, id) in service.serviceGoodForLists" :key="id" 
+                <img class="icon" v-for="(goodFor, id) in service.serviceGoodForLists" :key="id" 
                       :src="getImageSource(goodFor.goodForId)" alt="">
               </span>
             </div>
 
-            <div class="sans-serif text-xl">
+            <div class="sans-serif text-2xl">
               <b class="serif">Description:</b> {{ service.webDescription }}
             </div>
 
-            <div class="sans-serif text-xl">
+            <div class="sans-serif text-2xl">
               <b class="serif">Good for: </b> 
               <span v-for="(goodFor, gfid) in service.serviceGoodForLists" :key="gfid">{{ goodFor.goodForDescription }}<span v-show="service.serviceGoodForLists.length !== gfid + 1">, </span></span>
             </div>
@@ -85,13 +91,15 @@
 
     setup(props, context) {
       const state = reactive({
+        goodFors: [],
         services: []
       });
 
       window.scrollTo(0, 0);
 
       const {
-        getServicesGlobal
+        getServicesGlobal,
+        getGoodForsByDepartment
       } = khsdsRepo();
 
       onMounted(async () => {
@@ -105,9 +113,7 @@
 
         state.services = dataGlobal.services.serviceList.filter(service => service.department === props.department);
 
-        // state.services = state.services.sort(function (a, b) {
-          // return a.webSequence - b.webSequence;
-        // })
+        state.goodFors = await getGoodForsByDepartment(props.department);
       }
 
       function getImageSource(goodForId) {
@@ -141,7 +147,10 @@
 
 /* Extra large screen */
 @media only screen and (min-width: 1200px) {
-
+  .icon {
+    height: 5rem;
+    width: 5rem;
+  }
 }
 
 @media only screen and (min-width: 1500px) {

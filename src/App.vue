@@ -283,7 +283,7 @@
             break;
 
           case 'serviceMenu': 
-            router.push('/service-menu');
+            router.push('/service-guide/hair');
             state.sidebarVisible = false;
             break;
 

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg parallax-banner-xl md:mb-0" style="background-color: #E8DED1">
-      <div class="flex col-7 justify-content-end align-items-center md:py-7 md:col-7">
+    <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg parallax-banner-xl md:mb-0" style="background-color: var(--white)">
+      <div class="flex col-7 justify-content-end align-items-center md:py-7 md:col-5">
+        <div class="serif flex align-items-center text-4xl text-right z-1 negative-margin md:text-7xl lg:text-7xl xl:text-8xl" style="color: var(--black)">
+          Westerville <br> Salon + Spa Studio
+        </div>
+      </div>
+
+      <div class="flex col-5 md:col-7">
         <video class="flex justify-content-center location-video-md location-video-lg location-video-xl" autoplay loop muted>
           <source src="/src/assets/locations/ws/video.mp4">
         </video>
-      </div>
-
-      <div class="flex col-5 md:col-5">
-        <div class="serif flex align-items-center text-4xl text-left z-1 negative-margin md:text-7xl lg:text-7xl xl:text-8xl" style="color: var(--tan)">
-          Westerville Salon <br> + Spa Studio
-        </div>
       </div>
     </div>
 
@@ -334,6 +334,7 @@
   /* Extra large screen */
   @media only screen and (min-width: 1200px) {
     .parallax-banner-xl {
+      background-position: right;
       background-size: 45% 150%;
       height: 52rem;
     }
@@ -368,7 +369,7 @@
   }
 
   .negative-margin {
-    margin: 0 0 0 -17rem;
+    margin: 0 -7rem 0 0;
   }
 
   .rotate {
