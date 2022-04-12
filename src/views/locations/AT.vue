@@ -96,50 +96,53 @@
             Our Academy family
           </div>
 
-          <div class="col-12 sans-serif text-center text-xl name">
+          <div class="col-12 sans-serif text-center text-3xl name">
             Lead by <span v-for="(employee, id) in state.employees.manager" :key="id">{{ employee.emalias }}<span v-if="id !== state.employees.manager.length - 1">, </span></span>
+             and supported by <span v-for="(employee, id) in state.employees.desk" :key="id"> {{ employee.emalias }}<span v-if="id !== state.employees.desk.length - 1">, </span></span>
           </div>
-
-          <div class="col-12 serif text-center text-3xl" v-if="state.employees.desk.length > 0">
-            Supported by
+          
+          <div class="col-2 serif rotate text-left text-8xl mt-7" v-if="state.employees.hair.length > 0">
+            HAIR
           </div>
-
-          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.desk" :key="id">
-            <div class="name flex justify-content-center align-items-center" v-if="state.employees.desk.length > 0">
-              {{ employee.emalias }}
+          
+          <div class="col-10 mt-6" v-if="state.employees.hair.length > 0">
+            <div class="grid">
+              <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.hair" :key="id">
+                <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
+                      @click="goToInstagram(employee.username)">
+                  {{ employee.emalias }}
+                </div>
+              </div>
             </div>
           </div>
-        
-          <div class="col-12 serif text-center text-3xl mt-5" v-if="state.employees.hair.length > 0">
-            Hair
+                    
+          <div class="col-2 serif rotate text-left text-8xl mt-7" v-if="state.employees.nail.length > 0">
+            Nails
           </div>
-
-          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.hair" :key="id">
-            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
-                  @click="goToInstagram(employee.username)" v-if="state.employees.hair.length > 0">
-              {{ employee.emalias }}
+          
+          <div class="col-10 mt-6" v-if="state.employees.nail.length > 0">
+            <div class="grid">
+              <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.nail" :key="id">
+                <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
+                      @click="goToInstagram(employee.username)">
+                  {{ employee.emalias }}
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="col-12 serif text-center text-3xl mt-5" v-if="state.employees.nail.length > 0">
-            Nail
-          </div>
-
-          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.nail" :key="id">
-            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
-                  @click="goToInstagram(employee.username)" v-if="state.employees.nail.length > 0">
-              {{ employee.emalias }}
-            </div>
-          </div>
-
-          <div class="col-12 serif text-center text-3xl mt-5" v-if="state.employees.spa.length > 0">
+                    
+          <div class="col-2 serif rotate text-left text-8xl mt-7" v-if="state.employees.spa.length > 0">
             Spa
           </div>
-
-          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.spa" :key="id">
-            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
-                  @click="goToInstagram(employee.username)" v-if="state.employees.spa.length > 0">
-              {{ employee.emalias }}
+          
+          <div class="col-10 mt-6" v-if="state.employees.spa.length > 0">
+            <div class="grid">
+              <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.spa" :key="id">
+                <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
+                      @click="goToInstagram(employee.username)">
+                  {{ employee.emalias }}
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,12 +1,15 @@
 <template>
   <div>
+    <!-- Banner -->
     <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg parallax-banner-xl md:mb-0">
+      <!-- Text -->
       <div class="flex col-7 justify-content-end align-items-center md:py-7 md:col-7">
         <video class="flex justify-content-center location-video-md location-video-lg location-video-xl" autoplay loop muted>
             <source src="/src/assets/locations/ts/video.mp4">
           </video>
       </div>
 
+      <!-- Video -->
       <div class="flex col-5 md:col-5">
         <div class="serif flex align-items-center text-4xl text-left z-1 negative-margin md:text-7xl lg:text-7xl xl:text-8xl">
           Taylor Square Salon + Spa Studio
@@ -14,12 +17,16 @@
       </div>
     </div>
 
+    <!-- Information -->
     <div class="grid mt-0 flex flex-column lg:flex-row md:ml-7 lg:mx-7" style="background-color: var(--black)">
-      <div class="flex-order-1 col-12 lg:flex-order-0 lg:col-6">
+      <!-- Map -->
+      <div class="flex-order-1 col-12 lg:flex-order-0 lg:col-offset-1 lg:col-6">
         <iframe class="map-sm map-md map-lg map-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.100268152192!2d-82.78935838466066!3d39.939146792470055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883864dc4e69cd43%3A0xa9232520bf1c29ea!2sKenneth&#39;s!5e0!3m2!1sen!2sus!4v1533577746477"></iframe>
       </div>
 
-      <div class="col-12 md:flex-order-0 md:col-12 lg:flex-order-1 lg:col-6">
+      <!-- Details -->
+      <div class="col-12 md:flex-order-0 md:col-12 lg:flex-order-1 lg:col-5">
+        <!-- Address -->
         <div class="grid" style="height: 50%">
           <div class="col-12 flex justify-content-start align-items-center">
             <div class="text-left sans-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl" style="color: white">
@@ -42,6 +49,7 @@
           </div>
         </div>
 
+        <!-- Hours -->
         <div class="grid flex mt-3" style="height: 50%; color: white">
           <div class="sans-serif flex flex-column justify-content-start col-7 text-xl md:col-offset-3 md:col-5 md:text-xl lg:col-6 lg:col-offset-0 lg:text-xl xl:text-2xl">
             <div>
@@ -89,60 +97,77 @@
       </div>
     </div>
 
+    <!-- Employees -->
     <div class="grid parallax-location-md parallax-location-lg parallax-location-xl mt-4 md:mt-0 md:ml-7 lg:mr-7 lg:ml-4 xl:p-8">
+      <!-- List of Employees -->
       <div class="col-12 flex flex-column justify-content-center md:flex-order-0 md:col-6">
         <div class="grid sans-serif text-lg">
-          <div class="col-12 serif text-center text-5xl">
+
+          <!-- Location Name -->
+          <div class="col-12 serif text-center text-6xl">
             Our Taylor Square family
           </div>
 
-          <div class="col-12 sans-serif text-center text-xl name">
+          <!-- Managers and Desk -->
+          <div class="col-12 sans-serif text-center text-3xl name">
             Lead by <span v-for="(employee, id) in state.employees.manager" :key="id">{{ employee.emalias }}<span v-if="id !== state.employees.manager.length - 1">, </span></span>
+             and supported by <span v-for="(employee, id) in state.employees.desk" :key="id"> {{ employee.emalias }}<span v-if="id !== state.employees.desk.length - 1">, </span></span>
           </div>
 
-          <div class="col-12 serif text-center text-3xl">
-            Supported by
+          <!-- Hair Text -->
+          <div class="col-2 serif rotate text-left text-8xl mt-7" v-if="state.employees.hair.length > 0">
+            HAIR
           </div>
 
-          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.desk" :key="id">
-            <div class="name flex justify-content-center align-items-center">
-              {{ employee.emalias }}
-            </div>
-          </div>
-        
-          <div class="col-12 serif text-center text-3xl mt-5">
-            Hair
-          </div>
-
-          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.hair" :key="id">
-            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
-                  @click="goToInstagram(employee.username)">
-              {{ employee.emalias }}
+          <!-- Hair Employees -->
+          <div class="col-10 mt-6" v-if="state.employees.hair.length > 0">
+            <div class="grid">
+              <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.hair" :key="id">
+                <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
+                      @click="goToInstagram(employee.username)">
+                  {{ employee.emalias }}
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="col-12 serif text-center text-3xl mt-5">
-            Nail
+          <!-- Nail text -->
+          <div class="col-2 serif rotate text-left text-8xl mt-7" v-if="state.employees.nail.length > 0">
+            Nails
           </div>
 
-          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.nail" :key="id">
-            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)">
-              {{ employee.emalias }}
+          <!-- Nail Employees -->
+          <div class="col-10 mt-6" v-if="state.employees.nail.length > 0">
+            <div class="grid">
+              <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.nail" :key="id">
+                <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
+                      @click="goToInstagram(employee.username)">
+                  {{ employee.emalias }}
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="col-12 serif text-center text-3xl mt-5">
+         
+          <!-- Spa Text -->
+          <div class="col-2 serif rotate text-left text-8xl mt-7" v-if="state.employees.spa.length > 0">
             Spa
           </div>
 
-          <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.spa" :key="id">
-            <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)">
-              {{ employee.emalias }}
+          <!-- Spa Employees -->
+          <div class="col-10 mt-6" v-if="state.employees.spa.length > 0">
+            <div class="grid">
+              <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.spa" :key="id">
+                <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
+                      @click="goToInstagram(employee.username)">
+                  {{ employee.emalias }}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Photo -->
       <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
         <img src="/src/assets/locations/ts/regularImage.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl hidden md:block">
       </div>
@@ -346,7 +371,7 @@
       -o-filter: grayscale(100%);
       filter: grayscale(100%);
       width: 80%;
-      height: 30rem;
+      height: 35rem;
       margin: 4rem 4rem 4rem 6rem;
     }
 
