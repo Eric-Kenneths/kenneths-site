@@ -1,26 +1,32 @@
 <template>
   <div>
+    <!-- Banner -->
     <div class="grid mx-7">
       <div class="col-12">
         <div class="grid">
+          <!-- Banner Text -->
           <div class="col-6 flex px-6">
             <div class="flex flex-column align-items-end justify-content-center">
+              <!-- Header -->
               <div class="serif text-right md:text-2xl lg:text-4xl xl:text-6xl">
                 A Beautiful Experience.
               </div>
 
+              <!-- Subtext -->
               <div class="sans-serif lg:text-lg xl:text-xl align-self-end text-right mt-2">
                 Not sure what you're looking for? No worries, each service begins with an in-depth consultation. 
                 This empowers our technicians to customize your service. If you don't see what you're looking for, contact us for 
                 more information. We can promise a personalized, extraordinary experience.
               </div>
 
+              <!-- Button -->
               <div class="mt-4">
                 <Button label="Book Now"/>
               </div>
             </div>
           </div>
 
+          <!-- Banner Image -->
           <div class="col-6 p-0">
             <div class="flex align-items-center justify-content-center">
               <img src="/src/assets/service/serviceMenuLower.jpg" alt="" class="flex align-items-center justify-content-center" style="height: 100%; width: 100%">
@@ -30,22 +36,27 @@
       </div>
     </div>
 
+    <!-- Service List -->
     <div class="grid mx-7">
       <div class="col-12">
         <div class="grid">
+          <!-- Photo -->
           <div class="col-6 p-0">
             <div>
               <img src="/src/assets/service/serviceMenuUpper.jpg" alt="" style="width: 100%">
             </div>
           </div>
 
+          <!-- Services -->
           <div class="col-6 mt-8">
             <div class="grid flex justify-content-center">
               <div class="col-10" v-for="(item, id) in state.serviceMenu" :key="id">
+                <!-- Section Heading -->
                 <div class="text-4xl">
                   {{ item.header }}
                 </div>
 
+                <!-- Services -->
                 <div class="grid mt-1 text-2xl sans-serif">
                   <div class="col-12 text-right px-0">
                     <div class="flex ml-2 flex-column">

@@ -1,6 +1,8 @@
 <template>
   <div>
+    <!-- Row 1 -->
     <div class="grid mt-1 flex flex-column align-items-start md:ml-7 md:flex-row lg:mx-7">
+      <!-- Mill Run -->
       <div class="col-12 md:px-4 md:col-4">
         <div class="grid py-3" style="background-color: var(--black); color: var(--white); height: 100%">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
@@ -44,6 +46,7 @@
         </div>
       </div>
 
+      <!-- Avery -->
       <div class="col-12 md:px-4 md:col-4">
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
@@ -87,6 +90,7 @@
         </div>
       </div>
 
+      <!-- Grove City -->
       <div class="col-12 md:px-4 md:col-4">
         <div class="grid py-3" style="background-color: var(--black); color: var(--white); height: 100%;">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
@@ -128,7 +132,9 @@
       </div>
     </div>
 
+    <!-- Row 2 -->
     <div class="grid mt-4 flex flex-column align-items-center md:align-items-start md:ml-7 md:flex-row lg:mx-7">
+      <!-- Kingsdale -->
       <div class="col-12 md:px-4 md:col-4">
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
@@ -172,6 +178,7 @@
         </div>
       </div>
 
+      <!-- New Albany -->
       <div class="col-12 md:px-4 md:col-4">
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
@@ -212,6 +219,7 @@
         </div>
       </div>
 
+      <!-- Taylor Square -->
       <div class="col-12 md:px-4 md:col-4">
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
@@ -256,7 +264,9 @@
       </div>
     </div>
 
+    <!-- Row 3 -->
     <div class="grid mt-4 flex flex-column align-items-center md:align-items-start md:ml-7 md:flex-row lg:mx-7">
+      <!-- Polaris -->
       <div class="col-12 md:px-4 md:col-4">
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
@@ -297,6 +307,7 @@
         </div>
       </div>
 
+      <!-- Powell -->
       <div class="col-12 md:px-4 md:col-4">
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
@@ -337,6 +348,7 @@
         </div>
       </div>
 
+      <!-- Westerville -->
       <div class="col-12 md:px-4 md:col-4">
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
@@ -381,7 +393,9 @@
       </div>
     </div>
 
+    <!-- Row 4 -->
     <div class="grid mt-4 flex flex-column align-items-center md:align-items-start md:ml-7 md:flex-row lg:mx-7">
+      <!-- Academy -->
       <div class="col-12 md:px-4 md:col-4">
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
@@ -435,7 +449,8 @@
 </template>
 
 <script>
-  import { reactive } from 'vue';
+  import { reactive} from 'vue';
+  import { appGlobal } from '@/store/global/appGlobal';
   import { useRouter } from 'vue-router';
   
   export default {
@@ -496,7 +511,8 @@
 
       return {
         state,
-        doRoute
+        doRoute,
+        appGlobal
       }
     }
   }

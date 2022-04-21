@@ -1,7 +1,7 @@
 <template>
   <div>
-    testingadsfasdfasdfasdfasdfasdf
-    <video-embed src="https://www.tiktok.com/@kennethssalonandspa/video/7080239002674007338?is_from_webapp=1&sender_device=pc&web_id=7080585645789644331"></video-embed>
+    testingadsfasdfasdfasdfasdfasdffffff
+    <iframe :src="state.imageURL" class="tiktok"></iframe>
   </div>
 </template>
 
@@ -14,7 +14,7 @@
 
     setup() {
       const state = reactive({
-
+        imageURL: 'https://www.tiktok.com/embed/v2/7085803630888095018'
       });
 
       window.scrollTo(0, 0);
@@ -38,4 +38,9 @@
 </script>
 
 <style scoped>
+.tiktok {
+  height: 55rem;
+  width: 25rem;
+  border: none;
+}
 </style>

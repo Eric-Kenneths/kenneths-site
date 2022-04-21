@@ -8,11 +8,13 @@
               <div class="serif text-right md:text-2xl lg:text-4xl xl:text-6xl">
                 {{ department }} Services
               </div>
+              
               <div class="sans-serif lg:text-lg xl:text-xl align-self-end text-right mt-2">
                 Not sure what you're looking for? No worries, each service begins with an in-depth consultation. 
                 This empowers our technicians to customize your service. If you don't see what you're looking for, contact us for 
                 more information. We can promise a personalized, extraordinary experience.
               </div>
+
               <div class="mt-4">
                 <Button label="Book Now"/>
               </div>
@@ -33,7 +35,7 @@
         <div class="grid pt-6 pb-6" style="background-color: var(--grey)">
           <div class="col text-center" v-for="(goodFor, id) in state.goodFors" :key="id">
             <div class="col">
-              <img :src="getImageSource(goodFor.goodForId)" alt="">
+              <img :src="getImageSource(goodFor.goodForId)" alt="" @click="filterServices(goodFor.goodForId)">
             </div>
             
             <div class="text-3xl">
@@ -48,7 +50,7 @@
     <div class="grid mx-7">
       <div class="col-12">
         <div class="grid">
-          <div class="col-6 p-8" v-for="(service, id) in state.services" :key="id">
+          <div class="col-6 p-8" v-for="(service, id) in state.servicesDisplay" :key="id">
             <div class=" text-5xl serif bold">
               <b>{{ service.serviceDescription }}</b>
             </div>
@@ -74,6 +76,8 @@
         </div>
       </div>
     </div>
+
+    <ScrollTop :threshold="1000" icon="pi pi-arrow-up"/>
   </div>
 </template>
 
@@ -92,7 +96,9 @@
     setup(props, context) {
       const state = reactive({
         goodFors: [],
-        services: []
+        serviceList: [],
+        servicesDisplay: [],
+        goodForFilter: 0
       });
 
       window.scrollTo(0, 0);
@@ -111,7 +117,10 @@
           await getServicesGlobal();
         }
 
-        state.services = dataGlobal.services.serviceList.filter(service => service.department === props.department);
+        state.serviceList = dataGlobal.services.serviceList.filter(service => service.department === props.department);
+
+        state.servicesDisplay = [...state.serviceList];
+        console.log(state.servicesDisplay)
 
         state.goodFors = await getGoodForsByDepartment(props.department);
       }
@@ -120,10 +129,33 @@
         return '/src/assets/icon/serviceGuide/' + goodForId + '.png';
       }
 
+      async function filterServices(goodForId) {
+        if (state.goodForFilter === goodForId) {
+          state.servicesDisplay = state.serviceList;
+
+          state.goodForFilter = 0;
+        } else {
+          state.goodForFilter = goodForId;
+
+          let array = [];
+
+          state.serviceList.forEach(service => {
+            service.serviceGoodForLists.forEach(goodFor => {
+              if (goodFor.goodForId === state.goodForFilter) {
+                array.push(service);
+              }
+            })
+          })
+
+          state.servicesDisplay = array;
+        }
+      }
+
       return {
         state,
         getServicesGlobal,
-        getImageSource
+        getImageSource,
+        filterServices
       }
     }
   }

@@ -5,7 +5,8 @@ const appGlobal = reactive({
     appName: 'Kenneths-Site',
     appVersion: '0.1',
     requestVerificationToken: '',
-    today: new Date()
+    today: new Date(),
+    isLoading: false
   }); 
   
   export { appGlobal };

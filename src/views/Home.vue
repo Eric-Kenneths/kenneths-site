@@ -1,18 +1,22 @@
 <template>
   <div>
+    <!-- Banner -->
     <div class="grid mb-0 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg md:mb-0">
+      <!-- Text -->
       <div class="flex col-3 md:col-4 md:col-offset-1">
         <div class="serif flex align-items-center text-4xl text-right z-1 negative-margin md:text-7xl lg:text-8xl xl:text-8xl">
           A partner in life's most memorable moments
         </div>
       </div>
 
+      <!-- Image -->
       <div class="flex col-9 justify-content-start align-items-center md:py-7 md:col-7">
         <img src="/src/assets/home/banner.jpg" alt="Whatever" 
               class="photo-banner-sm photo-banner-sh photo-banner-md photo-banner-lg photo-banner-xl">
       </div>
     </div>
 
+    <!-- Video -->
     <div class="grid mt-0 md:ml-7 lg:mx-7">
       <div class="col-12 py-0 px-0">
         <div class="flex flex-row align-items-center justify-content-center text-6xl square">
@@ -23,13 +27,17 @@
       </div>
     </div>
 
+    <!-- First section -->
     <div class="grid align-items-center parallax-creative-sm parallax-creative-md parallax-creative-lg parallax-creative-xl mt-4 sm:p-0 md:mt-0 md:ml-7 md:mb-0 md:pb-7 lg:mx-7"> 
+      <!-- Image/Video -->
       <div class="col-12 flex justify-content-center p-0 mt-2 md:justify-content-end md:col-4 lg:col-5">
         <img src="/src/assets/home/location.jpg" alt="creative" class="mt-3 photo-creative-sm photo-creative-md photo-creative-lg photo-creative-xl">
       </div>
 
+      <!-- Text -->
       <div class="col-12 flex flex-column mt-4 md:col-8 lg:col-7">
         <div class="text-background-sm text-background-lg p-4 md:ml-4 lg:px-7">
+          <!-- Heading -->
           <div class="pt-1 px-6 serif text-2xl justify-content-center align-items-center flex flex-column md:flex-row md:text-xl md:px-4 lg:text-3xl lg:px-6">
             CREATIVE
             <Divider class="block md:hidden"/>
@@ -40,6 +48,7 @@
             CONSISTENT
           </div>
   
+          <!-- Subtext -->
           <div class="pb-3 sans-serif text-left text-lg mt-3 md:px-4 lg:px-6">
             At Kenneth's, we believe we are greater as a team than we are as individuals. We go about things authentically, lifting people 
             up and offering a space where our guests can realize their natural beauty. Inclusivity, creativity and consistency - these are more 
@@ -51,14 +60,18 @@
       </div>
     </div>
     
+    <!-- Second Section -->
     <div class="grid parallax-location-sm parallax-location-md parallax-location-lg parallax-location-xl mt-4 md:mt-0 md:ml-7 lg:mx-7 xl:p-8">
+      <!-- Text -->
       <div class="col-12 flex justify-content-center md:flex-order-0 md:col-6">
         <div class="flex flex-column align-items-center justify-content-center">
           <div class="p-4 text-background-sm md:pr-4">
+            <!-- Heading -->
             <div class="serif text-left pt-1 md:text-xl md:px-4 lg:text-3xl lg:px-6">
               TEN LOCATIONS, ONE EXCEPTIONAL EXPEREINCE
             </div>
 
+            <!-- Subtext -->
             <div class="sans-serif text-xl mt-3 md:px-4 lg:px-6">
               Kenneth's Salons + Day Spas has 10 locations throughout central Ohio to best serve our communities. 
               Regardless of the location you call home, you can expect the same gratifying experience that 
@@ -72,6 +85,7 @@
         </div>
       </div>
 
+      <!-- Image/Video -->
       <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
         <video class="flex justify-content-center location-video-sm location-video-md location-video-lg location-video-xl" autoplay loop muted>
           <source src="/src/assets/locations/pl/video.mp4">
@@ -79,21 +93,25 @@
       </div>
     </div>
 
+    <!-- Departments -->
     <div class="grid md:ml-7 lg:mx-7">
       <div class="col-12 my-0 py-0">
         <div class="flex grid mt-1 service-row-sm service-row-md service-row-lg service-row-xl">
+          <!-- Spa -->
           <div class="flex col-4 justify-content-center align-items-center spa-sm spa-md spa-lg spa-xl cursor-pointer">
-              <div class="spa-text text-3xl md:text-5xl lg:text-6xl">
-                SPA
-              </div>
+            <div class="spa-text text-3xl md:text-5xl lg:text-6xl">
+              SPA
+            </div>
           </div>
           
+          <!-- Nails -->
           <div class="flex col-4 justify-content-center align-items-center nail-sm nail-md nail-lg nail-xl cursor-pointer">
             <div class="nail-text text-3xl md:text-5xl lg:text-6xl">
               NAILS
             </div>
           </div>
 
+          <!-- Hair -->
           <div class="flex col-4 justify-content-center align-items-center hair-sm hair-md hair-lg hair-xl cursor-pointer">
             <div class="hair-text text-3xl md:text-5xl lg:text-6xl">
               HAIR
