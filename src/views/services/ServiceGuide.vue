@@ -6,7 +6,7 @@
           <div class="col-6 flex px-6">
             <div class="flex flex-column align-items-end justify-content-center">
               <div class="serif text-right md:text-2xl lg:text-4xl xl:text-6xl">
-                {{ department }} Services
+                {{ category }} Services
               </div>
               
               <div class="sans-serif lg:text-lg xl:text-xl align-self-end text-right mt-2">
@@ -29,7 +29,19 @@
       </div>
     </div>
 
-    <!-- Servbice good for key -->
+    <div class="grid mx-7">
+      <div class="col-12">
+        <div class="grid">
+          <div class="col text-center" v-for="(department, id) in state.departments" :key="id">
+            <!-- <Button class="button-department" :label="department.description" @click="changeDepartment(department.code)"/> -->
+            <input type="radio" name="department" :id="id"/>
+            <label :for="id">{{ department.description }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Service good for key -->
     <div class="grid mx-7">
       <div class="col-12">
         <div class="grid pt-6 pb-6" style="background-color: var(--grey)">
@@ -72,6 +84,10 @@
             </div>
 
             <!-- pairs with -->
+            <div class="sans-serif text-2xl" v-show="service.servicePairLists.length > 0">
+              <b class="serif">Pairs with: </b>
+              <span v-for="(servicePair, spid) in service.servicePairLists" :key="spid">{{ servicePair.webSiteDescription }}<span v-show="service.servicePairLists.length !== spid + 1">, </span></span>
+            </div>
           </div>
         </div>
       </div>
@@ -91,10 +107,12 @@
   export default {
     name: 'ServiceGuide',
 
-    props: ['department'],
+    props: ['category'],
 
     setup(props, context) {
       const state = reactive({
+        departments: [],
+        department: '',
         goodFors: [],
         serviceList: [],
         servicesDisplay: [],
@@ -109,20 +127,58 @@
       } = khsdsRepo();
 
       onMounted(async () => {
+        if (props.category === 'Hair') {
+          state.departments = [{
+                                code: 'H',
+                                description: 'Hair'
+                              }];
+
+        } else if (props.category === 'Spa') {
+          state.departments = [{
+                                code: 'E',
+                                description: 'Peel'
+                              }, 
+                              {
+                                code: 'F',
+                                description: 'Facial'
+                              }, 
+                              {
+                                code: 'W',
+                                description: 'Waxing'
+                              }, 
+                              {
+                                code: 'M',
+                                description: 'Massage'
+                              }];
+
+        } else if (props.category === 'Nail') {
+          state.departments = [{
+                                code: 'N',
+                                description: 'Manicure'
+                              }, 
+                              {
+                                code: 'P',
+                                description: 'Pedicure'
+                              }];
+        }
+
+        state.department = state.departments[0].code;
+console.log(state.department)
         await getServices();
       });
 
       async function getServices() {
         if (dataGlobal.services.lastPullDateTime === '' || minutesDifference(dataGlobal.services.lastPullDateTime, new Date()) > 30) {
           await getServicesGlobal();
+          console.log(dataGlobal.services.serviceList)
         }
 
-        state.serviceList = dataGlobal.services.serviceList.filter(service => service.department === props.department);
+        state.serviceList = dataGlobal.services.serviceList.filter(service => state.department === service.department);
 
         state.servicesDisplay = [...state.serviceList];
         console.log(state.servicesDisplay)
 
-        state.goodFors = await getGoodForsByDepartment(props.department);
+        state.goodFors = await getGoodForsByDepartment(state.department);
       }
 
       function getImageSource(goodForId) {
@@ -151,11 +207,23 @@
         }
       }
 
+      function foo() {
+        console.log(state.department)
+      }
+
+      async function changeDepartment(code) {
+        state.department = code;
+
+        await getServices();
+      }
+
       return {
         state,
         getServicesGlobal,
         getImageSource,
-        filterServices
+        filterServices,
+        foo,
+        changeDepartment
       }
     }
   }
@@ -188,4 +256,28 @@
 @media only screen and (min-width: 1500px) {
 
 }
+
+.button-department {
+  border-radius: 0px !important;
+  background-color: transparent !important;
+  color: var(--black) !important;
+  border-width: 0px !important;
+  border-color: var(--black) !important;
+  box-shadow: transparent !important;
+  font-size: 20px !important;
+  font-family: 'lato', arial, helvetica !important;
+  border-radius: 0px !important;
+}
+
+/* .button-department: { */
+  /* border-radius: 0px !important; */
+  /* background-color: black !important; */
+  /* color: var(--black) !important; */
+  /* border-width: 0px !important; */
+  /* border-color: var(--black) !important; */
+  /* box-shadow: transparent !important; */
+  /* font-size: 20px !important; */
+  /* font-family: 'lato', arial, helvetica !important; */
+  /* border-radius: 0px !important; */
+/* } */
 </style>

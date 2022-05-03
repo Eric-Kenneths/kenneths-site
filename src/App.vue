@@ -283,7 +283,7 @@
             break;
 
           case 'serviceMenu': 
-            router.push('/service-guide/hair');
+            router.push('/service-menu');
             state.sidebarVisible = false;
             break;
 
@@ -419,8 +419,4 @@ button:focus {
   color: var(--black);
   text-decoration: none;  
 }
-
-
-
-
 </style>

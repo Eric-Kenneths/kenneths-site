@@ -98,21 +98,24 @@
       <div class="col-12 my-0 py-0">
         <div class="flex grid mt-1 service-row-sm service-row-md service-row-lg service-row-xl">
           <!-- Spa -->
-          <div class="flex col-4 justify-content-center align-items-center spa-sm spa-md spa-lg spa-xl cursor-pointer">
+          <div class="flex col-4 justify-content-center align-items-center spa-sm spa-md spa-lg spa-xl cursor-pointer" 
+                @click="doRoute('spa')">
             <div class="spa-text text-3xl md:text-5xl lg:text-6xl">
               SPA
             </div>
           </div>
           
           <!-- Nails -->
-          <div class="flex col-4 justify-content-center align-items-center nail-sm nail-md nail-lg nail-xl cursor-pointer">
+          <div class="flex col-4 justify-content-center align-items-center nail-sm nail-md nail-lg nail-xl cursor-pointer"
+                @click="doRoute('nail')">
             <div class="nail-text text-3xl md:text-5xl lg:text-6xl">
               NAILS
             </div>
           </div>
 
           <!-- Hair -->
-          <div class="flex col-4 justify-content-center align-items-center hair-sm hair-md hair-lg hair-xl cursor-pointer">
+          <div class="flex col-4 justify-content-center align-items-center hair-sm hair-md hair-lg hair-xl cursor-pointer"
+                @click="doRoute('hair')">
             <div class="hair-text text-3xl md:text-5xl lg:text-6xl">
               HAIR
             </div>
@@ -143,6 +146,18 @@
         switch (whereTo) {
           case 'locations':
             router.push('/locations');
+            break;
+
+          case 'spa':
+            router.push('/service-guide/spa');
+            break;
+
+          case 'nail':
+            router.push('/service-guide/nail');
+            break;
+          
+          case 'hair':
+            router.push('/service-guide/hair');
             break;
         }
       }

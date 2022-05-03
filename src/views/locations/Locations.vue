@@ -616,7 +616,7 @@
   }
 
   .label-xl {
-    font-size: 2.15rem;
+    font-size: 3rem;
   }
 
   .large-label-xl {
