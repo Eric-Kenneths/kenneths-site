@@ -41,9 +41,31 @@
       <div class="col-12">
         <div class="grid">
           <!-- Photo -->
-          <div class="col-6 p-0">
-            <div>
+          <div class="col-6 flex flex-column p-0">
+            <div class="flex align-content-start">
               <img src="/src/assets/service/serviceMenuUpper.jpg" alt="" style="width: 100%">
+            </div>
+
+            <div class="flex justify-content-center align-items-center bat">
+              <div class="grid">
+                <div class="col-12">
+                  <div class="flex justify-content-center">
+                    Hair Services
+                  </div>
+                </div>
+                
+                <div class="col-12">
+                  <div class="flex justify-content-center">
+                    Spa Services
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="flex justify-content-center">
+                    Nail Services
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -177,6 +199,10 @@ button {
 
 button:focus {
   box-shadow: 0 0 0 0 transparent !important;
+}
+
+.bat {
+  height: 100%;
 }
 
 </style>

@@ -20,6 +20,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-6 p-0">
             <div class="flex align-items-center justify-content-center">
               <img src="/src/assets/service/serviceMenuLower.jpg" alt="" class="flex align-items-center justify-content-center" style="height: 100%; width: 100%">
@@ -29,14 +30,14 @@
       </div>
     </div>
 
-    <div class="grid mx-7">
+    <div class="grid mx-7 py-3">
       <div class="col-12">
         <div class="grid">
-          <div class="col text-center" v-for="(department, id) in state.departments" :key="id">
+          <span class="col text-center selection" v-for="(department, id) in state.departments" :key="id">
             <!-- <Button class="button-department" :label="department.description" @click="changeDepartment(department.code)"/> -->
-            <input type="radio" name="department" :id="id"/>
-            <label :for="id">{{ department.description }}</label>
-          </div>
+            <input class="hidden" type="radio" name="department" :id="id" :value="department.code" v-model="state.department" @change="changeDepartment()"/>
+            <label class="text-3xl cursor-pointer" :for="id">{{ department.description }}</label>
+          </span>
         </div>
       </div>
     </div>
@@ -44,15 +45,19 @@
     <!-- Service good for key -->
     <div class="grid mx-7">
       <div class="col-12">
-        <div class="grid pt-6 pb-6" style="background-color: var(--grey)">
-          <div class="col text-center" v-for="(goodFor, id) in state.goodFors" :key="id">
-            <div class="col">
-              <img :src="getImageSource(goodFor.goodForId)" alt="" @click="filterServices(goodFor.goodForId)">
+        <div class="grid pt-0 pb-4" style="background-color: var(--grey)">
+          <div class="flex flex-column text-center col pt-0" v-for="(goodFor, gfid) in state.goodFors" :key="gfid">
+            <!-- <span class="bar"> -->
+              <!-- <input class="rad" type="radio" name="goodFor" :id="'gf' + goodFor.goodForId" :value="goodFor.goodForId" v-model="state.selectedGoodFor"/> -->
+              <!-- <label class="text-3xl cursor-pointer" :for="'gf' + goodFor.goodForId" @click="filterServices(goodFor.goodForId)">{{ goodFor.goodForDescription }}</label> -->
+            <!-- </span> -->
+            <div class="hidden flex bar-g" :id="'gfa' + gfid">
+
             </div>
-            
-            <div class="text-3xl">
+
+            <span class="text-3xl cursor-pointer align-self-center" :id="'gf' + gfid" @click="filterServices(goodFor.goodForId)">
               {{ goodFor.goodForDescription }}
-            </div>
+            </span>
           </div>
         </div>
       </div>
@@ -62,28 +67,24 @@
     <div class="grid mx-7">
       <div class="col-12">
         <div class="grid">
-          <div class="col-6 p-8" v-for="(service, id) in state.servicesDisplay" :key="id">
+          <div class="col-6 p-6" v-for="(service, id) in state.servicesDisplay" :key="id">
+            <!-- Service name -->
             <div class=" text-5xl serif bold">
               <b>{{ service.serviceDescription }}</b>
             </div>
 
-            <div class="p-2" v-show="service.serviceGoodForLists !== undefined">
-              <span>
-                <img class="icon" v-for="(goodFor, id) in service.serviceGoodForLists" :key="id" 
-                      :src="getImageSource(goodFor.goodForId)" alt="">
-              </span>
-            </div>
-
-            <div class="sans-serif text-2xl">
+            <!-- Service description -->
+            <div class="sans-serif text-2xl py-2">
               <b class="serif">Description:</b> {{ service.webDescription }}
             </div>
 
+            <!-- Service good fors -->
             <div class="sans-serif text-2xl">
               <b class="serif">Good for: </b> 
               <span v-for="(goodFor, gfid) in service.serviceGoodForLists" :key="gfid">{{ goodFor.goodForDescription }}<span v-show="service.serviceGoodForLists.length !== gfid + 1">, </span></span>
             </div>
 
-            <!-- pairs with -->
+            <!-- Pairs with -->
             <div class="sans-serif text-2xl" v-show="service.servicePairLists.length > 0">
               <b class="serif">Pairs with: </b>
               <span v-for="(servicePair, spid) in service.servicePairLists" :key="spid">{{ servicePair.webSiteDescription }}<span v-show="service.servicePairLists.length !== spid + 1">, </span></span>
@@ -112,11 +113,11 @@
     setup(props, context) {
       const state = reactive({
         departments: [],
-        department: '',
+        department: '',        
         goodFors: [],
         serviceList: [],
         servicesDisplay: [],
-        goodForFilter: 0
+        displayedGoodFor: 0
       });
 
       window.scrollTo(0, 0);
@@ -163,11 +164,12 @@
         }
 
         state.department = state.departments[0].code;
-console.log(state.department)
+
         await getServices();
       });
 
       async function getServices() {
+        console.log('here')
         if (dataGlobal.services.lastPullDateTime === '' || minutesDifference(dataGlobal.services.lastPullDateTime, new Date()) > 30) {
           await getServicesGlobal();
           console.log(dataGlobal.services.serviceList)
@@ -181,23 +183,28 @@ console.log(state.department)
         state.goodFors = await getGoodForsByDepartment(state.department);
       }
 
-      function getImageSource(goodForId) {
-        return '/src/assets/icon/serviceGuide/' + goodForId + '.png';
-      }
+      // function getImageSource(goodForId) {
+        // return '/static/image/icons/serviceGuide/' + props.category + '/' + goodForId + '.png';
+      // }
 
       async function filterServices(goodForId) {
-        if (state.goodForFilter === goodForId) {
+        console.log(goodForId)
+        if (state.displayedGoodFor === goodForId) {
+          console.log('same')
           state.servicesDisplay = state.serviceList;
 
-          state.goodForFilter = 0;
+          var element = document.getElementById('gfa' + goodForId);
+          var classes = element.
+
+          state.displayedGoodFor = 0;
         } else {
-          state.goodForFilter = goodForId;
+          state.displayedGoodFor = goodForId;
 
           let array = [];
 
           state.serviceList.forEach(service => {
             service.serviceGoodForLists.forEach(goodFor => {
-              if (goodFor.goodForId === state.goodForFilter) {
+              if (goodFor.goodForId === state.displayedGoodFor) {
                 array.push(service);
               }
             })
@@ -207,22 +214,15 @@ console.log(state.department)
         }
       }
 
-      function foo() {
-        console.log(state.department)
-      }
-
-      async function changeDepartment(code) {
-        state.department = code;
-
-        await getServices();
+      function changeDepartment() {
+        getServices();
       }
 
       return {
         state,
         getServicesGlobal,
-        getImageSource,
+        //getImageSource,
         filterServices,
-        foo,
         changeDepartment
       }
     }
@@ -266,7 +266,6 @@ console.log(state.department)
   box-shadow: transparent !important;
   font-size: 20px !important;
   font-family: 'lato', arial, helvetica !important;
-  border-radius: 0px !important;
 }
 
 /* .button-department: { */
@@ -280,4 +279,19 @@ console.log(state.department)
   /* font-family: 'lato', arial, helvetica !important; */
   /* border-radius: 0px !important; */
 /* } */
+
+.selection {
+  border: 0px solid black;
+}
+
+input[type="radio"]:checked + label {
+  font-weight: 800;
+}
+
+.bar-g {
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid var(--grey);
+  margin: auto auto;
+}
 </style>
