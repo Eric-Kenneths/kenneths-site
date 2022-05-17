@@ -11,7 +11,7 @@
 
       <!-- Image -->
       <div class="flex col-9 justify-content-start align-items-center md:py-7 md:col-7">
-        <img src="/src/assets/home/banner.jpg" alt="Whatever" 
+        <img src="/static/home/banner.jpg" alt="Whatever" 
               class="photo-banner-sm photo-banner-sh photo-banner-md photo-banner-lg photo-banner-xl">
       </div>
     </div>
@@ -21,7 +21,7 @@
       <div class="col-12 py-0 px-0">
         <div class="flex flex-row align-items-center justify-content-center text-6xl square">
           <video class="flex justify-content-center video" autoplay loop muted>
-            <source src="/src/assets/home/horizontal.mp4">
+            <source src="/static/home/horizontal.mp4">
           </video>
         </div>
       </div>
@@ -31,7 +31,7 @@
     <div class="grid align-items-center parallax-creative-sm parallax-creative-md parallax-creative-lg parallax-creative-xl mt-4 sm:p-0 md:mt-0 md:ml-7 md:mb-0 md:pb-7 lg:mx-7"> 
       <!-- Image/Video -->
       <div class="col-12 flex justify-content-center p-0 mt-2 md:justify-content-end md:col-4 lg:col-5">
-        <img src="/src/assets/home/location.jpg" alt="creative" class="mt-3 photo-creative-sm photo-creative-md photo-creative-lg photo-creative-xl">
+        <img src="/static/home/location.jpg" alt="creative" class="mt-3 photo-creative-sm photo-creative-md photo-creative-lg photo-creative-xl">
       </div>
 
       <!-- Text -->
@@ -88,7 +88,7 @@
       <!-- Image/Video -->
       <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
         <video class="flex justify-content-center location-video-sm location-video-md location-video-lg location-video-xl" autoplay loop muted>
-          <source src="/src/assets/locations/pl/video.mp4">
+          <source src="/static/locations/pl/video.mp4">
         </video>
       </div>
     </div>
@@ -223,7 +223,7 @@
   }
 
   .spa-sm {
-    background-image: url('/src/assets/home/spa.png');
+    background-image: url('/static/home/spa.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 40%;
@@ -231,7 +231,7 @@
   }
 
   .nail-sm {
-    background-image: url('/src/assets/home/nail.png');
+    background-image: url('/static/home/nail.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 40%;
@@ -239,7 +239,7 @@
   }
 
   .hair-sm {
-    background-image: url('/src/assets/home/hair.png');
+    background-image: url('/static/home/hair.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 40%;
@@ -266,7 +266,7 @@
   }
 
   .parallax-banner-md {
-    background-image: url('/src/assets/home/parallax/bannerParallax.jpg');
+    background-image: url('/static/home/parallax/bannerParallax.jpg');
     background-color: var(--white);
     background-attachment: fixed;
     background-position: right;
@@ -313,7 +313,7 @@
   }
 
   .spa-md {
-    background-image: url('/src/assets/home/spa.png');
+    background-image: url('/static/home/spa.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 55%;
@@ -325,7 +325,7 @@
   }
 
   .nail-md {
-    background-image: url('/src/assets/home/nail.png');
+    background-image: url('/static/home/nail.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 55%;
@@ -337,7 +337,7 @@
   }
 
   .hair-md {
-    background-image: url('/src/assets/home/hair.png');
+    background-image: url('/static/home/hair.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 55%;
@@ -357,7 +357,7 @@
   }
 
   .parallax-banner-lg {
-    background-image: url('/src/assets/home/parallax/bannerParallax.jpg');
+    background-image: url('/static/home/parallax/bannerParallax.jpg');
     background-color: var(--white);
     background-attachment: fixed;
     background-position: right;
@@ -376,7 +376,7 @@
   }
 
   .parallax-creative-lg {
-    background-image: url('/src/assets/home/parallax/creativeParallax.jpg');
+    background-image: url('/static/home/parallax/creativeParallax.jpg');
     background-attachment: fixed;
     background-position: left;
     background-repeat: no-repeat;
@@ -385,7 +385,7 @@
   }
 
   .parallax-location-lg {
-    background-image: url('/src/assets/home/parallax/locationParallax.jpg');
+    background-image: url('/static/home/parallax/locationParallax.jpg');
     background-attachment: fixed;
     background-position: right;
     background-repeat: no-repeat;
@@ -403,7 +403,7 @@
   }
 
   .spa-lg {
-    background-image: url('/src/assets/home/spa.png');
+    background-image: url('/static/home/spa.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 70%;
@@ -415,7 +415,7 @@
   }
 
   .nail-lg {
-    background-image: url('/src/assets/home/nail.png');
+    background-image: url('/static/home/nail.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 70%;
@@ -427,7 +427,7 @@
   }
 
   .hair-lg {
-    background-image: url('/src/assets/home/hair.png');
+    background-image: url('/static/home/hair.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 70%;
@@ -503,7 +503,7 @@
   }
 
   .service-hair-xl {
-    background-image: url('/src/assets/home/hair.png');
+    background-image: url('/sstatic/home/hair.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 70%;

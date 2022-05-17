@@ -99,6 +99,7 @@ export function khsdsRepo() {
       .finally(function () {
         //Maybe do something
       })
+      
     return serviceDetails.value;
   }
 

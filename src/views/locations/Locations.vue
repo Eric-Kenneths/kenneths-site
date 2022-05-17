@@ -9,7 +9,7 @@
             <div class="ml-3 flex flex-column align-items-center md:block">
               <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
                       @click="doRoute('mr')">
-                <source src="/src/assets/locations/mr/video.mp4">
+                <source src="/static/locations/mr/video.mp4">
               </video>
 
               <div class="grid mt-2 flex flex-column">
@@ -53,7 +53,7 @@
             <div class="ml-3 flex flex-column align-items-center md:block">
               <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
                       @click="doRoute('av')">
-                <source src="/src/assets/locations/av/video.mp4">
+                <source src="/static/locations/av/video.mp4">
               </video>
 
               <div class="grid mt-2 flex flex-column">
@@ -95,7 +95,7 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white); height: 100%;">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <img src="/src/assets/locations/gr/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg cursor-pointer" @click="doRoute('gr')">
+              <img src="/static/locations/gr/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg cursor-pointer" @click="doRoute('gr')">
 
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=1582+Stringtown+Rd+,+Grove+City,+OH+43123" target="_blank">
@@ -141,7 +141,7 @@
             <div class="ml-3 flex flex-column align-items-center md:block">
               <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
                       @click="doRoute('kd')">
-                <source src="/src/assets/locations/kd/video.mp4">
+                <source src="/static/locations/kd/video.mp4">
               </video>
               
               <div class="grid mt-2 flex flex-column">
@@ -183,7 +183,7 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <img src="/src/assets/locations/ng/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg cursor-pointer" @click="doRoute('ng')">
+              <img src="/static/locations/ng/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg cursor-pointer" @click="doRoute('ng')">
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=4942+Morse+Rd,+Columbus,+OH+43230" target="_blank">
@@ -226,7 +226,7 @@
             <div class="ml-3 flex flex-column align-items-center md:block">
               <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
                       @click="doRoute('ts')">
-                <source src="/src/assets/locations/ts/video.mp4">
+                <source src="/static/locations/ts/video.mp4">
               </video>
               
               <div class="grid mt-2 flex flex-column">
@@ -271,7 +271,10 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <img src="/src/assets/locations/pl/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg cursor-pointer" @click="doRoute('pl')">
+              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
+                      @click="doRoute('pl')">
+                <source src="/static/locations/pl/video.mp4">
+              </video>
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=1305+Cameron+Ave,+Lewis+Center,+OH+43035" target="_blank">
@@ -293,7 +296,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                    <Button label="BOOK"/>
+                  <Button label="BOOK"/>
                 </div>
               </div>
             </div>
@@ -312,7 +315,7 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <img src="/src/assets/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg cursor-pointer" @click="doRoute('pw')">
+              <img src="/static/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg cursor-pointer" @click="doRoute('pw')">
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=9868+Brewster+Ln,+Powell,+OH+43065" target="_blank">
@@ -355,7 +358,7 @@
             <div class="ml-3 flex flex-column align-items-center md:block">
               <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="this.play()" onmouseout="this.pause();" loop muted
                       @click="doRoute('ws')">
-                <source src="/src/assets/locations/ws/video.mp4">
+                <source src="/static/locations/ws/video.mp4">
               </video>
               
               <div class="grid mt-2 flex flex-column">
@@ -402,7 +405,7 @@
             <div class="ml-3 flex flex-column align-items-center md:block">
               <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="this.play()" onmouseout="this.pause();" loop muted
                       @click="doRoute('at')">
-                <source src="/src/assets/locations/at/video.mp4">
+                <source src="/static/locations/at/video.mp4">
               </video>
               
               <div class="grid mt-2 flex flex-column">

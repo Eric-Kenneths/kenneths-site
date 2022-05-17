@@ -29,7 +29,7 @@
           <!-- Banner Image -->
           <div class="col-6 p-0">
             <div class="flex align-items-center justify-content-center">
-              <img src="/src/assets/service/serviceMenuLower.jpg" alt="" class="flex align-items-center justify-content-center" style="height: 100%; width: 100%">
+              <img src="/static/service/serviceMenuLower.jpg" alt="" class="flex align-items-center justify-content-center" style="height: 100%; width: 100%">
             </div>
           </div>
         </div>
@@ -43,26 +43,26 @@
           <!-- Photo -->
           <div class="col-6 flex flex-column p-0">
             <div class="flex align-content-start">
-              <img src="/src/assets/service/serviceMenuUpper.jpg" alt="" style="width: 100%">
+              <img src="/static/service/serviceMenuUpper.jpg" alt="" style="width: 100%">
             </div>
 
             <div class="flex justify-content-center align-items-center bat">
               <div class="grid">
                 <div class="col-12">
                   <div class="flex justify-content-center">
-                    Hair Services
+                    <Button label="Hair Services" @click="doRoute('hair')"/>
                   </div>
                 </div>
                 
                 <div class="col-12">
                   <div class="flex justify-content-center">
-                    Spa Services
+                    <Button label="Spa Services" @click="doRoute('spa')"/>
                   </div>
                 </div>
 
                 <div class="col-12">
                   <div class="flex justify-content-center">
-                    Nail Services
+                    <Button label="Nail Services" @click="doRoute('nail')"/>
                   </div>
                 </div>
               </div>
@@ -100,6 +100,7 @@
 
 <script>
   import { reactive, onMounted } from 'vue';
+  import { useRouter } from 'vue-router';
   import { khsdsRepo } from '@/store/repository/khsdsRepo';
   
   export default {
@@ -111,6 +112,23 @@
       });
 
       window.scrollTo(0, 0);
+
+      const router = useRouter();
+
+      function doRoute(whereTo) {
+        switch (whereTo) {
+          case 'spa':
+            router.push('/service-guide/spa');
+            break;
+          case 'nail':
+            router.push('/service-guide/nail');
+            break;
+
+          case 'hair':
+            router.push('/service-guide/hair');
+            break;
+        }
+      }
 
       const {
         getServiceHeaders,
@@ -141,12 +159,14 @@
         };
 
         state.serviceMenu.sort((a, b) => a.sequence - b.sequence);
+
+        console.log(state.serviceMenu)
       }
 
       return {
         state,
-        getServices,
-        
+        doRoute,
+        getServices
       }
     }
   }

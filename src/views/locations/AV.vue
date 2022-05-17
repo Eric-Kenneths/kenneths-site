@@ -5,7 +5,7 @@
       <!-- Video -->
       <div class="flex col-7 justify-content-end align-items-center md:py-7 md:col-7">
         <video class="flex justify-content-center location-video-md location-video-lg location-video-xl" autoplay loop muted>
-            <source src="/src/assets/locations/av/video.mp4">
+            <source src="/static/locations/av/video.mp4">
           </video>
       </div>
 
@@ -169,7 +169,7 @@
 
       <!-- Photo -->
       <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
-        <img src="/src/assets/locations/av/regularImage.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl hidden md:block">
+        <img src="/static/locations/av/regularImage.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl hidden md:block">
       </div>
     </div>
   </div>
@@ -304,7 +304,7 @@
     }
 
     .parallax-banner-md {
-      background-image: url('/src/assets/locations/av/bannerParallax.jpg');
+      background-image: url('/static/locations/av/bannerParallax.jpg');
       background-repeat: no-repeat;
       background-size: 55% 100%;
       height: 46%;
@@ -344,7 +344,7 @@
     }
 
     .parallax-location-lg {
-      background-image: url('/src/assets/locations/av/otherParallax.jpg');
+      background-image: url('/static/locations/av/otherParallax.jpg');
       background-attachment: fixed;
       background-position: right;
       background-repeat: no-repeat;

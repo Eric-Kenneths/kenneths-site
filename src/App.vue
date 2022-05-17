@@ -14,7 +14,7 @@
       </div>
 
       <div class="col m-0 p-0 text-center">
-        <img src="/src/assets/logo.png" class="logo cursor-pointer" @click="doRoute('home')"/>
+        <img src="/static/logo.png" class="logo cursor-pointer" @click="doRoute('home')"/>
       </div>
 
       <div class="col-5 text-right md:flex md:flex-column md:align-items-end lg:block">
@@ -33,7 +33,7 @@
       <Button class="absolute top-0 left-0 test hamburger-button" icon="pi pi-bars" @click="state.sidebarVisible = true"/>
 
       <div class="text-center">
-        <img src="/src/assets/logo.png" width="125" @click="doRoute('home')"/>
+        <img src="/static/logo.png" width="125" @click="doRoute('home')"/>
       </div>
 
       <Sidebar class="sidebar" v-model:visible="state.sidebarVisible" :baseZIndex="1000">
@@ -72,31 +72,31 @@
         <div class="grid my-2">
           <div class="col-2">
             <a href="https://www.instagram.com/kennethssalonandspa/ " target="_blank">
-              <img src="/src/assets/social/Instagram.png" width="20"/>
+              <img src="/static/social/Instagram.png" width="20"/>
             </a>
           </div>
 
           <div class="col-2 ">
             <a href="https://www.tiktok.com/@kennethssalonandspa" target="_blank">
-              <img src="/src/assets/social/TikTok.png" width="20"/>
+              <img src="/static/social/TikTok.png" width="20"/>
             </a>
           </div>
           
           <div class="col-2">
             <a href="https://www.facebook.com/KennethsSalonandspa" target="_blank">
-              <img src="/src/assets/social/FaceBook.png" width="18"/>
+              <img src="/static/social/FaceBook.png" width="18"/>
             </a>
           </div>
 
           <div class="col-2">
             <a href="https://www.pinterest.com/kennethssalonandspa" target="_blank">
-              <img src="/src/assets/social/Pintrest.png" width="18"/>
+              <img src="/static/social/Pintrest.png" width="18"/>
             </a>
           </div>
 
           <!-- <div class="col-2"> -->
             <!-- <a href="https://twitter.com/KennethsSalon" target="_blank"> -->
-              <!-- <img src="/src/assets/social/Twitter.png" width="20"/> -->
+              <!-- <img src="/static/social/Twitter.png" width="20"/> -->
             <!-- </a> -->
           <!-- </div> -->
         </div>
@@ -106,36 +106,36 @@
     <!-- Social Media (left) -->
     <div class="hidden md:flex flex-column fixed top-50 left-0 ml-4">
       <div class="flex align-items-center">
-        <img src="/src/assets/social/vertical/FollowUs.png" width="18"/>
+        <img src="/static/icons/social/vertical/FollowUs.png" width="18"/>
       </div>
 
       <div class="flex align-items-center mt-4">
         <a href="https://www.instagram.com/kennethssalonandspa/ " target="_blank">
-          <img src="/src/assets/social/Instagram.png" width="18"/>
+          <img src="/static/icons/social/Instagram.png" width="18"/>
         </a>
       </div>
 
       <div class="flex align-items-center mt-4">
         <a href="https://www.tiktok.com/@kennethssalonandspa" target="_blank">
-          <img src="/src/assets/social/TikTok.png" width="18"/>
+          <img src="/static/icons/social/TikTok.png" width="18"/>
         </a>
       </div>
 
       <div class="flex align-items-center mt-4">
         <a href="https://www.facebook.com/KennethsSalonandspa" target="_blank">
-          <img src="/src/assets/social/FaceBook.png" width="18"/>
+          <img src="/static/icons/social/FaceBook.png" width="18"/>
         </a>
       </div>
 
       <div class="flex align-items-center mt-4">
         <a href="https://www.pinterest.com/kennethssalonandspa" target="_blank">
-          <img src="/src/assets/social/Pintrest.png" width="18"/>
+          <img src="/static/icons/social/Pintrest.png" width="18"/>
         </a>
       </div>
 
       <!-- <div class="flex align-items-center mt-3"> -->
         <!-- <a href="https://twitter.com/KennethsSalon" target="_blank"> -->
-          <!-- <img src="/src/assets/social/Twitter.png" width="18"/> -->
+          <!-- <img src="/static/icons/social/Twitter.png" width="18"/> -->
         <!-- </a> -->
       <!-- </div> -->
     </div>
@@ -143,15 +143,15 @@
     <!-- Quick Access (right) -->
     <div class="hidden lg:flex flex-column fixed top-50 right-0 mr-4">
         <div class="flex align-items-center mb-5">
-          <img src="/src/assets/menu/vertical/bookNow.png" width="18" class="cursor-pointer"/>
+          <img src="/static/menu/vertical/bookNow.png" width="18" class="cursor-pointer"/>
         </div>
 
         <div class="flex align-items-center mb-5">
-          <img src="/src/assets/menu/vertical/retail.png" width="18" class="cursor-pointer"/>
+          <img src="/static/menu/vertical/retail.png" width="18" class="cursor-pointer"/>
         </div>
 
         <div class="flex align-items-center">
-          <img src="/src/assets/menu/vertical/giftCards.png" width="18" class="cursor-pointer"/>
+          <img src="/static/menu/vertical/giftCards.png" width="18" class="cursor-pointer"/>
         </div>
     </div>    
 
@@ -169,7 +169,7 @@
         <div class="col text-center text-4xl md:text-5xl">
           Get Inspired 
           <a class="link" href="https://www.instagram.com/kennethssalonandspa" target="_blank">
-            <img src="/src/assets/social/Instagram.png" width="27"/> kennethssalonandspa</a>
+            <img src="/static/social/Instagram.png" width="27"/> kennethssalonandspa</a>
 
           <div class="grid mt-1 flex flex-row">
             <div class="col-4 md:col-2" v-for="(post, id) in state.footerPosts" :key="id">
