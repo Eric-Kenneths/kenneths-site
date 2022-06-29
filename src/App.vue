@@ -3,22 +3,20 @@
   <div>
     <!-- Large Menu -->
     <div class="hidden md:flex md:align-items-center my-2 lg:grid">
-      <div class="col-5 md:flex md:flex-column md:align-items-start lg:block">
-        <Button label="BOOK NOW" class="menu-button border-none"/>
+      <div class="md:col-4 lg:col-5 md:flex md:flex-column md:align-items-start lg:block">
+        <Button label="BOOK NOW" class="menu-button border-none" @click="navigate('appointmentBook')"/>
 
-        <Button label="RETAIL" class="menu-button border-none"/>
+        <Button label="RETAIL" class="menu-button border-none" @click="navigate('retail')"/>
 
         <Button label="SERVICES" class="menu-button border-none" @click="doRoute('serviceMenu')"/>
-
-        <!-- <Button label="CLUB KENNETH" class="menu-button border-none"/> -->
       </div>
 
-      <div class="col m-0 p-0 text-center">
+      <div class="md:col-4 lg:col-2 m-0 p-0 text-center">
         <img src="/static/logo.png" class="logo cursor-pointer" @click="doRoute('home')"/>
       </div>
 
-      <div class="col-5 text-right md:flex md:flex-column md:align-items-end lg:block">
-        <Button label="GIFT CARDS" class="menu-button border-none"/>
+      <div class="md:col-4 lg:col-5 text-right md:flex md:flex-column md:align-items-end lg:block">
+        <Button label="GIFT CARDS" class="menu-button border-none" @click="navigate('giftCards')"/>
 
         <Button label="LOCATIONS" class="menu-button border-none" @click="doRoute('locations')"/>
 
@@ -38,24 +36,24 @@
 
       <Sidebar class="sidebar" v-model:visible="state.sidebarVisible" :baseZIndex="1000">
         <div>
-          <Button label="BOOK NOW" class="menu-button border-noround border-none border-bottom-1 my-2"/>
+          <Button label="BOOK NOW" class="menu-button border-noround border-none border-bottom-1 my-2" @click="navigate('appointmentBook')"/>
         </div>
 
         <div>
-          <Button label="RETAIL" class="menu-button border-noround border-none border-bottom-1 my-2"/>
+          <Button label="RETAIL" class="menu-button border-noround border-none border-bottom-1 my-2" @click="navigate('retail')"/>
         </div>
 
         <div>
-          <Button label="GIFT CARDS" class="menu-button border-noround border-none border-bottom-1 my-2"/>
+          <Button label="GIFT CARDS" class="menu-button border-noround border-none border-bottom-1 my-2" @click="navigate('giftCards')"/>
         </div>
 
         <div>
           <Button label="SERVICES" class="menu-button border-noround border-none border-bottom-1 my-2" @click="doRoute('serviceMenu')"/>
         </div>
 
-        <div>
-          <Button label="CLUB KENNETH" class="menu-button border-noround border-none border-bottom-1 my-2"/>
-        </div>
+        <!-- <div> -->
+          <!-- <Button label="CLUB KENNETH" class="menu-button border-noround border-none border-bottom-1 my-2"/> -->
+        <!-- </div> -->
 
         <div>
           <Button label="LOCATIONS" class="menu-button border-noround border-none border-bottom-1 my-2" @click="doRoute('locations')"/>
@@ -143,15 +141,15 @@
     <!-- Quick Access (right) -->
     <div class="hidden lg:flex flex-column fixed top-50 right-0 mr-4">
         <div class="flex align-items-center mb-5">
-          <img src="/static/menu/vertical/bookNow.png" width="18" class="cursor-pointer"/>
+          <img src="/static/menu/vertical/bookNow.png" @click="navigate('appointmentBook')" width="18" class="cursor-pointer"/>
         </div>
 
         <div class="flex align-items-center mb-5">
-          <img src="/static/menu/vertical/retail.png" width="18" class="cursor-pointer"/>
+          <img src="/static/menu/vertical/retail.png" @click="navigate('retail')" width="18" class="cursor-pointer"/>
         </div>
 
         <div class="flex align-items-center">
-          <img src="/static/menu/vertical/giftCards.png" width="18" class="cursor-pointer"/>
+          <img src="/static/menu/vertical/giftCards.png" @click="navigate('giftCards')" width="18" class="cursor-pointer"/>
         </div>
     </div>    
 
@@ -294,11 +292,28 @@
         }
       }
 
+      function navigate(whereTo) {
+        switch (whereTo) {
+          case 'giftCards':
+            window.location.href = 'https://kenneths.com/Gift-Certificate/purchase.aspx';
+            break;
+
+            case 'appointmentBook':
+              window.location.href = 'https://kenneths.com/Appointment-Book/login.aspx';
+              break;
+
+            case 'retail':
+              window.location.href = 'https://kenneths.com/Shop-Retail/Landing.aspx';
+              break;
+        }
+      }
+
       return {
         state,
         appGlobal,
         doRoute,
-        loadInstagramPosts
+        loadInstagramPosts,
+        navigate
       }
     }
   }
@@ -418,5 +433,9 @@ button:focus {
 .link {
   color: var(--black);
   text-decoration: none;  
+}
+
+.bold {
+  font-weight: 900;
 }
 </style>

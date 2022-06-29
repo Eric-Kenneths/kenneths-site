@@ -5,13 +5,14 @@ import { handleResponse } from '@/helpers/response';
 export function employeeRepo() {
   const object = ref({});
   const array = ref([]);
+  const integer = ref(0);
 
   async function getSocialMediaToken() {
 
     const url = appGlobal.apiBaseUrl + '/employees/SocialMedia/GetToken/177000/1';
 
     object.value = {};
-console.log(appGlobal.apiBaseUrl)
+
     await fetch(url)
     .then(response => response.json())
     .then(function (data) {
@@ -42,7 +43,7 @@ console.log(appGlobal.apiBaseUrl)
       array.value = returnData.data;
     })
     .catch(function (e) {
-      console.log(e);
+
     }).finally(function() {              
 
     })  
@@ -65,7 +66,7 @@ console.log(appGlobal.apiBaseUrl)
       array.value = data.listSocialMediaByLocationForWebViewModels;
     })
     .catch(function (e) {
-      console.log(e);
+
     }).finally(function() {              
 
     })  
@@ -73,9 +74,63 @@ console.log(appGlobal.apiBaseUrl)
     return array.value;          
   }
 
+  async function getPositionsForCareer() {
+    const url = appGlobal.apiBaseUrl + '/employees/Position/ForWebCareer/';
+
+    array.value = [];
+
+    await fetch(url)
+    .then(response => response.json())
+    .then(function (data) {
+      if (!handleResponse(data)) {
+        return;
+      }
+
+      array.value = data.listPositionListForWebCareerViewModels;
+    })
+    .catch(function (e) {
+
+    }).finally(function() {  
+
+    })  
+
+    return array.value;          
+  }
+
+  async function postOnlineApplicant(applicant) {
+    const url = appGlobal.apiBaseUrl + '/employees/OnlineApplicant/';
+
+    integer.value = 0;
+
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(applicant)
+    };
+    
+    await fetch(url, options)
+      .then(response => response.json())
+      .then(function (data) {
+        if (!handleResponse(data)) {
+          return;
+        }
+        
+        integer.value = data.onlineApplicantId;
+      })
+      .catch(function (e) {
+
+      }).finally(function () {
+
+      })
+
+    return integer;
+  }
+
   return {
     getSocialMediaToken,
     getPhotos,
-    getEmployeesByLocationWithSocialMedia
+    getEmployeesByLocationWithSocialMedia,
+    getPositionsForCareer,
+    postOnlineApplicant
   };
 }

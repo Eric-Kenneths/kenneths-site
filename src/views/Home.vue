@@ -20,7 +20,7 @@
     <div class="grid mt-0 md:ml-7 lg:mx-7">
       <div class="col-12 py-0 px-0">
         <div class="flex flex-row align-items-center justify-content-center text-6xl square">
-          <video class="flex justify-content-center video" autoplay loop muted>
+          <video class="flex justify-content-center video" autoplay loop muted playsinline>
             <source src="/static/home/horizontal.mp4">
           </video>
         </div>
@@ -28,7 +28,7 @@
     </div>
 
     <!-- First section -->
-    <div class="grid align-items-center parallax-creative-sm parallax-creative-md parallax-creative-lg parallax-creative-xl mt-4 sm:p-0 md:mt-0 md:ml-7 md:mb-0 md:pb-7 lg:mx-7"> 
+    <div class="grid align-items-center parallax-creative-sm parallax-creative-md parallax-creative-lg parallax-creative-xl md:mt-0 md:ml-7 md:mb-0 md:pb-7 lg:mx-7"> 
       <!-- Image/Video -->
       <div class="col-12 flex justify-content-center p-0 mt-2 md:justify-content-end md:col-4 lg:col-5">
         <img src="/static/home/location.jpg" alt="creative" class="mt-3 photo-creative-sm photo-creative-md photo-creative-lg photo-creative-xl">
@@ -61,14 +61,14 @@
     </div>
     
     <!-- Second Section -->
-    <div class="grid parallax-location-sm parallax-location-md parallax-location-lg parallax-location-xl mt-4 md:mt-0 md:ml-7 lg:mx-7 xl:p-8">
+    <div class="grid parallax-location-sm parallax-location-md parallax-location-lg parallax-location-xl mt-0 md:ml-7 lg:mx-7 xl:p-8">
       <!-- Text -->
       <div class="col-12 flex justify-content-center md:flex-order-0 md:col-6">
         <div class="flex flex-column align-items-center justify-content-center">
           <div class="p-4 text-background-sm md:pr-4">
             <!-- Heading -->
             <div class="serif text-left pt-1 md:text-xl md:px-4 lg:text-3xl lg:px-6">
-              TEN LOCATIONS, ONE EXCEPTIONAL EXPEREINCE
+              TEN LOCATIONS, ONE EXCEPTIONAL EXPERIENCE
             </div>
 
             <!-- Subtext -->
@@ -87,7 +87,7 @@
 
       <!-- Image/Video -->
       <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
-        <video class="flex justify-content-center location-video-sm location-video-md location-video-lg location-video-xl" autoplay loop muted>
+        <video class="flex justify-content-center location-video-sm location-video-md location-video-lg location-video-xl" autoplay loop muted playsinline>
           <source src="/static/locations/pl/video.mp4">
         </video>
       </div>
@@ -149,15 +149,15 @@
             break;
 
           case 'spa':
-            router.push('/service-guide/spa');
+            router.push('/service-guide/Spa');
             break;
 
           case 'nail':
-            router.push('/service-guide/nail');
+            router.push('/service-guide/Nail');
             break;
           
           case 'hair':
-            router.push('/service-guide/hair');
+            router.push('/service-guide/Hair');
             break;
         }
       }
@@ -191,25 +191,12 @@
     width: 50%;
   }
 
-  .parallax-creative-sm {
-    background-image: linear-gradient(var(--red), var(--red));
-    background-attachment: fixed;
-    background-position: bottom center 0px;
-    background-repeat: no-repeat;
-    background-size: 100% 50%;
-  }
-
   .photo-location-sm {
     height: auto;
     width: 50%;
   }
 
   .parallax-location-sm {
-    background-image: linear-gradient(var(--light-tan), var(--light-tan));
-    background-attachment: fixed;
-    background-position: bottom center 0px;
-    background-repeat: no-repeat;
-    background-size: 100% 50%;
     flex-direction: column-reverse !important;
   }
 
@@ -268,25 +255,14 @@
   .parallax-banner-md {
     background-image: url('/static/home/parallax/bannerParallax.jpg');
     background-color: var(--white);
-    background-attachment: fixed;
     background-position: right;
     background-repeat: no-repeat;
     background-size: 55% 100%;
-    height: 46%;
   }
 
   .photo-creative-md {
-    height: auto;
+    height: 25rem;
     width: 100%;
-  }
-
-  .parallax-creative-md {
-    background-image: linear-gradient(var(--light-red), var(--light-red));
-    background-attachment: fixed;
-    background-position: bottom left 0px;
-    background-repeat: no-repeat;
-    background-size: 90% 50%;
-
   }
 
   .photo-location-md {
@@ -295,11 +271,6 @@
   }
 
   .parallax-location-md {
-    background-image: linear-gradient(var(--light-red), var(--light-red));
-    background-attachment: fixed;
-    background-position: center left 0px;
-    background-repeat: no-repeat;
-    background-size: 90% 50%;
     flex-direction: unset !important;
   }
 
@@ -472,7 +443,7 @@
   }
 
   .location-video-xl {
-    width: 50%;
+    width: 60%;
   }
 
   .service-row-xl {

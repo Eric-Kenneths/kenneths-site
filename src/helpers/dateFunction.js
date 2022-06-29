@@ -26,7 +26,7 @@ function confirmInputType(date) {
 
 function confirmReturnType(date) {
   let type = (date instanceof Date ? "date" : "string");
-console.log(type)
+
   if (returnType === 'date') {
     if (type === 'date') {
       return date;
@@ -258,7 +258,7 @@ export function convertDateToApiString(date) {
 
 export function convertStringToDate(date) {
   let parts = [];
-console.log(new Date(date))
+
   if (date.includes('-')) {
     parts = date.split('-');
   } 

@@ -2,36 +2,34 @@
   <div>
     <!-- Banner -->
     <div class="grid mb-1 parallax-banner-sm parallax-banner-sh parallax-banner-md parallax-banner-lg parallax-banner-xl md:mb-0">
-      <!-- Video -->
-      <div class="flex col-7 justify-content-end align-items-center md:py-7 md:col-7">
-        <!-- <video class="flex justify-content-center location-video-md location-video-lg location-video-xl" autoplay loop muted> -->
-          <!-- <source src="/static/locations/ng/video.mp4"> -->
-        <!-- </video> -->
-
-        <img src="/static/locations/ng/banner.jpg" class="flex justify-content-center location-video-md location-video-lg location-video-xl">
-      </div>
-
-      <!-- Text -->
+      <!-- Banner Text -->
       <div class="flex col-5 md:col-5">
-        <div class="serif flex align-items-center text-4xl text-left z-1 negative-margin md:text-7xl lg:text-7xl xl:text-8xl">
+        <div class="serif flex align-items-center text-4xl text-right z-1 negative-margin md:text-7xl xl:text-8xl">
           New Albany Salon + Spa Studio
         </div>
+      </div>
+
+      <!-- Video -->
+      <div class="flex col-7 justify-content-start align-items-center md:py-7 md:col-7">
+        <video class="flex justify-content-center location-video-md location-video-lg location-video-xl" autoplay loop muted>
+          <source src="/static/locations/ng/video.mp4">
+        </video>
       </div>
     </div>
 
     <!-- Information -->
     <div class="grid mt-0 flex flex-column lg:flex-row md:ml-7 lg:mx-7" style="background-color: var(--black)">
       <!-- Map -->
-      <div class="flex-order-1 col-12 lg:flex-order-0 lg:col-offset-1 lg:col-6">
+      <div class="flex-order-1 col-12 lg:flex-order-0 lg:col-6 xl:col-offset-1">
         <iframe class="map-sm map-md map-lg map-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3053.8825065492038!2d-82.86284668465761!3d40.05572288543993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883860f91cbfadd3%3A0x345069bb788038af!2sKenneth&#39;s+Hair+Salons+%26+Day+Spas!5e0!3m2!1sen!2sus!4v1533574854051"></iframe>
       </div>
 
-      <!-- Deatils -->
-      <div class="col-12 md:flex-order-0 md:col-12 lg:flex-order-1 lg:col-5">
+      <!-- Details -->
+      <div class="col-12 md:flex-order-0 md:col-12 lg:flex-order-1 lg:col-6 xl:col-5">
         <!-- Address -->
         <div class="grid" style="height: 50%">
-          <div class="col-12 flex justify-content-start align-items-center">
-            <div class="text-left sans-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl" style="color: white">
+          <div class="col-12 flex justify-content-center xl:justify-content-start align-items-center">
+            <div class="text-left sans-serif text-3xl lg:text-4xl xl:text-5xl" style="color: white">
               <a class="address" href="https://maps.google.com/?q=4942+Morse+Rd,+Gahanna,+OH+43230" target="_blank">
                 <a class="address" href="https://maps.apple.com/maps?q=4942+Morse+Rd,+Gahanna,+OH+43230" target="_blank">
                   <div>
@@ -52,8 +50,8 @@
         </div>
 
         <!-- Hours -->
-        <div class="grid flex mt-3" style="height: 50%; color: white">
-          <div class="sans-serif flex flex-column justify-content-start col-7 text-xl md:col-offset-3 md:col-5 md:text-xl lg:col-6 lg:col-offset-0 lg:text-xl xl:text-2xl">
+        <div class="grid flex justify-content-center lg:justify-content-end xl:justify-content-start mt-3" style="height: 50%; color: white">
+          <div class="sans-serif flex flex-column justify-content-start col-7 text-xl md:col-offset-3 md:col-5 md:text-xl lg:col-7 lg:col-offset-0 lg:text-xl xl:text-2xl">
             <div>
               <div style="float: left">MON</div>
               <div style="float: right">8:30am - 7:30pm</div>
@@ -101,30 +99,30 @@
     </div>
 
     <!-- Employee List -->
-    <div class="grid parallax-location-md parallax-location-lg parallax-location-xl mt-4 md:mt-0 md:ml-7 lg:mr-7 lg:ml-4 xl:p-8">
+    <div class="grid parallax-location-lg parallax-location-xl mt-4 md:mt-0 md:ml-7 lg:mr-7 lg:ml-8 xl:px-8">
       <!-- Employees -->
-      <div class="col-12 flex flex-column justify-content-center md:flex-order-0 md:col-6">
+      <div class="col-12 flex flex-column justify-content-center md:flex-order-0 lg:col-6">
         <div class="grid sans-serif text-lg">
           <!-- Location Name -->
-          <div class="col-12 serif text-center text-5xl">
-            Our Kingsdale family
+          <div class="col-12 serif text-center text-4xl lg:text-5xl">
+            Our New Albany family
           </div>  
 
           <!-- Managers and Desk -->
-          <div class="col-12 sans-serif text-center text-3xl name">
+          <div class="col-12 sans-serif text-center text-xl md:text-2xl lg:text-3xl name h-auto">
             Lead by <span v-for="(employee, id) in state.employees.manager" :key="id">{{ employee.emalias }}<span v-if="id !== state.employees.manager.length - 1">, </span></span>
              and supported by <span v-for="(employee, id) in state.employees.desk" :key="id"> {{ employee.emalias }}<span v-if="id !== state.employees.desk.length - 1">, </span></span>
           </div>
 
           <!-- Hair Text -->
-          <div class="col-2 serif rotate text-left text-8xl mt-7" v-if="state.employees.hair.length > 0">
+          <div class="col-2 serif rotate text-left text-5xl md:text-6xl lg:text-7xl lg:mt-4 xl:text-8xl xl:mt-7" v-if="state.employees.hair.length > 0">
             HAIR
           </div>
 
           <!-- Hair Employees -->
-          <div class="col-10 mt-6" v-if="state.employees.hair.length > 0">
+          <div class="col-10 lg:mt-4 xl:mt-6" v-if="state.employees.hair.length > 0">
             <div class="grid">
-              <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.hair" :key="id">
+              <div class="sans-serif text-center text-xl col-4 md:col-3 lg:p-0 xl:p-2" v-for="(employee, id) in state.employees.hair" :key="id">
                 <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
                       @click="goToInstagram(employee.username)">
                   {{ employee.emalias }}
@@ -134,14 +132,14 @@
           </div>
 
           <!-- Nail Text -->
-          <div class="col-2 serif rotate text-left text-8xl mt-7" v-if="state.employees.nail.length > 0">
+          <div class="col-2 serif rotate text-left text-5xl md:text-6xl lg:text-7xl xl:text-8xl mt-7" v-if="state.employees.nail.length > 0">
             Nails
           </div>
 
           <!-- Nail Employees -->
           <div class="col-10 mt-6" v-if="state.employees.nail.length > 0">
             <div class="grid">
-              <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.nail" :key="id">
+              <div class="sans-serif text-center text-xl col-4 md:col-3 lg:p-0 xl:p-2" v-for="(employee, id) in state.employees.nail" :key="id">
                 <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
                       @click="goToInstagram(employee.username)">
                   {{ employee.emalias }}
@@ -151,14 +149,14 @@
           </div>
 
           <!-- Spa Text -->
-          <div class="col-2 serif rotate text-left text-8xl mt-7" v-if="state.employees.spa.length > 0">
+          <div class="col-2 serif rotate text-left text-5xl md:text-6xl lg:text-7xl xl:text-8xl mt-7" v-if="state.employees.spa.length > 0">
             Spa
           </div>
 
           <!-- Spa Employees -->
           <div class="col-10 mt-6" v-if="state.employees.spa.length > 0">
             <div class="grid">
-              <div class="sans-serif text-center text-xl col-4 lg:col-3" v-for="(employee, id) in state.employees.spa" :key="id">
+              <div class="sans-serif text-center text-xl col-4 md:col-3 lg:p-0 xl:p-2" v-for="(employee, id) in state.employees.spa" :key="id">
                 <div class="name flex justify-content-center align-items-center" :style="styleInstagram(employee.username)"
                       @click="goToInstagram(employee.username)">
                   {{ employee.emalias }}
@@ -170,8 +168,8 @@
       </div>
 
       <!-- Photo -->
-      <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
-        <img src="/static/locations/kd/regularImage.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl hidden md:block">
+      <div class="col-12 flex justify-content-center md:flex-order-1 md:justify-content-end md:align-items-center md:col-5 lg:col-6 lg:justify-content-start lg:align-items-center lg:pl-8">
+        <img src="/static/locations/kd/regularImage.jpg" alt="creative" class="photo-location-sm photo-location-md photo-location-lg photo-location-xl hidden lg:block">
       </div>
     </div>
   </div>
@@ -277,7 +275,7 @@
 
     .photo-location-sm {
       height: auto;
-      width: 50%;
+      width: 0%;
     }
   }
 
@@ -308,6 +306,7 @@
     .parallax-banner-md {
       background-image: url('/static/locations/ng/bannerParallax.jpg');
       background-repeat: no-repeat;
+      background-position: top right 0px;
       background-size: 55% 100%;
       height: 46%;
     }
@@ -322,7 +321,7 @@
       background-attachment: fixed;
       background-position: top right 0px;
       background-repeat: no-repeat;
-      background-size: 40% 60%;
+      background-size: 35% 60%;
       flex-direction: unset !important;
     }
   }
@@ -340,7 +339,7 @@
       height: 45rem;
     }
 
-    .photo-lg {
+    .photo-location-lg {
       width: 45%;
       height: auto;
     }
@@ -362,7 +361,8 @@
   /* Extra large screen */
   @media only screen and (min-width: 1200px) {
     .parallax-banner-xl {
-      background-size: 45% 150%;
+      background-position: right;
+      background-size: 45% 100%;
       height: 52rem;
     }
 
@@ -374,12 +374,12 @@
       filter: grayscale(100%);
       width: 80%;
       height: 35rem;
-      margin: 4rem 4rem 4rem 6rem;
+      margin: 5% 2% 5% 0%;
     }
 
     .photo-location-xl {
       height: auto;
-      width: 85%;
+      width: 55%;
     }
 
     .parallax-location-xl {
@@ -396,7 +396,7 @@
   }
 
   .negative-margin {
-    margin: 0 0 0 -4rem;
+    margin: 0 -7rem 0 0;
   }
 
   .rotate {

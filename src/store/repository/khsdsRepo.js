@@ -22,7 +22,7 @@ export function khsdsRepo() {
         locations.value = data;
       })
       .catch(function (e) {
-        console.log(e);
+
       })
       .finally(function () {
         //Maybe do something
@@ -47,7 +47,7 @@ export function khsdsRepo() {
 
       })
       .catch(function (e) {
-        console.log(e);
+
       })
       .finally(function () {
         //Maybe do something
@@ -71,7 +71,7 @@ export function khsdsRepo() {
         serviceDetails.value = data;
       })
       .catch(function (e) {
-        console.log(e);
+
       })
       .finally(function () {
         //Maybe do something
@@ -94,7 +94,7 @@ export function khsdsRepo() {
         dataGlobal.services.lastPullDateTime = data.lastPullDateTime;
       })
       .catch(function (e) {
-        console.log(e);
+
       })
       .finally(function () {
         //Maybe do something
@@ -118,7 +118,7 @@ export function khsdsRepo() {
         goodFors.value = data;
       })
       .catch(function (e) {
-        console.log(e);
+
       })
       .finally(function () {
         //Maybe do something

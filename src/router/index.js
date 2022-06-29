@@ -82,22 +82,16 @@ const routes = [
     component: ServiceMenu
   },
   {
-    path: '/service-guide/hair',
-    name: 'ServiceGuideHair',
+    path: '/service-guide/:category',
+    name: 'ServiceGuide',
     component: ServiceGuide,
-    props: {category: 'Hair'}
+    props: true
   },
   {
-    path: '/service-guide/nail',
-    name: 'ServiceGuideNail',
+    path: '/service-guide/:department/:serviceCode',
+    name: 'ServiceGuideWithParams',
     component: ServiceGuide,
-    props: {category: 'Nail'}
-  },
-  {
-    path: '/service-guide/spa',
-    name: 'ServiceGuideSpa',
-    component: ServiceGuide,
-    props: {category: 'Spa'}
+    props: true
   },
   {
     path: '/careers',

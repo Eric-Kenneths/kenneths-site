@@ -32,7 +32,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                  <Button label="BOOK"/>
+                  <Button label="BOOK" @click="doRoute('appointmentBook')"/>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                  <Button label="BOOK"/>
+                  <Button label="BOOK" @click="doRoute('appointmentBook')"/>
                 </div>
               </div>
             </div>
@@ -95,7 +95,10 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white); height: 100%;">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <img src="/static/locations/gr/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg cursor-pointer" @click="doRoute('gr')">
+              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
+                      @click="doRoute('gr')">
+                <source src="/static/locations/gr/video.mp4">
+              </video>
 
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=1582+Stringtown+Rd+,+Grove+City,+OH+43123" target="_blank">
@@ -117,7 +120,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                    <Button label="BOOK"/>
+                    <Button label="BOOK" @click="doRoute('appointmentBook')"/>
                 </div>
               </div>
             </div>
@@ -164,7 +167,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                    <Button label="BOOK"/>
+                    <Button label="BOOK" @click="doRoute('appointmentBook')"/>
                 </div>
               </div>
             </div>
@@ -183,7 +186,10 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <img src="/static/locations/ng/banner.jpg" alt="Add later" class="photo-sm photo-md photo-lg cursor-pointer" @click="doRoute('ng')">
+              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
+                      @click="doRoute('ng')">
+                <source src="/static/locations/ng/video.mp4">
+              </video>
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=4942+Morse+Rd,+Columbus,+OH+43230" target="_blank">
@@ -205,7 +211,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                    <Button label="BOOK"/>
+                    <Button label="BOOK" @click="doRoute('appointmentBook')"/>
                 </div>
               </div>
             </div>
@@ -249,7 +255,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                    <Button label="BOOK"/>
+                    <Button label="BOOK" @click="doRoute('appointmentBook')"/>
                 </div>
               </div>
             </div>
@@ -296,7 +302,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                  <Button label="BOOK"/>
+                  <Button label="BOOK" @click="doRoute('appointmentBook')"/>
                 </div>
               </div>
             </div>
@@ -315,7 +321,10 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <img src="/static/home/parallax/nailParallax.jpg" alt="Add later" class="photo-sm photo-md photo-lg cursor-pointer" @click="doRoute('pw')">
+              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
+                      @click="doRoute('pw')">
+                <source src="/static/locations/pw/video.mp4">
+              </video>
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=9868+Brewster+Ln,+Powell,+OH+43065" target="_blank">
@@ -337,7 +346,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                    <Button label="BOOK"/>
+                    <Button label="BOOK" @click="doRoute('appointmentBook')"/>
                 </div>
               </div>
             </div>
@@ -381,7 +390,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                    <Button label="BOOK"/>
+                    <Button label="BOOK" @click="doRoute('appointmentBook')"/>
                 </div>
               </div>
             </div>
@@ -428,7 +437,7 @@
                 </a>
 
                 <div class="col-12 align-self-end md:flex md:justify-content-end pt-3 pb-0">
-                    <Button label="BOOK"/>
+                    <Button label="BOOK" @click="doRoute('appointmentBook')"/>
                 </div>
               </div>
             </div>
@@ -508,6 +517,9 @@
 
           case 'at':
             router.push('/locations/academy-hair-salon');
+            break;
+          case 'appointmentBook':
+            window.location.href = 'https://kenneths.com/Appointment-Book/login.aspx';
             break;
         }
       }

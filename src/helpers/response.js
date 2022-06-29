@@ -1,10 +1,8 @@
 import { appGlobal } from '@/store/global/appGlobal';
 
 export function handleResponse(response) {    
-
     var noResponseError = true;
 
-    //console.log(response);
     const data = JSON.stringify(response);
 
     JSON.parse(data, (key, value) => {
@@ -13,7 +11,6 @@ export function handleResponse(response) {
             //var title = JSON.parse(data).title;
 
             //noResponseError = false;
-            console.log(error);
 
             //Put a fancier alert here
         }
