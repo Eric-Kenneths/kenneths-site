@@ -22,7 +22,7 @@
 
         <Button label="CAREERS" class="menu-button border-none" @click="doRoute('careers')"/>
 
-        <Button label="BLOG" class="menu-button border-none"/>
+        <Button label="BLOG" class="menu-button border-none" @click="navigate('blog')"/>
       </div>
     </div>
 
@@ -64,7 +64,7 @@
         </div>
 
         <div>
-          <Button label="BLOG" class="menu-button border-noround border-none border-bottom-1 my-2"/>
+          <Button label="BLOG" class="menu-button border-noround border-none border-bottom-1 my-2" @click="navigate('blog')"/>
         </div>
 
         <div class="grid my-2">
@@ -304,6 +304,10 @@
 
             case 'retail':
               window.location.href = 'https://kenneths.com/Shop-Retail/Landing.aspx';
+              break;
+
+            case 'blog':
+              window.location.href = 'https://kenneths.com/blog';
               break;
         }
       }

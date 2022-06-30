@@ -7,10 +7,15 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white); height: 100%">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
-                      @click="doRoute('mr')">
+              <!-- Video will only show in large and xl screens -->
+              <video class="flex justify-content-center photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" 
+                      loop muted @click="doRoute('mr')" v-if="state.width >= 992">
                 <source src="/static/locations/mr/video.mp4">
               </video>
+
+              <!-- Image will only show on small and medium screens -->
+              <img src="/static/locations/mr.jpg" alt="creative" class="flex justify-content-center photo-sm photo-md"
+                    v-if="state.width < 992" @click="doRoute('mr')">
 
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=3610+Fishinger+Blvd+,+Hilliard,+OH+43026" target="_blank">
@@ -51,10 +56,15 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
-                      @click="doRoute('av')">
+              <!-- Video will only show in large and xl screens -->
+              <video class="flex justify-content-center photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" 
+                      loop muted @click="doRoute('av')" v-if="state.width >= 992">
                 <source src="/static/locations/av/video.mp4">
               </video>
+
+              <!-- Image will only show on small and medium screens -->
+              <img src="/static/locations/av.jpg" alt="creative" class="flex justify-content-center photo-sm photo-md"
+                    v-if="state.width < 992" @click="doRoute('av')">
 
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=7056+Hospital+Dr+,+Dublin,+OH+43016" target="_blank">
@@ -95,10 +105,15 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white); height: 100%;">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
-                      @click="doRoute('gr')">
+              <!-- Video will only show in large and xl screens -->
+              <video class="flex justify-content-center photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" 
+                      loop muted @click="doRoute('gr')" v-if="state.width >= 992">
                 <source src="/static/locations/gr/video.mp4">
               </video>
+
+              <!-- Image will only show on small and medium screens -->
+              <img src="/static/locations/gr.jpg" alt="creative" class="flex justify-content-center photo-sm photo-md"
+                    v-if="state.width < 992" @click="doRoute('gr')">
 
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=1582+Stringtown+Rd+,+Grove+City,+OH+43123" target="_blank">
@@ -142,10 +157,15 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
-                      @click="doRoute('kd')">
+              <!-- Video will only show in large and xl screens -->
+              <video class="flex justify-content-center photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" 
+                      loop muted @click="doRoute('kd')" v-if="state.width >= 992">
                 <source src="/static/locations/kd/video.mp4">
               </video>
+
+              <!-- Image will only show on small and medium screens -->
+              <img src="/static/locations/kd.jpg" alt="creative" class="flex justify-content-center photo-sm photo-md"
+                    v-if="state.width < 992" @click="doRoute('kd')">
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=3134+Kingsdale+,+Upper+Arlington,+OH+43221" target="_blank">
@@ -186,10 +206,15 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
-                      @click="doRoute('ng')">
+              <!-- Video will only show in large and xl screens -->
+              <video class="flex justify-content-center photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" 
+                      loop muted @click="doRoute('ng')" v-if="state.width >= 992">
                 <source src="/static/locations/ng/video.mp4">
               </video>
+
+              <!-- Image will only show on small and medium screens -->
+              <img src="/static/locations/ng.jpg" alt="creative" class="flex justify-content-center photo-sm photo-md"
+                    v-if="state.width < 992" @click="doRoute('ng')">
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=4942+Morse+Rd,+Columbus,+OH+43230" target="_blank">
@@ -230,10 +255,15 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
-                      @click="doRoute('ts')">
+              <!-- Video will only show in large and xl screens -->
+              <video class="flex justify-content-center photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" 
+                      loop muted @click="doRoute('ts')" v-if="state.width >= 992">
                 <source src="/static/locations/ts/video.mp4">
               </video>
+
+              <!-- Image will only show on small and medium screens -->
+              <img src="/static/locations/ts.jpg" alt="creative" class="flex justify-content-center photo-sm photo-md"
+                    v-if="state.width < 992" @click="doRoute('ts')">
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=2865+Taylor+Rd+Ext,+Reynoldsburg,+OH+43068" target="_blank">
@@ -277,10 +307,15 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
-                      @click="doRoute('pl')">
+              <!-- Video will only show in large and xl screens -->
+              <video class="flex justify-content-center photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" 
+                      loop muted @click="doRoute('pl')" v-if="state.width >= 992">
                 <source src="/static/locations/pl/video.mp4">
               </video>
+
+              <!-- Image will only show on small and medium screens -->
+              <img src="/static/locations/pl.jpg" alt="creative" class="flex justify-content-center photo-sm photo-md"
+                    v-if="state.width < 992" @click="doRoute('pl')">
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=1305+Cameron+Ave,+Lewis+Center,+OH+43035" target="_blank">
@@ -321,10 +356,15 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" loop muted
-                      @click="doRoute('pw')">
+              <!-- Video will only show in large and xl screens -->
+              <video class="flex justify-content-center photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" 
+                      loop muted @click="doRoute('pw')" v-if="state.width >= 992">
                 <source src="/static/locations/pw/video.mp4">
               </video>
+
+              <!-- Image will only show on small and medium screens -->
+              <img src="/static/locations/pw.jpg" alt="creative" class="flex justify-content-center photo-sm photo-md"
+                    v-if="state.width < 992" @click="doRoute('pw')">
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=9868+Brewster+Ln,+Powell,+OH+43065" target="_blank">
@@ -365,10 +405,15 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="this.play()" onmouseout="this.pause();" loop muted
-                      @click="doRoute('ws')">
+              <!-- Video will only show in large and xl screens -->
+              <video class="flex justify-content-center photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" 
+                      loop muted @click="doRoute('ws')" v-if="state.width >= 992">
                 <source src="/static/locations/ws/video.mp4">
               </video>
+
+              <!-- Image will only show on small and medium screens -->
+              <img src="/static/locations/ws.jpg" alt="creative" class="flex justify-content-center photo-sm photo-md"
+                    v-if="state.width < 992" @click="doRoute('ws')">
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=726+North+State+St,+Westerville,+OH+43082" target="_blank">
@@ -412,10 +457,15 @@
         <div class="grid py-3" style="background-color: var(--black); color: var(--white);">  
           <div class="col-9 md:col-10 md:pl-0 md:py-0">
             <div class="ml-3 flex flex-column align-items-center md:block">
-              <video class="flex justify-content-center photo-sm photo-md photo-lg cursor-pointer" onmouseover="this.play()" onmouseout="this.pause();" loop muted
-                      @click="doRoute('at')">
+              <!-- Video will only show in large and xl screens -->
+              <video class="flex justify-content-center photo-lg cursor-pointer" onmouseover="play()" onmouseout="pause()" 
+                      loop muted @click="doRoute('at')" v-if="state.width >= 992">
                 <source src="/static/locations/at/video.mp4">
               </video>
+
+              <!-- Image will only show on small and medium screens -->
+              <img src="/static/locations/at.jpg" alt="creative" class="flex justify-content-center photo-sm photo-md"
+                    v-if="state.width < 992" @click="doRoute('at')">
               
               <div class="grid mt-2 flex flex-column">
                 <a class="address" href="https://maps.google.com/?q=5151+Reed+Rd+Suite+110B,+Columbus,+OH+43220" target="_blank">
@@ -461,7 +511,7 @@
 </template>
 
 <script>
-  import { reactive} from 'vue';
+  import { reactive, onMounted} from 'vue';
   import { appGlobal } from '@/store/global/appGlobal';
   import { useRouter } from 'vue-router';
   
@@ -470,10 +520,14 @@
 
     setup() {
       const state = reactive({
-
+        width: 0
       });
 
       window.scrollTo(0, 0);
+
+      onMounted(async () => {
+        state.width = window.innerWidth;
+      });
 
       const router = useRouter();
 

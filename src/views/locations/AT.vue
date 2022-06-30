@@ -11,7 +11,7 @@
 
       <!-- Video -->
       <div class="flex col-7 justify-content-start align-items-center md:py-7 md:col-7">
-        <video class="flex justify-content-center location-video-md location-video-lg location-video-xl" autoplay loop muted>
+        <video class="flex justify-content-center location-video-md location-video-lg location-video-xl" autoplay loop muted playsinline>
           <source src="/static/locations/at/video.mp4">
         </video>
       </div>

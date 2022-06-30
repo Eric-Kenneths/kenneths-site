@@ -24,15 +24,15 @@
                 industry, this position is a great way to start your career.
               </div>
 
-              <div class="mt-4 flex justify-content-center">
-                <Button label="Apply Now"/>
-              </div>
+              <!-- <div class="mt-4 flex justify-content-center"> -->
+                <!-- <Button label="Apply Now"/> -->
+              <!-- </div> -->
             </div>
           </div>
 
           <div class="flex banner-lg align-items-center col-12 lg:col-6">
             <div class="flex justify-content-center md:m-0 md:p-0 lg:justify-content-start">
-              <video class="video-sm video-md video-lg video-xl" autoplay loop muted>
+              <video class="video-sm video-md video-lg video-xl" autoplay loop muted playsinline>
                 <source src="/static/careers/video.mp4">
               </video>
             </div>
@@ -112,8 +112,9 @@
 
     <div class="grid mx-7" v-if="state.step === 1">
       <div class="col-12">
-        <div class="flex justify-content-center">
-          iframe will show here
+        <div class="flex justify-content-center sans-serif text-2xl">
+          Your information has been submitted. Please fill out the application in the new window. <br>
+          Someone from Kenneth's will be in contact with you soon.
         </div>
       </div>
     </div>
@@ -190,6 +191,8 @@
           await postOnlineApplicant(state.applicant);
 
           state.step++;
+
+          window.open("https://kenneths.com/careers.htm", "_blank");
         }
       }
 
